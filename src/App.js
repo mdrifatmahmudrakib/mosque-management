@@ -6,6 +6,8 @@ import Home from './Pages/Home/Home';
 import Donate from './Pages/Donate/Donate';
 import Header from './Pages/Shared/Header/Header';
 import Scolar from './Pages/Scolar/Scolar';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Login/Register/Register';
 
 
 function App() {
@@ -17,6 +19,11 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path='/donate' element={<Donate></Donate>}></Route>
         <Route path='/scolar' element={<Scolar></Scolar>}></Route>
+
+
+        <Route path="/login" element={<Login></Login>}></Route>
+
+        <Route path="/register" element={<Register></Register>}></Route>
       </Routes>
 
     </div>

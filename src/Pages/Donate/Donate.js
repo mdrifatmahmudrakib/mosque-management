@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Donate.css";
 import onelinee from "../../1_images/1_home/1_line.png"
-import Header from '../Shared/Header/Header';
+
 import donatebanner from "../../../src/1_images/8_donate_page/1_donate_home.jpg";
 import History from '../Home/History/History';
 import Help from '../Home/Help/Help';
