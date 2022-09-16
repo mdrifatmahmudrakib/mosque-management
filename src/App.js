@@ -8,6 +8,7 @@ import Header from './Pages/Shared/Header/Header';
 import Scolar from './Pages/Scolar/Scolar';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import AddCampaign from './Pages/Dashboard/AddCampaign/AddCampaign';
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
 
         <Route path="/register" element={<Register></Register>}></Route>
+
+        <Route path="/addcampaign" element={<AddCampaign></AddCampaign>}></Route>
       </Routes>
 
     </div>

@@ -37,7 +37,7 @@ const Header = () => {
                                 <Nav.Link className='text-light' as={Link} to="addevent">Add Event</Nav.Link>
 
 
-                                <Nav.Link className='text-light' as={Link} to="allcampaign">All Campaign</Nav.Link>
+                                <Nav.Link className='text-light' as={Link} to="addcampaign">Add Campaign</Nav.Link>
                             </>
                         }
                     </Nav>
