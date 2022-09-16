@@ -9,6 +9,7 @@ import Scolar from './Pages/Scolar/Scolar';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AddCampaign from './Pages/Dashboard/AddCampaign/AddCampaign';
+import HelpDetails from './Pages/Home/Help/HelpDetails';
 
 
 function App() {
@@ -27,6 +28,11 @@ function App() {
         <Route path="/register" element={<Register></Register>}></Route>
 
         <Route path="/addcampaign" element={<AddCampaign></AddCampaign>}></Route>
+
+
+        <Route path='/campaign/:campaignId' element={
+          <HelpDetails></HelpDetails>}></Route>
+
       </Routes>
 
     </div>

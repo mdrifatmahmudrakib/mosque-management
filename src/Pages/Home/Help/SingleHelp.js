@@ -1,8 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 
 const SingleHelp = ({ cause }) => {
-    const { img, name, short_description, Raised, Goal } = cause;
+    const { _id, img, name, short_description, Raised, Goal } = cause;
+    const navigate = useNavigate();
+    const handlenavigateToHelpDetails = id => {
+        navigate(`/campaign/${id}`)
+    }
     return (
         <div class="col-12 col-md-6 col-lg-4 col-xl-4 justify-content-center  mt-3 mt-md-3 mt-lg-0">
             <div class="help_card_shadow">
@@ -38,6 +43,7 @@ const SingleHelp = ({ cause }) => {
                     </p>
 
                 </div>
+                <button className="btn btn-dark" onClick={() => handlenavigateToHelpDetails(_id)}>Donate</button>
             </div>
         </div>
     );
