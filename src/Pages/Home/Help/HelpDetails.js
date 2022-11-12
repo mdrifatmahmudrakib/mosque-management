@@ -12,7 +12,7 @@ const HelpDetails = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setCauses(data))
-    }, [])
+    }, [campaignId])
     const { img, name, Goal, short_description } = cause;
     return (
         <div>

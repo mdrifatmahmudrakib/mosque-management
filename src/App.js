@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Router, Routes } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Donate from './Pages/Donate/Donate';
 import Header from './Pages/Shared/Header/Header';
@@ -10,33 +10,21 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import AddCampaign from './Pages/Dashboard/AddCampaign/AddCampaign';
 import HelpDetails from './Pages/Home/Help/HelpDetails';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import { Stack } from 'react-bootstrap';
+import Footer from './Pages/Shared/Footer/Footer';
+import { useState } from 'react';
+import Routesin from './Pages/Routes/Routesin';
 
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/home" element={<Home></Home>}></Route>
-        <Route path='/donate' element={<Donate></Donate>}></Route>
-        <Route path='/scolar' element={<Scolar></Scolar>}></Route>
 
+    <Routes>
+      <Route path="/dashboard" element={<Dashboard></Dashboard>} />
+      <Route path="*" element={<Routesin></Routesin>} />
+    </Routes>
 
-        <Route path="/login" element={<Login></Login>}></Route>
-
-        <Route path="/register" element={<Register></Register>}></Route>
-
-        <Route path="/addcampaign" element={<AddCampaign></AddCampaign>}></Route>
-
-
-        <Route path='/campaign/:campaignId' element={
-          <HelpDetails></HelpDetails>}></Route>
-
-      </Routes>
-
-    </div>
   );
 }
-
 export default App;
