@@ -1,8 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const AddCampaign = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         console.log(data);
@@ -19,6 +20,8 @@ const AddCampaign = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
+                toast.success("Campaign added successfully");
+                reset();
             })
     }
     return (
@@ -26,9 +29,6 @@ const AddCampaign = () => {
             <h1 className='text-danger m-4'> Please add Your Item</h1>
             <div className="card border-0 m-4" >
                 <div className="row g-0">
-                    <div className="col-md-6 d-flex align-items-center">
-                        <img src=" " className="img-fluid rounded-start" alt="..." />
-                    </div>
 
 
 
@@ -38,31 +38,31 @@ const AddCampaign = () => {
                             <label className="text-left ">
                                 <h5>Campaign Name</h5>
                             </label>
-                            <input className='mb-2 ' placeholder='Campaign Name'  {...register("name")} />
+                            <input required className='mb-2 ' placeholder='Campaign Name'  {...register("name")} />
 
 
                             <label className="text-left ">
                                 <h5>Item Photo URL</h5>
                             </label>
                             {/* <input className='mb-2' type="file" id="myFile" name="filename" {...register("image")} /> */}
-                            <input className='mb-2' placeholder='Campaign Photo URL' type="text" {...register("image")} />
+                            <input required className='mb-2' placeholder='Campaign Photo URL' type="text" {...register("img")} />
 
 
                             <label className="text-left ">
                                 <h5>Add Description</h5>
                             </label>
-                            <textarea className='mb-2' placeholder='Campaign Description' {...register("short_description")} />
+                            <textarea required className='mb-2' placeholder='Campaign Description' {...register("short_description")} />
 
 
                             <label className="text-left ">
                                 <h5>Raised</h5>
                             </label>
-                            <input className='mb-2' placeholder='Item Price' type="number" {...register("Raised")} />
+                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Raised")} />
 
                             <label className="text-left ">
                                 <h5>Goal</h5>
                             </label>
-                            <input className='mb-2' placeholder='Item Price' type="number" {...register("Goal")} />
+                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Goal")} />
 
 
                             <input className='mt-2 btn btn-dark' type="submit" value='Add Item' />

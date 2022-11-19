@@ -4,16 +4,11 @@ import member from "../../../1_images/4_team-section/1_member.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowRight, faFacebook, faMosque, faHands, faHand, faHandsHelping, faBox, faBook, faFaceAngry } from '@fortawesome/free-solid-svg-icons';
 import SingleTeam from './SingleTeam';
+import Experts from '../../../hooks/Experts';
 const Team = () => {
 
 
-	const [experts, setExperts] = useState([])
-
-	useEffect(() => {
-		fetch('http://localhost:5000/experts')
-			.then(res => res.json())
-			.then(data => setExperts(data))
-	}, [])
+	const [experts] = Experts();
 
 	return (
 

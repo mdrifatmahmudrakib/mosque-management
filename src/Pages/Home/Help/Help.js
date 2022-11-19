@@ -5,16 +5,13 @@ import { faLongArrowRight, faQuran, faMosque, faHands, faHand, faHandsHelping } 
 import banner from "../../../1_images/istockphoto-1252924066-170667a.jpg";
 import "./Help.css"
 import SingleHelp from './SingleHelp';
+import AllCampaigns from '../../../hooks/AllCampaigns';
 const Help = () => {
 
+    const [causes] = AllCampaigns()
 
-    const [causes, setCauses] = useState([])
 
-    useEffect(() => {
-        fetch('http://localhost:5000/allcampaign')
-            .then(res => res.json())
-            .then(data => setCauses(data))
-    }, [])
+
 
     return (
         // < !--_____________________________ help section starts _____________________________-- >

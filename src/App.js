@@ -15,15 +15,27 @@ import { Stack } from 'react-bootstrap';
 import Footer from './Pages/Shared/Footer/Footer';
 import { useState } from 'react';
 import Routesin from './Pages/Routes/Routesin';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageCampaign from './Pages/Dashboard/ManageCampaign/ManageCampaign';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
   return (
 
-    <Routes>
-      <Route path="/dashboard" element={<Dashboard></Dashboard>} />
-      <Route path="*" element={<Routesin></Routesin>} />
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard></Dashboard>}  >
+          <Route path="/dashboard/addcampaign" element={<AddCampaign></AddCampaign>} />
+          <Route path="/dashboard/addnewproduct" element={<AddProduct></AddProduct>} />
+          <Route path="/dashboard/managecampaign" element={<ManageCampaign></ManageCampaign>} />
+        </Route>
+
+        <Route path="*" element={<Routesin></Routesin>} />
+      </Routes>
+      <ToastContainer></ToastContainer>
+    </div>
 
   );
 }
