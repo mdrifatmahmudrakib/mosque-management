@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import AllEvents from '../../../hooks/AllEvents';
 // import divbanner from "../../../1_images/5_events/1_events.jpg";
 import "./Event.css"
 import SingleEvent from './SingleEvent';
 const Event = () => {
-    const [events, setEvents] = useState([])
 
-    useEffect(() => {
-        fetch('http://localhost:5000/events')
-            .then(res => res.json())
-            .then(data => setEvents(data))
-    }, [])
+    const [events] = AllEvents()
+
+
     return (
         <section class="container-fluid pt-5 pb-5 poppins event-bg"  >
 
@@ -40,6 +38,8 @@ const Event = () => {
                                 event={event}
                             ></SingleEvent>)
                         }
+
+
 
                         {/* <div class="col-12 col-md-6 col-lg-6 col-xl-6 justify-content-center ">
                             <div class="div-card-bg"  >
@@ -157,6 +157,9 @@ const Event = () => {
 
 
             </div >
+            <div>
+
+            </div>
         </section >
     );
 };

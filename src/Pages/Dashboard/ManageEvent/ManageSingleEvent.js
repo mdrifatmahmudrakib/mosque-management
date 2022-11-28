@@ -1,33 +1,30 @@
-import { faCreativeCommons } from '@fortawesome/free-brands-svg-icons';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import CreateIcon from '@mui/icons-material/Create';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
-import React, { useState } from 'react';
-import { Table } from 'react-bootstrap';
-import { Link, useNavigate, useParams } from 'react-router-dom';
 
-const ManageSingleCampaign = ({ cause }) => {
-
-    const { _id, img, name, short_description, Raised, Goal } = cause;
+const ManageSingleEvent = ({ event }) => {
+    const { _id, name, img, short_description, date, time } = event;
     const { campaignId } = useParams();
+
     const navigate = useNavigate();
-    const handlenavigateToHelpDetails = id => {
-        navigate(`/campaign/${id}`)
+
+    const handlenavigateToEventDetails = id => {
+        navigate(`/event/${id}`)
     }
     const handlenavigateToupdateDetails = id => {
-        navigate(`/dashboard/updatecampaign/${id}`)
+        navigate(`/dashboard/updateevent/${id}`)
     }
 
-    const [causes, setCauses] = useState([]);
+
+    const [events, setEvents] = useState([]);
 
     const handleDelete = id => {
         console.log(id);
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
-            const url = `http://localhost:5000/campaign/${id}`;
+            const url = `http://localhost:5000/event/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -35,8 +32,8 @@ const ManageSingleCampaign = ({ cause }) => {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
-                    const remaining = causes.filter(cause => cause._id !== id)
-                    setCauses(remaining);
+                    const remaining = events.filter(event => event._id !== id)
+                    setEvents(remaining);
                 })
 
         }
@@ -69,9 +66,9 @@ const ManageSingleCampaign = ({ cause }) => {
                     <div className="row">
 
                         <div className='col d-flex justify-content-center'>
-                            <button type="button" class="btn btn-success m-2  " onClick={() => handlenavigateToHelpDetails(_id)}><RemoveRedEyeIcon /></button>
+                            <button type="button" class="btn btn-success m-2  " onClick={() => handlenavigateToEventDetails(_id)}><RemoveRedEyeIcon /></button>
                             <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" class="btn btn-primary m-2 "> <CreateIcon /></button>
-                            <button type="button" class="btn btn-danger m-2" onClick={() => handleDelete(cause._id)}><DeleteOutlineIcon /></button>
+                            <button type="button" class="btn btn-danger m-2" onClick={() => handleDelete(event._id)}><DeleteOutlineIcon /></button>
                         </div>
                     </div>
                 </div>
@@ -90,4 +87,4 @@ const ManageSingleCampaign = ({ cause }) => {
     );
 };
 
-export default ManageSingleCampaign;
+export default ManageSingleEvent;

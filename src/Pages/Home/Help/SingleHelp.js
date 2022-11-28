@@ -23,10 +23,10 @@ const SingleHelp = ({ cause }) => {
 
                 </div>
 
-                <div class="card-body p-4">
+                <div class="card-body pt-2 ">
                     <h5 class="help_card_title ps-1 pe-1">{name}</h5>
                     <p class="help_card_text ps-2 pe-2">
-                        {short_description.slice(0, 70)}
+                        {short_description.slice(0, 20)}
                         <div class="ps-1">
                             <div class="col-11">
                                 <input class="col-12" type="range" value="90"></input>
@@ -43,7 +43,9 @@ const SingleHelp = ({ cause }) => {
                     </p>
 
                 </div>
-                <button className="btn btn-dark" onClick={() => handlenavigateToHelpDetails(_id)}>Donate</button>
+                <div>
+                    <button className="btn btn-success mb-4" onClick={() => handlenavigateToHelpDetails(_id)}>Donate</button>
+                </div>
             </div>
         </div>
     );

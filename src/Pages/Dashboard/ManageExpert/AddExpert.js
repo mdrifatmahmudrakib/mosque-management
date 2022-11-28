@@ -2,15 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const AddCampaign = () => {
+const AddExpert = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         console.log(data);
 
-        
 
-        const url = `http://localhost:5000/allcampaign`;
+        const url = `http://localhost:5000/experts`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -21,13 +20,13 @@ const AddCampaign = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result)
-                toast.success("Campaign added successfully");
+                toast.success("Expert added successfully");
                 reset();
             })
     }
     return (
         <div className='container '>
-            <h1 className='text-danger m-4'> Please add Your Item</h1>
+            <h1 className='text-danger m-4'> Please add Your Expert</h1>
             <div className="card border-0 m-4" >
                 <div className="row g-0">
 
@@ -37,7 +36,7 @@ const AddCampaign = () => {
 
                         <form className='d-flex flex-column mx-3 shadow p-3 ' onSubmit={handleSubmit(onSubmit)} >
                             <label className="text-left ">
-                                <h5>Campaign Name</h5>
+                                <h5>Expert Name</h5>
                             </label>
                             <input required className='mb-2 ' placeholder='Campaign Name'  {...register("name")} />
 
@@ -56,14 +55,27 @@ const AddCampaign = () => {
 
 
                             <label className="text-left ">
-                                <h5>Raised</h5>
+                                <h5>Facebook</h5>
                             </label>
-                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Raised")} />
+                            <input required className='mb-2' placeholder='Item Price' type="text" {...register("facebook")} />
 
                             <label className="text-left ">
-                                <h5>Goal</h5>
+                                <h5>Twitter</h5>
                             </label>
-                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Goal")} />
+                            <input required className='mb-2' placeholder='Item Price' type="text" {...register("twitter")} />
+
+
+                            <label className="text-left ">
+                                <h5>Instagram</h5>
+                            </label>
+                            <input required className='mb-2' placeholder='Item Price' type="text" {...register("instagram")} />
+
+
+
+                            <label className="text-left ">
+                                <h5>Google</h5>
+                            </label>
+                            <input required className='mb-2' placeholder='Item Price' type="text" {...register("google")} />
 
 
                             <input className='mt-2 btn btn-dark' type="submit" value='Add Item' />
@@ -75,4 +87,4 @@ const AddCampaign = () => {
     );
 };
 
-export default AddCampaign;
+export default AddExpert;

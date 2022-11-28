@@ -68,7 +68,7 @@ const Sidebar = () => {
                     <Link to="managecampaign" style={{ textDecoration: "none" }}>
                         <li>
                             <SettingsSystemDaydreamOutlinedIcon className="icon" />
-                            <span>All Campaigns</span>
+                            <span>Manage Campaigns</span>
                         </li>
                     </Link>
 
@@ -78,10 +78,26 @@ const Sidebar = () => {
                             <span>Add Campaign </span>
                         </li>
                     </Link>
-                    <li>
-                        <SettingsApplicationsIcon className="icon" />
-                        <span>Update Campaign </span>
-                    </li>
+
+
+
+
+                    {/* Event */}
+                    <p className="title">Events</p>
+                    <Link to="manageevent" style={{ textDecoration: "none" }}>
+                        <li>
+                            <SettingsSystemDaydreamOutlinedIcon className="icon" />
+                            <span>Manage Event</span>
+                        </li>
+                    </Link>
+
+                    <Link to="addevent" style={{ textDecoration: "none" }}>
+                        <li>
+                            <PsychologyOutlinedIcon className="icon" />
+                            <span>Add Event </span>
+                        </li>
+                    </Link>
+
                     <p className="title">USER</p>
                     <li>
                         <AccountCircleOutlinedIcon className="icon" />

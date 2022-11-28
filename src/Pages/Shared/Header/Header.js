@@ -11,7 +11,8 @@ const Header = () => {
 
     const [user] = useAuthState(auth)
     const handleSignOut = () => {
-        signOut(auth)
+        signOut(auth);
+        localStorage.removeItem('accessToken');
     }
 
     return (

@@ -19,6 +19,10 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageCampaign from './Pages/Dashboard/ManageCampaign/ManageCampaign';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UpdateCampaign from './Pages/Dashboard/ManageCampaign/UpdateCampaign';
+import AddEvent from './Pages/Dashboard/ManageEvent/AddEvent';
+import ManageEvent from './Pages/Dashboard/ManageEvent/ManageEvent';
+import UpdateEvent from './Pages/Dashboard/ManageEvent/UpdateEvent';
 
 
 function App() {
@@ -27,9 +31,17 @@ function App() {
     <div>
       <Routes>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}  >
-          <Route path="/dashboard/addcampaign" element={<AddCampaign></AddCampaign>} />
-          <Route path="/dashboard/addnewproduct" element={<AddProduct></AddProduct>} />
-          <Route path="/dashboard/managecampaign" element={<ManageCampaign></ManageCampaign>} />
+          <Route path="addcampaign" element={<AddCampaign></AddCampaign>} />
+          <Route path="addevent" element={<AddEvent></AddEvent>} />
+          <Route path="addnewproduct" element={<AddProduct></AddProduct>} />
+          <Route path="managecampaign" element={<ManageCampaign></ManageCampaign>} />
+          <Route path="manageevent" element={<ManageEvent></ManageEvent>} />
+
+
+
+          <Route path='updatecampaign/:campaignId' element={<UpdateCampaign></UpdateCampaign>}></Route>
+          <Route path='updateevent/:id' element={<UpdateEvent></UpdateEvent>}></Route>
+
         </Route>
 
         <Route path="*" element={<Routesin></Routesin>} />

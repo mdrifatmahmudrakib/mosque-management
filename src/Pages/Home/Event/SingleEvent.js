@@ -3,8 +3,13 @@ import divbanner from "../../../1_images/5_events/1_events.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowRight, faQuran, faMosque, faHands, faHand, faHandsHelping, faCalendar, faClock } from '@fortawesome/free-solid-svg-icons';
 import "./Event.css"
+import { useNavigate } from 'react-router-dom';
 const SingleEvent = ({ event }) => {
-    const { img, name, short_description, date, time } = event;
+    const { _id, img, name, short_description, date, time } = event;
+    const navigate = useNavigate();
+    const handlenavigateToeventDetails = id => {
+        navigate(`/event/${id}`)
+    }
     return (
         <div class="col-12 col-md-6 col-lg-6 col-xl-6 justify-content-center ">
             <div class="div-card-bg"  >
@@ -38,7 +43,7 @@ const SingleEvent = ({ event }) => {
                             </label>
                         </div>
                     </p>
-
+                    <button className="btn btn-success mb-4" onClick={() => handlenavigateToeventDetails(_id)} >Learn More</button>
                 </div>
             </div>
         </div>

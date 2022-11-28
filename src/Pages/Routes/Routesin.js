@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import AddCampaign from '../Dashboard/AddCampaign/AddCampaign';
 import Dashboard from '../Dashboard/Dashboard';
 import Donate from '../Donate/Donate';
+import EventDetails from '../Home/Event/EventDetails';
 import HelpDetails from '../Home/Help/HelpDetails';
 import Home from '../Home/Home';
 import Login from '../Login/Login/Login';
@@ -36,6 +37,8 @@ const Routesin = () => {
                 <Route path='/campaign/:campaignId' element={
                     <HelpDetails></HelpDetails>}></Route>
 
+                <Route path='/event/:id' element={
+                    <EventDetails></EventDetails>}></Route>
             </Routes>
             <React.Fragment />
         </div>

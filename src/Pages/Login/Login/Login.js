@@ -1,13 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from './SocialLogin/SocialLogin';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import login from "../../../1_images/login.jpg"
+import useToken from '../../../hooks/useToken';
 const Login = () => {
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
     const emailRef = useRef('')
     const passwordRef = useRef('')
     const navigate = useNavigate();
@@ -22,14 +25,22 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token] = useToken(user || gUser); // token
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
+
     if (loading) {
         return <Loading></Loading>
     }
-    if (user) {
-        navigate(from, { replace: true });
-    }
+    // if (user) {
+    //     navigate(from, { replace: true });
+    // }
 
 
     if (error) {
@@ -90,9 +101,12 @@ const Login = () => {
                                     </Button>
                                 </Form>
                                 {errorElement}
-                                <p className='text-light'>You don't have an account? <Link to='/register ' className='text-danger pe-auto text-decoration-none ' onClick={navigateRegister}>Please Register</Link></p>
+                                <p className='text-light'>You don't have an account? <Link to='/register' className='text-danger pe-auto text-decoration-none ' onClick={navigateRegister}>Please Register</Link></p>
+
                                 <p className='text-light'>Forget your password? <button to='/register ' className='btn btn-link text-danger pe-auto text-decoration-none ' onClick={resetPassword}>Reset Password</button></p>
-                                <SocialLogin></SocialLogin>
+
+                                <button onClick={() => signInWithGoogle()} className="btn btn-success">Continue With Google</button>
+                                {/* <SocialLogin></SocialLogin> */}
                                 <ToastContainer />
                             </div>
                         </div>

@@ -2,15 +2,16 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-const AddCampaign = () => {
+const AddEvent = () => {
+
+
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
         console.log(data);
 
-        
 
-        const url = `http://localhost:5000/allcampaign`;
+        const url = `http://localhost:5000/events`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -27,7 +28,7 @@ const AddCampaign = () => {
     }
     return (
         <div className='container '>
-            <h1 className='text-danger m-4'> Please add Your Item</h1>
+            <h1 className='text-danger m-4'> Please add Your Event</h1>
             <div className="card border-0 m-4" >
                 <div className="row g-0">
 
@@ -58,12 +59,12 @@ const AddCampaign = () => {
                             <label className="text-left ">
                                 <h5>Raised</h5>
                             </label>
-                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Raised")} />
+                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("date")} />
 
                             <label className="text-left ">
                                 <h5>Goal</h5>
                             </label>
-                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Goal")} />
+                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("time")} />
 
 
                             <input className='mt-2 btn btn-dark' type="submit" value='Add Item' />
@@ -75,4 +76,4 @@ const AddCampaign = () => {
     );
 };
 
-export default AddCampaign;
+export default AddEvent;

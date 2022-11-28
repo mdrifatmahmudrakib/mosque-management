@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ManageTeam = () => {
+const ManageExpert = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const ManageTeam = () => {
     );
 };
 
-export default ManageTeam;
+export default ManageExpert;

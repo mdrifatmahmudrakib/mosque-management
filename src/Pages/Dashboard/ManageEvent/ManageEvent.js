@@ -1,17 +1,17 @@
 import React from 'react';
+import { DataGrid } from '@mui/x-data-grid';
+import AllEvents from '../../../hooks/AllEvents';
 import { Link } from 'react-router-dom';
-import AllCampaigns from '../../../hooks/AllCampaigns';
-import SingleHelp from '../../Home/Help/SingleHelp';
-import ManageSingleCampaign from './ManageSingleCampaign';
+import ManageSingleEvent from './ManageSingleEvent';
 
-const ManageCampaign = () => {
-    const [causes] = AllCampaigns()
+const ManageEvent = () => {
+    const [events] = AllEvents();
     return (
         <section className="content-main">
             <div className="content-header">
                 <h2 className="content-title">Products</h2>
                 <div>
-                    <Link to="/dashboard/addcampaign" className="btn btn-primary">
+                    <Link to="/dashboard/addevent" className="btn btn-primary">
                         Create Campaign
                     </Link>
                 </div>
@@ -49,10 +49,10 @@ const ManageCampaign = () => {
                     <div className="row ">
 
                         {
-                            causes?.map(cause => <ManageSingleCampaign
-                                key={cause._id}
-                                cause={cause}
-                            ></ManageSingleCampaign>)
+                            events?.map(event => <ManageSingleEvent
+                                key={event._id}
+                                event={event}
+                            ></ManageSingleEvent>)
                         }
 
                     </div>
@@ -92,4 +92,4 @@ const ManageCampaign = () => {
     );
 };
 
-export default ManageCampaign;
+export default ManageEvent;

@@ -3,9 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../Login/SocialLogin/SocialLogin';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import "./Register.css";
+
+import useToken from '../../../hooks/useToken';
 const Register = () => {
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
     const [agree, setAgree] = useState(false)
     const [
         createUserWithEmailAndPassword,
@@ -14,16 +18,36 @@ const Register = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+
+
     const navigate = useNavigate();
+
+    //user info save krbo
+    const [token] = useToken(user || gUser); // token
+
+    let signInError;
+    if (error || gError || updating) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small> </p>
+    }
+
+
 
     const navigateLogin = () => {
         navigate('/login')
     }
 
-    if (loading) {
+
+
+
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
 
+
+    if (token) {
+        navigate('/home');
+    }
 
 
     const handleRegister = async (event) => {
@@ -35,8 +59,7 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name });
         console.log('Updated profile');
-        navigate('/home')
-
+        // navigate('/home')
 
 
 
@@ -71,7 +94,8 @@ const Register = () => {
                                         value="Register" />
                                 </form>
                                 <p className="text-light">Already have an account? <Link to='/login ' className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Login</Link></p>
-                                <SocialLogin></SocialLogin>
+                                <button onClick={() => signInWithGoogle()} className="btn btn-success">Continue With Google</button>
+
 
                             </div>
                         </div>
