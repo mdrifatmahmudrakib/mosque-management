@@ -23,6 +23,9 @@ import UpdateCampaign from './Pages/Dashboard/ManageCampaign/UpdateCampaign';
 import AddEvent from './Pages/Dashboard/ManageEvent/AddEvent';
 import ManageEvent from './Pages/Dashboard/ManageEvent/ManageEvent';
 import UpdateEvent from './Pages/Dashboard/ManageEvent/UpdateEvent';
+import User from './Pages/Dashboard/Users/User';
+import RequireAuth from './Pages/Login/RequireAuth';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 
 
 function App() {
@@ -30,9 +33,10 @@ function App() {
 
     <div>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}  >
+        <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}  >
           <Route path="addcampaign" element={<AddCampaign></AddCampaign>} />
-          <Route path="addevent" element={<AddEvent></AddEvent>} />
+          <Route path="users" element={<RequireAdmin> <User></User> </RequireAdmin>} />
+          <Route path="addevent" element={<RequireAdmin><AddEvent></AddEvent></RequireAdmin>} />
           <Route path="addnewproduct" element={<AddProduct></AddProduct>} />
           <Route path="managecampaign" element={<ManageCampaign></ManageCampaign>} />
           <Route path="manageevent" element={<ManageEvent></ManageEvent>} />

@@ -14,8 +14,13 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 
 import "./Sidebar.css"
 import { Link, Outlet } from 'react-router-dom';
+import useAdmin from "../../../hooks/useAdmin";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 const Sidebar = () => {
 
+    const [user] = useAuthState(auth);
+    const [admin] = useAdmin(user);
     return (
         <div className="sidebar">
 
@@ -33,18 +38,19 @@ const Sidebar = () => {
                         <span>Dashboard</span>
                     </li>
                     <p className="title">LISTS</p>
-                    <Link to="/users" style={{ textDecoration: "none" }}>
+                    <Link to="/dashboard/users" style={{ textDecoration: "none" }}>
                         <li>
                             <PersonOutlineIcon className="icon" />
                             <span>Users</span>
                         </li>
                     </Link>
-                    <Link to="/dashboard/products" style={{ textDecoration: "none" }}>
+
+                    {admin && <Link to="/dashboard/products" style={{ textDecoration: "none" }}>
                         <li>
                             <StoreIcon className="icon" />
                             <span>Products</span>
                         </li>
-                    </Link>
+                    </Link>}
                     <li>
                         <CreditCardIcon className="icon" />
                         <span>Orders</span>

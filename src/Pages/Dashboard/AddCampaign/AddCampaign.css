@@ -1,0 +1,20 @@
+.form-input{
+    background-color: #F6F8FA;
+    padding: 8px 5px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+.form-input-des{
+    padding-bottom: 40px;
+}
+.form-button-add{
+    background-color: #7451F8;
+    color: white;
+    border: 1px solid #7451F8;
+    font-size: 20px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    cursor: pointer;
+    text-align: center;
+}

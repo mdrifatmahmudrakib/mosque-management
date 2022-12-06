@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import './AddCampaign.css'
 
 const AddCampaign = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -8,7 +9,7 @@ const AddCampaign = () => {
     const onSubmit = data => {
         console.log(data);
 
-        
+
 
         const url = `http://localhost:5000/allcampaign`;
         fetch(url, {
@@ -28,45 +29,46 @@ const AddCampaign = () => {
     return (
         <div className='container '>
             <h1 className='text-danger m-4'> Please add Your Item</h1>
-            <div className="card border-0 m-4" >
+            <div className="card border-0 lg:m-4" >
                 <div className="row g-0">
 
 
 
-                    <div className='w-50 mx-auto align-items-center  '>
+                    <div className='lg:w-75 mx-auto align-items-center  '>
 
-                        <form className='d-flex flex-column mx-3 shadow p-3 ' onSubmit={handleSubmit(onSubmit)} >
-                            <label className="text-left ">
-                                <h5>Campaign Name</h5>
+                        <form className='d-flex flex-column lg:mx-3 shadow p-4 border rounded' onSubmit={handleSubmit(onSubmit)} >
+                            <label className="lg:text-left text-start ">
+                                <h6>Campaign Name</h6>
                             </label>
-                            <input required className='mb-2 ' placeholder='Campaign Name'  {...register("name")} />
+                            <input required className='mb-2 form-input' placeholder='Campaign Name'  {...register("name")} />
 
 
-                            <label className="text-left ">
-                                <h5>Item Photo URL</h5>
+                            <label className="lg:text-left text-start ">
+                                <h6>Item Photo URL</h6>
                             </label>
-                            {/* <input className='mb-2' type="file" id="myFile" name="filename" {...register("image")} /> */}
-                            <input required className='mb-2' placeholder='Campaign Photo URL' type="text" {...register("img")} />
 
 
-                            <label className="text-left ">
-                                <h5>Add Description</h5>
+                            <input required className='mb-2 form-input' placeholder='Campaign Photo URL' type="text" {...register("img")} />
+
+
+                            <label className="lg:text-left text-start  ">
+                                <h6>Add Description</h6>
                             </label>
-                            <textarea required className='mb-2' placeholder='Campaign Description' {...register("short_description")} />
+                            <textarea required className='mb-2 form-input form-input-des' placeholder='Campaign Description' {...register("short_description")} />
 
 
-                            <label className="text-left ">
-                                <h5>Raised</h5>
+                            <label className="lg:text-left text-start ">
+                                <h6>Raised</h6>
                             </label>
-                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Raised")} />
+                            <input required className='mb-2 form-input' type="number" {...register("Raised")} />
 
-                            <label className="text-left ">
-                                <h5>Goal</h5>
+                            <label className="lg:text-left text-start ">
+                                <h6>Goal</h6>
                             </label>
-                            <input required className='mb-2' placeholder='Item Price' type="number" {...register("Goal")} />
+                            <input required className='mb-2 form-input' type="number" {...register("Goal")} />
 
 
-                            <input className='mt-2 btn btn-dark' type="submit" value='Add Item' />
+                            <input className='mt-2 form-button-add text-center w-25' type="submit" value='Submit' />
                         </form>
                     </div>
                 </div>
