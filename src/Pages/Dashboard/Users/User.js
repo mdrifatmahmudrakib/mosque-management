@@ -40,6 +40,7 @@ const User = () => {
     // }, [users, setUsers])
 
     // ********************************XXXXX***********
+    const [user, loading] = useAuthState(auth);
 
     const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
         method: 'GET',
@@ -47,7 +48,8 @@ const User = () => {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
-    if (isLoading) {
+
+    if (loading || isLoading) {
         return <Loading></Loading>
     }
     return (

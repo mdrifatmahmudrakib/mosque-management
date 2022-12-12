@@ -43,6 +43,7 @@ const AddCampaign = () => {
                             <input required className='mb-2 form-input' placeholder='Campaign Name'  {...register("name")} />
 
 
+
                             <label className="lg:text-left text-start ">
                                 <h6>Item Photo URL</h6>
                             </label>

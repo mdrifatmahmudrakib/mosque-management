@@ -1,4 +1,6 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import Donate from '../Donate/Donate';
 import Banner from './Banner/Banner';
 import Event from './Event/Event';
@@ -12,6 +14,8 @@ import Team from './Team/Team';
 import Tetimonial from './Tetimonial/Tetimonial';
 
 const Home = () => {
+    const [user, loading] = useAuthState(auth);
+    console.log(user);
     return (
         <div>
             <Banner></Banner>

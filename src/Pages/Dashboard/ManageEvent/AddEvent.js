@@ -54,12 +54,12 @@ const AddEvent = () => {
                             <label className="lg:text-left text-start ">
                                 <h6>Date</h6>
                             </label>
-                            <input required className='mb-2 form-input' type="text" {...register("date")} />
+                            <input required className='mb-2 form-input' type="date" {...register("date")} />
 
                             <label className="lg:text-left text-start ">
                                 <h6>Time</h6>
                             </label>
-                            <input required className='mb-2 form-input' type="text" {...register("time")} />
+                            <input required className='mb-2 form-input' type="time" {...register("time")} />
                             <label className="lg:text-left text-start ">
                                 <h6>Location</h6>
                             </label>

@@ -24,6 +24,7 @@ const UserRow = ({ user, refetch }) => {
 
             })
     }
+    console.log(user)
     return (
         <tr>
             <th>1</th>

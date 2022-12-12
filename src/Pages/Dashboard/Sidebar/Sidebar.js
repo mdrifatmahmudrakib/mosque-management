@@ -17,7 +17,14 @@ import { Link, Outlet } from 'react-router-dom';
 import useAdmin from "../../../hooks/useAdmin";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 const Sidebar = () => {
+
+
+    const handleSignOut = () => {
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+    }
 
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
@@ -37,82 +44,121 @@ const Sidebar = () => {
                         <DashboardIcon className="icon" />
                         <span>Dashboard</span>
                     </li>
-                    <p className="title">LISTS</p>
-                    <Link to="/dashboard/users" style={{ textDecoration: "none" }}>
-                        <li>
-                            <PersonOutlineIcon className="icon" />
-                            <span>Users</span>
-                        </li>
-                    </Link>
 
-                    {admin && <Link to="/dashboard/products" style={{ textDecoration: "none" }}>
-                        <li>
-                            <StoreIcon className="icon" />
-                            <span>Products</span>
-                        </li>
-                    </Link>}
-                    <li>
-                        <CreditCardIcon className="icon" />
-                        <span>Orders</span>
-                    </li>
-                    <li>
-                        <LocalShippingIcon className="icon" />
-                        <span>Delivery</span>
-                    </li>
-                    <p className="title">USEFUL</p>
-                    <Link to="/dashboard/addnewproduct" style={{ textDecoration: "none" }}>
-                        <li>
-                            <InsertChartIcon className="icon" />
-                            <span>Stats</span>
-                        </li>
-                    </Link>
-                    <li>
-                        <NotificationsNoneIcon className="icon" />
-                        <span>Notifications</span>
-                    </li>
-                    <p className="title">Campaigns</p>
-                    <Link to="managecampaign" style={{ textDecoration: "none" }}>
-                        <li>
-                            <SettingsSystemDaydreamOutlinedIcon className="icon" />
-                            <span>Manage Campaigns</span>
-                        </li>
-                    </Link>
-
-                    <Link to="addcampaign" style={{ textDecoration: "none" }}>
-                        <li>
-                            <PsychologyOutlinedIcon className="icon" />
-                            <span>Add Campaign </span>
-                        </li>
-                    </Link>
+                    {admin && <>
+                        <p className="title">LISTS</p>
+                        <Link to="/dashboard/users" style={{ textDecoration: "none" }}>
+                            <li>
+                                <PersonOutlineIcon className="icon" />
+                                <span>Users</span>
+                            </li>
+                        </Link>
 
 
 
+                        <Link to="/dashboard/products" style={{ textDecoration: "none" }}>
+                            <li>
+                                <StoreIcon className="icon" />
+                                <span>Products</span>
+                            </li>
+                        </Link>
 
-                    {/* Event */}
-                    <p className="title">Events</p>
-                    <Link to="manageevent" style={{ textDecoration: "none" }}>
-                        <li>
-                            <SettingsSystemDaydreamOutlinedIcon className="icon" />
-                            <span>Manage Event</span>
-                        </li>
-                    </Link>
 
-                    <Link to="addevent" style={{ textDecoration: "none" }}>
+
                         <li>
-                            <PsychologyOutlinedIcon className="icon" />
-                            <span>Add Event </span>
+                            <CreditCardIcon className="icon" />
+                            <span>Orders</span>
                         </li>
-                    </Link>
+                        <Link to="/dashboard/imam" style={{ textDecoration: "none" }}>
+                            <li>
+                                <InsertChartIcon className="icon" />
+                                <span>Add Imam</span>
+                            </li>
+                        </Link>
+
+                        <Link to="/dashboard/addscolar" style={{ textDecoration: "none" }}>
+                            <li>
+                                <InsertChartIcon className="icon" />
+                                <span>Add Scolar</span>
+                            </li>
+                        </Link>
+
+
+                        <p className="title">USEFUL</p>
+                        <Link to="/dashboard/addnewproduct" style={{ textDecoration: "none" }}>
+                            <li>
+                                <InsertChartIcon className="icon" />
+                                <span>Stats</span>
+                            </li>
+                        </Link>
+                        <li>
+                            <NotificationsNoneIcon className="icon" />
+                            <span>Notifications</span>
+                        </li>
+                        <p className="title">Campaigns</p>
+                        <Link to="managecampaign" style={{ textDecoration: "none" }}>
+                            <li>
+                                <SettingsSystemDaydreamOutlinedIcon className="icon" />
+                                <span>Manage Campaigns</span>
+                            </li>
+                        </Link>
+
+                        <Link to="addcampaign" style={{ textDecoration: "none" }}>
+                            <li>
+                                <PsychologyOutlinedIcon className="icon" />
+                                <span>Add Campaign </span>
+                            </li>
+                        </Link>
+
+
+
+
+                        {/* Event */}
+                        <p className="title">Events</p>
+                        <Link to="manageevent" style={{ textDecoration: "none" }}>
+                            <li>
+                                <SettingsSystemDaydreamOutlinedIcon className="icon" />
+                                <span>Manage Event</span>
+                            </li>
+                        </Link>
+
+                        <Link to="addevent" style={{ textDecoration: "none" }}>
+                            <li>
+                                <PsychologyOutlinedIcon className="icon" />
+                                <span>Add Event </span>
+                            </li>
+                        </Link>
+
+                    </>
+                    }
 
                     <p className="title">USER</p>
+                    <Link to="/dashboard/profile" style={{ textDecoration: "none" }}>
+                        <li>
+                            <AccountCircleOutlinedIcon className="icon" />
+                            <span>Profile</span>
+                        </li>
+
+                    </Link>
+
                     <li>
-                        <AccountCircleOutlinedIcon className="icon" />
-                        <span>Profile</span>
+                        <ExitToAppIcon className="icon" onClick={handleSignOut} />
+                        {
+
+                            <span onClick={handleSignOut}>Logout</span>
+
+                        }
                     </li>
-                    <li>
-                        <ExitToAppIcon className="icon" />
-                        <span>Logout</span>
-                    </li>
+
+                    {
+
+                        <span className='icon' onClick={handleSignOut}>Logout</span>
+
+                    }
+
+
+
+
                 </ul>
             </div>
             <div className="bottom">

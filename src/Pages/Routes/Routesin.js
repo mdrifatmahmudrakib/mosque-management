@@ -10,6 +10,7 @@ import Login from '../Login/Login/Login';
 import Register from '../Login/Register/Register';
 import Scolar from '../Scolar/Scolar';
 import Header from '../Shared/Header/Header';
+import Info from '../../Pages/Dashboard/Info';
 
 const Routesin = () => {
     return (
@@ -22,6 +23,7 @@ const Routesin = () => {
 
 
                 <Route path="/" element={<Home></Home>}></Route>
+                <Route path="/info" element={<Info></Info>}></Route>
                 <Route path="/home" element={<Home></Home>}></Route>
                 <Route path='/donate' element={<Donate></Donate>}></Route>
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>

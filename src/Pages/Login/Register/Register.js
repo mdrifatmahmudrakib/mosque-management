@@ -7,9 +7,11 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import "./Register.css";
 
 import useToken from '../../../hooks/useToken';
+import { useForm } from 'react-hook-form';
+
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
+    const { register, formState: { errors }, handleSubmit } = useForm();
     const [agree, setAgree] = useState(false)
     const [
         createUserWithEmailAndPassword,
@@ -21,10 +23,11 @@ const Register = () => {
 
 
 
-    const navigate = useNavigate();
 
     //user info save krbo
     const [token] = useToken(user || gUser); // token
+    console.log(user)
+    const navigate = useNavigate();
 
     let signInError;
     if (error || gError || updating) {
@@ -52,19 +55,22 @@ const Register = () => {
 
     const handleRegister = async (event) => {
         event.preventDefault();
-        const name = event.target.name.value;
+        const displayName = event.target.displayName.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         // const agree = event.target.terms.checked;
         await createUserWithEmailAndPassword(email, password)
-        await updateProfile({ displayName: name });
+        await updateProfile({ displayName });
         console.log('Updated profile');
+        console.log(event)
         // navigate('/home')
 
 
-
-
     }
+
+
+
+
     return (
 
 
@@ -82,7 +88,7 @@ const Register = () => {
                             <div className="register-form  ">
                                 <h2 className="m-4 text-danger" style={{ textAlign: 'center' }}>Please Register</h2>
                                 <form onSubmit={handleRegister}>
-                                    <input type="text" name='name' placeholder='Your Name' />
+                                    <input type="text" name='displayName' placeholder='Your Name' />
                                     <input type="email" name="email" id="1" placeholder='Email Address' required />
                                     <input type="password" name="password" id="2" placeholder='Password' required />
                                     <input onClick={() => setAgree(!agree)} type="checkbox" name="terms" id="terms" />

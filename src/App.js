@@ -26,6 +26,9 @@ import UpdateEvent from './Pages/Dashboard/ManageEvent/UpdateEvent';
 import User from './Pages/Dashboard/Users/User';
 import RequireAuth from './Pages/Login/RequireAuth';
 import RequireAdmin from './Pages/Login/RequireAdmin';
+import Info from './Pages/Dashboard/Info';
+import AddImam from './Pages/Dashboard/AddImam';
+import AddExpert from './Pages/Dashboard/ManageExpert/AddExpert';
 
 
 function App() {
@@ -37,14 +40,19 @@ function App() {
           <Route path="addcampaign" element={<AddCampaign></AddCampaign>} />
           <Route path="users" element={<RequireAdmin> <User></User> </RequireAdmin>} />
           <Route path="addevent" element={<RequireAdmin><AddEvent></AddEvent></RequireAdmin>} />
-          <Route path="addnewproduct" element={<AddProduct></AddProduct>} />
-          <Route path="managecampaign" element={<ManageCampaign></ManageCampaign>} />
-          <Route path="manageevent" element={<ManageEvent></ManageEvent>} />
+          <Route path="addnewproduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} />
+          <Route path="managecampaign" element={<RequireAdmin><ManageCampaign></ManageCampaign></RequireAdmin>} />
+          <Route path="manageevent" element={<RequireAdmin><ManageEvent></ManageEvent></RequireAdmin>} />
+
+          <Route path="profile" element={<Info></Info>} />
+
+          <Route path="imam" element={<RequireAdmin><AddImam></AddImam></RequireAdmin>} />
+          <Route path="addscolar" element={<RequireAdmin><AddExpert></AddExpert></RequireAdmin>} />
 
 
 
-          <Route path='updatecampaign/:campaignId' element={<UpdateCampaign></UpdateCampaign>}></Route>
-          <Route path='updateevent/:id' element={<UpdateEvent></UpdateEvent>}></Route>
+          <Route path='updatecampaign/:campaignId' element={<RequireAdmin><UpdateCampaign></UpdateCampaign></RequireAdmin>}></Route>
+          <Route path='updateevent/:id' element={<RequireAdmin><UpdateEvent></UpdateEvent></RequireAdmin>}></Route>
 
         </Route>
 
