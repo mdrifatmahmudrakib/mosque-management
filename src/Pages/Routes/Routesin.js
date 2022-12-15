@@ -11,6 +11,7 @@ import Register from '../Login/Register/Register';
 import Scolar from '../Scolar/Scolar';
 import Header from '../Shared/Header/Header';
 import Info from '../../Pages/Dashboard/Info';
+import Payment from '../Payment/Payment';
 
 const Routesin = () => {
     return (
@@ -35,8 +36,10 @@ const Routesin = () => {
 
                 <Route path="/addcampaign" element={<AddCampaign></AddCampaign>}></Route>
 
+                <Route path="/payment/:id" element={<Payment></Payment>}></Route>
 
-                <Route path='/campaign/:campaignId' element={
+
+                <Route path='/campaign/:id' element={
                     <HelpDetails></HelpDetails>}></Route>
 
                 <Route path='/event/:id' element={

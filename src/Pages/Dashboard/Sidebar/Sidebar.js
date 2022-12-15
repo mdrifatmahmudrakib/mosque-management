@@ -83,6 +83,13 @@ const Sidebar = () => {
                             </li>
                         </Link>
 
+                        <Link to="/dashboard/addkhutba" style={{ textDecoration: "none" }}>
+                            <li>
+                                <InsertChartIcon className="icon" />
+                                <span>Add Khutba</span>
+                            </li>
+                        </Link>
+
 
                         <p className="title">USEFUL</p>
                         <Link to="/dashboard/addnewproduct" style={{ textDecoration: "none" }}>

@@ -29,6 +29,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import Info from './Pages/Dashboard/Info';
 import AddImam from './Pages/Dashboard/AddImam';
 import AddExpert from './Pages/Dashboard/ManageExpert/AddExpert';
+import Khutba from './Pages/Dashboard/Khutba/Khutba';
 
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
           <Route path="users" element={<RequireAdmin> <User></User> </RequireAdmin>} />
           <Route path="addevent" element={<RequireAdmin><AddEvent></AddEvent></RequireAdmin>} />
           <Route path="addnewproduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>} />
+
+
           <Route path="managecampaign" element={<RequireAdmin><ManageCampaign></ManageCampaign></RequireAdmin>} />
           <Route path="manageevent" element={<RequireAdmin><ManageEvent></ManageEvent></RequireAdmin>} />
 
@@ -48,6 +51,8 @@ function App() {
 
           <Route path="imam" element={<RequireAdmin><AddImam></AddImam></RequireAdmin>} />
           <Route path="addscolar" element={<RequireAdmin><AddExpert></AddExpert></RequireAdmin>} />
+
+          <Route path="addkhutba" element={<RequireAdmin><Khutba></Khutba></RequireAdmin>} />
 
 
 
