@@ -38,12 +38,7 @@ const AddCampaign = () => {
         const img = form.img.value;
 
 
-
-
-
         const newCampaign = {
-
-
             name,
             img,
             short_description,
@@ -209,6 +204,7 @@ const AddCampaign = () => {
                                         <label for="exampleFormControlTextarea1"
                                             className="form-label">Upload Campaign Photo </label>
                                         <input
+                                            // type="link"
                                             type="link"
                                             name='img'
                                             className="form-control"
@@ -218,8 +214,13 @@ const AddCampaign = () => {
                                         />
 
                                     </div>
+
                                 </div>
+
                             </div>
+                            <button type="submit" className="btn btn-primary">
+                                Publish now
+                            </button>
                         </div>
                     </div>
                 </form>

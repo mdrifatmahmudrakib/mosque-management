@@ -7,97 +7,172 @@ import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const UpdateCampaign = () => {
-    const { register, handleSubmit, reset } = useForm();
+
     const [updateItem, setUpdateItem] = useState({});
-    const { campaignId } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/campaign/${campaignId}`)
+        fetch(`http://localhost:5000/campaign/${id}`)
             .then(res => res.json())
             .then(result => {
                 setUpdateItem(result);
                 console.log(result)
             })
-    }, [campaignId])
+    }, [id])
 
 
 
-    const onSubmit = data => {
-        const datas = {
-            name: data.name,
-            img: data.img,
-            short_description: data.short_description,
-            raised: data.Raised,
-            goal: data.Goal
-        }
-        fetch(`http://localhost:5000/campaign/${campaignId}`, {
+    const handleAddCampaign = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const short_description = form.short_description.value;
+        const Raised = form.Raised.value;
+        const Goal = form.Goal.value;
+        const img = form.img.value;
+
+
+        const newCampaign = {
+            name,
+            img,
+            short_description,
+            Raised,
+            Goal
+
+        };
+        fetch(`http://localhost:5000/campaign/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(datas)
+            body: JSON.stringify(newCampaign)
         })
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                reset();
+                // reset();
                 toast.success("Campaign Update Successfully");
             })
-        console.log(data);
+    };
 
-    }
+
+
+
+
+
+
 
 
 
     return (
-        <div>
-            <div className='container '>
-                <h1 className='text-danger m-4'> Please Update Your Item: {campaignId}</h1>
-                <div className="card border-0 m-4" >
-                    <div className="row g-0">
-
-
-
-                        <div className='w-50 mx-auto align-items-center  '>
-
-                            <form className='d-flex flex-column mx-3 shadow p-3 ' onSubmit={handleSubmit(onSubmit)} >
-                                <label className="text-left ">
-                                    <h5>Campaign Name</h5>
-                                </label>
-                                <input required className='mb-2 ' placeholder='Campaign Name'  {...register("name")} />
-
-
-                                <label className="text-left ">
-                                    <h5>Item Photo URL</h5>
-                                </label>
-                                {/* <input className='mb-2' type="file" id="myFile" name="filename" {...register("image")} /> */}
-                                <input required className='mb-2' placeholder='Campaign Photo URL' type="text" {...register("img")} />
-
-
-                                <label className="text-left ">
-                                    <h5>Add Description</h5>
-                                </label>
-                                <textarea required className='mb-2' placeholder='Campaign Description' {...register("short_description")} />
-
-
-                                <label className="text-left ">
-                                    <h5>Raised</h5>
-                                </label>
-                                <input required className='mb-2' placeholder='Item Price' type="number" {...register("Raised")} />
-
-                                <label className="text-left ">
-                                    <h5>Goal</h5>
-                                </label>
-                                <input required className='mb-2' placeholder='Item Price' type="number" {...register("Goal")} />
-
-
-                                <input className='mt-2 btn btn-dark' type="submit" value='Add Item' />
-                            </form>
+        <>
+            <section className="content-main" style={{ maxWidth: "1200px" }}>
+                <form onSubmit={handleAddCampaign}>
+                    <div className="content-header">
+                        {/* <Link to="" className="btn btn-danger text-white">
+        Go to products
+      </Link> */}
+                        <button className='btn btn-danger text-white'>Go to Campaigns</button>
+                        <h2 className="content-title">Add Campaign</h2>
+                        <div>
+                            <button type="submit" className="btn btn-primary">
+                                Publish now
+                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+
+                    <div className="row mb-4">
+                        <div className="col-xl-8 col-lg-8">
+                            <div className="card mb-4 shadow-sm">
+                                <div className="card-body">
+                                    <div className="mb-4">
+                                        <label htmlFor="product_title" for="exampleFormControlTextarea1"
+                                            className="form-label">
+                                            Campaign Name
+                                        </label>
+                                        <input
+                                            defaultValue={updateItem.name}
+                                            type="text"
+                                            name='name'
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Add your Campaign Name "
+
+                                            required
+                                        />
+                                    </div>
+
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Campaign Details</label>
+                                        <textarea
+                                            defaultValue={updateItem.short_description}
+                                            type="text"
+                                            name='short_description'
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Jummah Khutba About Crisis"
+                                            rows="7"
+
+
+                                            required
+                                        ></textarea>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Amout Rise </label>
+                                        <input
+                                            defaultValue={updateItem.Raised}
+                                            type="text"
+                                            name='Raised'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="MD Imtius Ahammed"
+                                            required
+                                        />
+
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Goal</label>
+                                        <input
+
+                                            defaultValue={updateItem.Goal}
+                                            type="number"
+                                            name='Goal'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="MD Imtius Ahammed"
+                                            required
+                                        />
+
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Upload Campaign Photo </label>
+                                        <input
+                                            // type="link"
+
+                                            defaultValue={updateItem.img}
+                                            type="link"
+                                            name='img'
+                                            className="form-control"
+                                            id="exampleFormControlInput1"
+                                            placeholder="link.mp3"
+                                            required
+                                        />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <button type="submit" className="btn btn-primary">
+                                Publish now
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </>
 
     );
 };

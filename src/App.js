@@ -56,7 +56,7 @@ function App() {
 
 
 
-          <Route path='updatecampaign/:campaignId' element={<RequireAdmin><UpdateCampaign></UpdateCampaign></RequireAdmin>}></Route>
+          <Route path='updatecampaign/:id' element={<RequireAdmin><UpdateCampaign></UpdateCampaign></RequireAdmin>}></Route>
           <Route path='updateevent/:id' element={<RequireAdmin><UpdateEvent></UpdateEvent></RequireAdmin>}></Route>
 
         </Route>

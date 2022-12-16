@@ -28,6 +28,8 @@ const ManageCampaign = () => {
                 setPageCount(pages);
             })
     }, [])
+
+
     return (
         <section className="content-main">
             <div className="content-header">
