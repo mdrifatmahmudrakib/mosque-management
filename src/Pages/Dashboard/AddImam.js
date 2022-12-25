@@ -56,82 +56,205 @@ const AddImam = () => {
     }
     return (
         <div>
-            <h2 className="text-2xl">Add a New Doctor</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <h2 className="">Add a New Doctor</h2>
+            <section className="content-main" style={{ maxWidth: "1200px" }}>
+                <form onSubmit={handleSubmit(onSubmit)}>
 
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Name</span>
-                    </label>
-                    <input
-                        value={user ? user?.displayName : "name"}
-                        type="text"
-                        placeholder="Your Name"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("name", {
-                            required: {
-                                // value: true,
-
-                                message: 'Name is Required'
-                            }
-                        })}
+                    <div className="content-header">
+                        {/* <Link to="" className="btn btn-danger text-white">
+            Go to products
+          </Link> */}
+                        <button className='btn btn-danger text-white'>Go to Campaigns</button>
+                        <h2 className="content-title">Add Campaign</h2>
+                        <div>
+                            <button type="submit" className="btn btn-primary">
+                                Publish now
+                            </button>
+                        </div>
+                    </div>
 
 
-
-                    />
-                    <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                    </label>
-                </div>
-
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Email</span>
-                    </label>
-                    <input
-                        type="email"
-                        placeholder="Your Email"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("email", {
-                            required: {
-                                value: true,
-                                message: 'Email is Required'
-                            },
-                            pattern: {
-                                value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                                message: 'Provide a valid Email'
-                            }
-                        })}
-                    />
-                    <label className="label">
-                        {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                        {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
-                    </label>
-                </div>
+                    {/* 
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input
 
 
 
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Photo</span>
-                    </label>
-                    <input
-                        type="file"
-                        className="input input-bordered w-full max-w-xs"
-                        {...register("image", {
-                            required: {
-                                value: true,
-                                message: 'Image is Required'
-                            }
-                        })}
-                    />
-                    <label className="label">
-                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                    </label>
-                </div>
 
-                <input className='btn btn-danger' type="submit" value="Add" />
-            </form>
+
+
+
+
+
+                            value={user ? user?.displayName : "name"}
+                            type="text"
+                            placeholder="Your Name"
+                            className="input input-bordered w-full max-w-xs"
+                            {...register("name", {
+                                required: {
+                                    // value: true,
+
+                                    message: 'Name is Required'
+                                }
+                            })}
+
+
+
+                        />
+                        <label className="label">
+                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                        </label>
+                    </div> */}
+                    <div className="row mb-4">
+                        <div className="col-xl-8 col-lg-8">
+                            <div className="card mb-4 shadow-sm">
+                                <div className="card-body">
+                                    <div className="mb-4">
+                                        <label htmlFor="product_title" for="exampleFormControlTextarea1"
+                                            className="form-label">
+                                            Campaign Name
+                                        </label>
+                                        <input
+
+                                            {...register("name", {
+                                                required: {
+                                                    // value: true,
+
+                                                    message: 'Name is Required'
+                                                }
+                                            })}
+                                            type="text"
+
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Add your Campaign Name "
+
+                                            required
+
+
+
+
+                                        />
+                                    </div>
+
+
+
+
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Goal</label>
+                                        <input
+                                            type="email"
+                                            placeholder="Your Email"
+                                            className="form-control" id="exampleFormControlInput1"
+                                            required
+                                            {...register("email", {
+                                                required: {
+                                                    value: true,
+                                                    message: 'Email is Required'
+                                                },
+                                                pattern: {
+                                                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                                    message: 'Provide a valid Email'
+                                                }
+                                            })}
+                                        />
+                                        <label className="label">
+                                            {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                                        </label>
+
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Upload Campaign Photo </label>
+                                        <input
+
+                                            type="file"
+                                            name='img'
+                                            className="form-control"
+                                            id="exampleFormControlInput1"
+                                            placeholder="link.mp3"
+                                            required
+                                            {...register("image", {
+                                                required: {
+                                                    value: true,
+                                                    message: 'Image is Required'
+                                                }
+                                            })}
+                                        />
+                                        <label className="label">
+                                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                                        </label>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <button type="submit" className="btn btn-primary">
+                                Publish now
+                            </button>
+                        </div>
+                    </div>
+
+
+
+
+                    {/* 
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input
+                            type="email"
+                            placeholder="Your Email"
+                            className="input input-bordered w-full max-w-xs"
+                            {...register("email", {
+                                required: {
+                                    value: true,
+                                    message: 'Email is Required'
+                                },
+                                pattern: {
+                                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                    message: 'Provide a valid Email'
+                                }
+                            })}
+                        />
+                        <label className="label">
+                            {errors.email?.type === 'required' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                            {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500">{errors.email.message}</span>}
+                        </label>
+                    </div> */}
+
+
+
+                    {/* <div className="form-control w-full max-w-xs">
+                        <label className="label">
+                            <span className="label-text">Photo</span>
+                        </label>
+                        <input
+                            type="file"
+                            className="input input-bordered w-full max-w-xs"
+                            {...register("image", {
+                                required: {
+                                    value: true,
+                                    message: 'Image is Required'
+                                }
+                            })}
+                        />
+                        <label className="label">
+                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
+                        </label>
+                    </div> */}
+
+                    {/* <input className='btn btn-danger' type="submit" value="Add" /> */}
+                </form>
+            </section>
+
         </div>
 
     );

@@ -31,6 +31,8 @@ const ManageSingleEvent = ({ event }) => {
 
                 .then(response => response.json())
                 .then(data => {
+
+                    
                     console.log(data);
                     const remaining = events.filter(event => event._id !== id)
                     setEvents(remaining);

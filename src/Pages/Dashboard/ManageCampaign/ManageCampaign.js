@@ -4,7 +4,7 @@ import AllCampaigns from '../../../hooks/AllCampaigns';
 import SingleHelp from '../../Home/Help/SingleHelp';
 import ManageSingleCampaign from './ManageSingleCampaign';
 import "./ManageCampaign.css"
-const ManageCampaign = () => {
+const ManageCampaign = ({ refetch }) => {
     // const [causes] = AllCampaigns();
     const [causes, setCauses] = useState([])
     const [pageCount, setPageCount] = useState(0);
@@ -24,7 +24,7 @@ const ManageCampaign = () => {
             .then(res => res.json())
             .then(data => {
                 const count = data.count;
-                const pages = Math.ceil(count / 2);
+                const pages = Math.ceil(count / 5);
                 setPageCount(pages);
             })
     }, [])
@@ -41,7 +41,7 @@ const ManageCampaign = () => {
                 </div>
             </div>
 
-            <div className="card mb-4 shadow-sm">
+            <div className="card mb-4 shadow-sm shadow-lg p-3 mb-5 bg-white rounded">
                 <header className="card-header bg-white ">
                     {/* <div className="row gx-3 py-3">
                         <div className="col-lg-4 col-md-6 me-auto ">
@@ -75,6 +75,7 @@ const ManageCampaign = () => {
                         {
                             causes?.map(cause => <ManageSingleCampaign
                                 key={cause._id}
+
                                 cause={cause}
                             ></ManageSingleCampaign>)
                         }

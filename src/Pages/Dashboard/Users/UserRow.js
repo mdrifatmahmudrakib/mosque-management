@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const UserRow = ({ user, refetch }) => {
+
+    const [users, setUsers] = useState([]);
     const { email, role } = user;
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
@@ -24,6 +26,34 @@ const UserRow = ({ user, refetch }) => {
 
             })
     }
+
+
+    const handleDelete = id => {
+        console.log(id);
+        const proceed = window.confirm('Are you Sure?');
+        if (proceed) {
+            const url = `http://localhost:5000/user/${email}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+
+                .then(response => response.json())
+                .then(data => {
+
+                    if (data.modifiedCount > 0) {
+                        // refetch();
+
+                        console.log(data);
+                        const remaining = users.filter(user => user._id !== id)
+                        setUsers(remaining);
+                    }
+
+                })
+        }
+
+
+    }
+
     console.log(user)
     return (
         <tr>
@@ -31,7 +61,7 @@ const UserRow = ({ user, refetch }) => {
             <td>{email}</td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-success">Make Admin</button>}</td>
             {/* <td><button onClick={makeAdmin} class="btn btn-success">Make Admin</button></td> */}
-            <td><button class="btn btn-danger">Remove User</button></td>
+            <td><button class="btn btn-danger" onClick={() => handleDelete(user._id)}>Remove User</button></td>
         </tr>
     );
 };

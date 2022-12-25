@@ -4,15 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CreateIcon from '@mui/icons-material/Create';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-import { TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
+
 import React, { useState } from 'react';
-import { Table } from 'react-bootstrap';
+
 import { Link, useNavigate, useParams } from 'react-router-dom';
+
 
 const ManageSingleCampaign = ({ cause }) => {
 
     const { _id, img, name, short_description, Raised, Goal } = cause;
-    const { campaignId } = useParams();
+    const { id } = useParams();
     const navigate = useNavigate();
     const handlenavigateToHelpDetails = id => {
         navigate(`/campaign/${id}`)
@@ -41,6 +42,9 @@ const ManageSingleCampaign = ({ cause }) => {
 
         }
     }
+
+
+
     return (
         <>
             <div className=' col-md-4 py-3 px-3 d-flex justify-content-center'>
