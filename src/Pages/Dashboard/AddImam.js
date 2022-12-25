@@ -8,7 +8,7 @@ import auth from '../../firebase.init';
 const AddImam = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const [user] = useAuthState(auth);
+    // const [user] = useAuthState(auth);
     const imageStorageKey = '66d703a3620cbf4048028b3360c26490';
 
 
