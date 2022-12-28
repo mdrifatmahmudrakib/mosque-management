@@ -30,6 +30,9 @@ import Info from './Pages/Dashboard/Info';
 import AddImam from './Pages/Dashboard/AddImam';
 import AddExpert from './Pages/Dashboard/ManageExpert/AddExpert';
 import Khutba from './Pages/Dashboard/Khutba/Khutba';
+import Side from './Pages/Dashboard/Side/Side';
+import Sidebar from './Pages/Dashboard/Sidebar/Sidebar';
+import ManageKhutba from './Pages/Dashboard/Khutba/ManageKhutba';
 
 
 function App() {
@@ -37,7 +40,7 @@ function App() {
 
     <div>
       <Routes>
-        <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}  >
+        <Route path="/dashboard" element={<Sidebar></Sidebar>}  >
           <Route path="addcampaign" element={<AddCampaign></AddCampaign>} />
           <Route path="users" element={<RequireAdmin> <User></User> </RequireAdmin>} />
           <Route path="addevent" element={<RequireAdmin><AddEvent></AddEvent></RequireAdmin>} />
@@ -46,6 +49,7 @@ function App() {
 
           <Route path="managecampaign" element={<RequireAdmin><ManageCampaign></ManageCampaign></RequireAdmin>} />
           <Route path="manageevent" element={<RequireAdmin><ManageEvent></ManageEvent></RequireAdmin>} />
+          <Route path="managekhutba" element={<RequireAdmin><ManageKhutba></ManageKhutba></RequireAdmin>} />
 
           <Route path="profile" element={<Info></Info>} />
 

@@ -8,35 +8,36 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import "./DashNavbar.css"
 const DashNavbar = () => {
     return (
-        <div className='dashnav'>
+        // <div className='dashnav'>
 
-            <div className="wrapper">
-                <div className="search">
-                    <input type="text" placeholder="Search..." />
-                    <SearchOutlinedIcon />
-                </div>
-                <div className="items">
+        //     {/* <div className="wrapper">
+        //         <div className="search">
+        //             <input type="text" placeholder="Search..." />
+        //             <SearchOutlinedIcon />
+        //         </div>
+        //         <div className="items">
 
-                    <div className="item">
-                        <DarkModeOutlinedIcon
-                            className="icon"
+        //             <div className="item">
+        //                 <DarkModeOutlinedIcon
+        //                     className="icon"
 
-                        />
-                    </div>
-
-
+        //                 />
+        //             </div>
 
 
-                    <div className="item">
-                        <img
-                            src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt=""
-                            className="avatar"
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+        //             <div className="item">
+        //                 <img
+        //                     src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        //                     alt=""
+        //                     className="avatar"
+        //                 />
+        //             </div>
+        //         </div>
+        //     </div> */}
+        // </div>
+        <></>
 
     );
 };

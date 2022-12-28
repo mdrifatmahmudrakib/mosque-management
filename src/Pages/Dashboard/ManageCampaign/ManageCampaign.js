@@ -41,9 +41,9 @@ const ManageCampaign = ({ refetch }) => {
                 </div>
             </div>
 
-            <div className="card mb-4 shadow-sm shadow-lg p-3 mb-5 bg-white rounded">
-                <header className="card-header bg-white ">
-                    {/* <div className="row gx-3 py-3">
+            <div className="card mb-4 shadow-sm shadow-lg p-3 mb-5 bg-white rounded ">
+                {/* <header className="card-header  ">
+                    <div className="row gx-3 py-3">
                         <div className="col-lg-4 col-md-6 me-auto ">
                             <input
                                 type="search"
@@ -66,8 +66,8 @@ const ManageCampaign = ({ refetch }) => {
                                 <option>Most viewed</option>
                             </select>
                         </div>
-                    </div> */}
-                </header>
+                    </div>
+                </header> */}
 
                 <div className="card-body">
                     <div className="row ">
