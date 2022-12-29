@@ -33,7 +33,7 @@ const Routesin = () => {
                 <Route path="/side" element={<Side></Side>}></Route>
                 <Route path='/donate' element={<Donate></Donate>}></Route>
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>
-                <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route>
+                {/* <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route> */}
                 <Route path='/test' element={<TestUpdate></TestUpdate>}></Route>
 
 

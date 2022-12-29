@@ -34,6 +34,7 @@ import Side from './Pages/Dashboard/Side/Side';
 import Sidebar from './Pages/Dashboard/Sidebar/Sidebar';
 import ManageKhutba from './Pages/Dashboard/Khutba/ManageKhutba';
 import TestUpdate from './Pages/Dashboard/ManageCampaign/TestUpdate';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -72,7 +73,9 @@ function App() {
 
         <Route path="*" element={<Routesin></Routesin>} />
       </Routes>
+      <Toaster></Toaster>
       <ToastContainer></ToastContainer>
+
     </div>
 
   );

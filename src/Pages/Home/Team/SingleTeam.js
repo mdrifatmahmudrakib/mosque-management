@@ -20,7 +20,7 @@ const SingleTeam = ({ expert }) => {
 
                 <h5 class="team_heading mt-4">{name}</h5>
                 <p class="team_body mt-3 about-scholar"  >
-                    {short_description.slice(0, 70)}
+                    {short_description}
                 </p>
                 <a href={facebook} class="service_read_more_btn p-2 m-1 social_media_icon rounded-circle">
 
