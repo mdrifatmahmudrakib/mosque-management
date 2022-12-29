@@ -5,23 +5,11 @@ import './AddCampaign.css'
 
 const AddCampaign = () => {
 
-    // const handleAddCampaign = (event) => {
-    // event.preventDefault();
-    // const form = event.target;
-    // const name = form.name.value;
-    // const short_description = form.short_description.value;
-    // const Raised = form.Raised.value;
-    // const Goal = form.Goal.value;
-    // const img = form.img.value;
-
-
-
-
 
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    // const [user] = useAuthState(auth);
+
     const imageStorageKey = '66d703a3620cbf4048028b3360c26490';
 
 
@@ -72,100 +60,6 @@ const AddCampaign = () => {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //     //imge:
-    //     const image = event.image[0];
-
-    //     const formData = new FormData();
-
-    //     formData.append('image', image);
-    //     const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
-    //     fetch(url, {
-    //         method: 'POST',
-    //         body: formData
-    //     })
-
-
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             if (result.success) {
-    //                 const image = result.event.url;
-    //                 const newCampaign = {
-    //                     name: event.name,
-    //                     short: event.short_description,
-    //                     raised: event.Raised,
-    //                     goal: event.Goal,
-    //                     img: event.image
-
-
-    //                 }
-    //                 // send to your database 
-    //                 fetch('http://localhost:5000/campaigns', {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         'content-type': 'application/json',
-    //                         authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //                     },
-    //                     body: JSON.stringify(newCampaign)
-    //                 })
-    //                     .then(res => res.json())
-    //                     .then(inserted => {
-    //                         if (inserted.insertedId) {
-    //                             toast.success('Imam added successfully')
-    //                             form.reset();
-    //                         }
-    //                         else {
-    //                             toast.error('Failed to add the Imam');
-    //                         }
-    //                     })
-
-    //             }
-
-    //         })
-    // }
-
-
-    //     const newCampaign = {
-    //         name,
-    //         img,
-    //         short_description,
-    //         Raised,
-    //         Goal
-
-    //     };
-    //     fetch("http://localhost:5000/campaigns", {
-    //         method: "POST",
-    //         headers: {
-    //             "content-type": "application/json",
-    //             // authorization: bearer ${localStorage.getItem("accessToken")},
-    //         },
-    //         body: JSON.stringify(newCampaign),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             if (data.acknowledged) {
-    //                 toast.success("Succesfully Added Campaign");
-    //                 form.reset();
-
-
-    //             }
-    //         })
-    //         .catch((er) => console.error(er));
-    // };
 
 
 

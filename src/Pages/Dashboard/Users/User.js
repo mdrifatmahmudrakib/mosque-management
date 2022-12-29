@@ -58,37 +58,41 @@ const User = () => {
 
             {/* hello from {users.length} */}
 
-            <table class="table w-full">
-                <thead>
+            <table className=' mx-auto table table-striped shadow m-4 p-4'>
+                {/* <thead>
                     <tr>
                         <th></th>
                         <th>Name</th>
                         <th>Job</th>
                         <th>Favorite Color</th>
                     </tr>
+                </thead> */}
+
+                <thead>
+                    <tr className='bg-dark text-white'>
+                        <th scope="col">SL.</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Handle</th>
+
+                    </tr>
                 </thead>
                 <tbody>
                     {
-                        users.map(user => <UserRow
+                        users.map((user, i) => <UserRow
+                            i={i}
                             key={user._id}
                             user={user}
                             refetch={refetch}
                         ></UserRow>)
                     }
 
-                    {/* <tr>
-                        <th>1</th>
-                        <td>{name}</td>
-                        <td>{users.email}</td>
-                        <td><div className="w-24 rounded-xl m-4">
-                            <img src={user?.photoURL || "https://api.lorem.space/image/face?hash=64318"} />
-                        </div></td>
-                     <td>{<button class="btn btn-success">Make Admin</button>}</td> 
 
-                </tr>  */}
                 </tbody>
             </table>
         </div >
+
+
 
 
 

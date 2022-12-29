@@ -38,9 +38,9 @@ const ManageKhutba = () => {
             `http://localhost:5000/allKhutba/${khutba._id}`,
             {
                 method: "DELETE",
-                // headers: {
-                //   authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                // },
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                },
             }
         )
             .then((res) => res.json())

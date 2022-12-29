@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
-const UserRow = ({ user, refetch }) => {
+const UserRow = ({ user, refetch, i }) => {
 
     const [users, setUsers] = useState([]);
     const { email, role } = user;
@@ -54,15 +54,35 @@ const UserRow = ({ user, refetch }) => {
 
     }
 
-    console.log(user)
+
     return (
-        <tr>
-            <th>1</th>
-            <td>{email}</td>
+        // <tr>
+        //     <th>1</th>
+        //     <td>{email}</td>
+        //     <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-success">Make Admin</button>}</td>
+        //     {/* <td><button onClick={makeAdmin} class="btn btn-success">Make Admin</button></td> */}
+        //     <td><button class="btn btn-danger" onClick={() => handleDelete(user._id)}>Remove User</button></td>
+        // </tr>
+
+
+        <tr class="table">
+
+
+
+            <th scope="row">{i + 1}</th>
+            <td>
+                <p>{email}</p>
+
+
+            </td>
             <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-success">Make Admin</button>}</td>
-            {/* <td><button onClick={makeAdmin} class="btn btn-success">Make Admin</button></td> */}
             <td><button class="btn btn-danger" onClick={() => handleDelete(user._id)}>Remove User</button></td>
+
+
+
+
         </tr>
+
     );
 };
 

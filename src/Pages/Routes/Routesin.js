@@ -15,6 +15,7 @@ import Payment from '../Payment/Payment';
 import Side from '../Dashboard/Side/Side';
 import Khutba from '../Dashboard/Khutba/Khutba';
 import ListenKhutba from '../ListenKhutba/ListenKhutba';
+import TestUpdate from '../Dashboard/ManageCampaign/TestUpdate';
 
 const Routesin = () => {
     return (
@@ -33,6 +34,7 @@ const Routesin = () => {
                 <Route path='/donate' element={<Donate></Donate>}></Route>
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>
                 <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route>
+                <Route path='/test' element={<TestUpdate></TestUpdate>}></Route>
 
 
                 <Route path="/login" element={<Login></Login>}></Route>

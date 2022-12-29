@@ -5,7 +5,48 @@ import { toast } from 'react-toastify';
 
 const UpdateEvent = () => {
 
-    const { register, handleSubmit, reset } = useForm();
+    // const { register, handleSubmit, reset } = useForm();
+    // const [updateItem, setUpdateItem] = useState({});
+    // const { id } = useParams();
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/event/${id}`)
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             setUpdateItem(result);
+    //             console.log(result)
+    //         })
+    // }, [id])
+
+
+
+    // const onSubmit = data => {
+    //     const datas = {
+    //         name: data.name,
+    //         img: data.img,
+    //         short_description: data.short_description,
+    //         date: data.date,
+    //         time: data.time
+    //     }
+    //     fetch(`http://localhost:5000/event/${id}`, {
+    //         method: "PUT",
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(datas)
+    //     })
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             console.log(result);
+    //             // reset();
+    //             toast.success("Campaign Update Successfully");
+    //         })
+    //     console.log(data);
+
+    // }
+
+
+
     const [updateItem, setUpdateItem] = useState({});
     const { id } = useParams();
 
@@ -20,79 +61,219 @@ const UpdateEvent = () => {
 
 
 
-    const onSubmit = data => {
-        const datas = {
-            name: data.name,
-            img: data.img,
-            short_description: data.short_description,
-            date: data.date,
-            time: data.time
-        }
+    const handleUpdateEvent = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const date = form.date.value;
+        const location = form.location.value;
+        const orgBy = form.orgBy.value;
+        const orgEmail = form.orgEmail.value;
+        const orgPhone = form.orgPhone.value;
+        const short_description = form.short_description.value;
+        const img = form.img.value;
+
+
+
+
+        const newEvent = {
+            name,
+            date,
+            location,
+            orgBy,
+            orgEmail,
+            orgPhone,
+            short_description,
+            img
+
+
+        };
         fetch(`http://localhost:5000/event/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(datas)
+            body: JSON.stringify(newEvent)
         })
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                reset();
+                // reset();
                 toast.success("Campaign Update Successfully");
             })
-        console.log(data);
+    };
 
-    }
+
+
     return (
-        <div>
-            <div className='container '>
-                <h1 className='text-danger m-4'> Please Update Your event Item: {id}</h1>
-                <div className="card border-0 m-4" >
-                    <div className="row g-0">
-
-
-
-                        <div className='w-50 mx-auto align-items-center  '>
-
-                            <form className='d-flex flex-column mx-3 shadow p-3 ' onSubmit={handleSubmit(onSubmit)} >
-                                <label className="text-left ">
-                                    <h5>Campaign Name</h5>
-                                </label>
-                                <input required className='mb-2 ' placeholder='Campaign Name' {...register("name")} defaultValue={updateItem.name} />
-
-
-                                <label className="text-left ">
-                                    <h5>Item Photo URL</h5>
-                                </label>
-                                {/* <input className='mb-2' type="file" id="myFile" name="filename" {...register("image")} /> */}
-                                <input required className='mb-2' placeholder='Campaign Photo URL' type="text" {...register("img")} defaultValue={updateItem.img} />
-
-
-                                <label className="text-left ">
-                                    <h5>Add Description</h5>
-                                </label>
-                                <textarea required className='mb-2' placeholder='Campaign Description' {...register("short_description")} defaultValue={updateItem.short_description} />
-
-
-                                <label className="text-left ">
-                                    <h5>Raised</h5>
-                                </label>
-                                <input required className='mb-2' placeholder='Item Price' type="number" {...register("date")} defaultValue={updateItem.date} />
-
-                                <label className="text-left ">
-                                    <h5>Goal</h5>
-                                </label>
-                                <input required className='mb-2' placeholder='Item Price' type="number" {...register("time")} defaultValue={updateItem.time} />
-
-
-                                <input className='mt-2 btn btn-dark' type="submit" value='Add Item' />
-                            </form>
+        <>
+            <section className="content-main " style={{ maxWidth: "1200px" }}>
+                <form onSubmit={handleUpdateEvent} >
+                    <div className="content-header">
+                        {/* <Link to="" className="btn btn-danger text-white">
+    Go to products
+  </Link> */}
+                        <button className='btn btn-danger text-white'>Go to Event</button>
+                        <h2 className="content-title">Add Event</h2>
+                        <div>
+                            <button type="submit" className="btn btn-primary">
+                                Publish now
+                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+
+                    <div className="row mb-4">
+                        <div className="col-xl-8 col-lg-8">
+                            <div className="card mb-4 shadow-sm">
+                                <div className="card-body">
+                                    <div className="mb-4">
+                                        <label htmlFor="product_title" for="exampleFormControlTextarea1"
+                                            className="form-label">
+                                            Event Name
+                                        </label>
+                                        <input
+                                            defaultValue={updateItem.name}
+                                            type="text"
+                                            name='name'
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Add your Event Name "
+
+
+
+                                        />
+                                    </div>
+
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Campaign Details</label>
+                                        <textarea
+                                            defaultValue={updateItem.short_description}
+                                            type="text"
+                                            name='short_description'
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Jummah Khutba About Crisis"
+                                            rows="7"
+
+
+
+
+
+
+                                        ></textarea>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Date </label>
+                                        <input
+
+                                            defaultValue={updateItem.date}
+                                            type="datetime-local"
+                                            name='date'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="MD Imtius Ahammed"
+
+
+
+                                        />
+
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Location</label>
+                                        <input
+                                            defaultValue={updateItem.location}
+                                            type="Text"
+                                            name='location'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="MD Imtius Ahammed"
+                                            required
+
+
+                                        />
+
+                                    </div>
+
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Org By</label>
+                                        <input
+                                            defaultValue={updateItem.orgBy}
+                                            type="text"
+                                            name='orgBy'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="MD Imtius Ahammed"
+                                            required
+
+
+                                        />
+
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">phone</label>
+                                        <input
+                                            defaultValue={updateItem.orgPhone}
+                                            type="number"
+                                            name='orgPhone'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="MD Imtius Ahammed"
+                                            required
+
+
+                                        />
+
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Email</label>
+                                        <input
+                                            defaultValue={updateItem.orgEmail}
+                                            type="email"
+                                            name='orgEmail'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="MD Imtius Ahammed"
+                                            required
+
+                                        />
+
+                                    </div>
+
+
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Upload Campaign Photo </label>
+                                        <input
+
+                                            defaultValue={updateItem.img}
+                                            type="link"
+                                            // type="file"
+                                            name='img'
+                                            className="form-control"
+                                            id="exampleFormControlInput1"
+                                            placeholder="link.mp3"
+
+
+
+                                        />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <button type="submit" className="btn btn-primary">
+                                Publish now
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </>
     );
 };
 

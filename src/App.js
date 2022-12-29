@@ -33,6 +33,7 @@ import Khutba from './Pages/Dashboard/Khutba/Khutba';
 import Side from './Pages/Dashboard/Side/Side';
 import Sidebar from './Pages/Dashboard/Sidebar/Sidebar';
 import ManageKhutba from './Pages/Dashboard/Khutba/ManageKhutba';
+import TestUpdate from './Pages/Dashboard/ManageCampaign/TestUpdate';
 
 
 function App() {
@@ -61,6 +62,10 @@ function App() {
 
 
           <Route path='updatecampaign/:id' element={<RequireAdmin><UpdateCampaign></UpdateCampaign></RequireAdmin>}></Route>
+
+          {/* <Route path='updatecampaign/:id' element={<RequireAdmin><TestUpdate></TestUpdate></RequireAdmin>}></Route> */}
+
+
           <Route path='updateevent/:id' element={<RequireAdmin><UpdateEvent></UpdateEvent></RequireAdmin>}></Route>
 
         </Route>
