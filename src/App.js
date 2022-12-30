@@ -35,6 +35,9 @@ import Sidebar from './Pages/Dashboard/Sidebar/Sidebar';
 import ManageKhutba from './Pages/Dashboard/Khutba/ManageKhutba';
 import TestUpdate from './Pages/Dashboard/ManageCampaign/TestUpdate';
 import { Toaster } from 'react-hot-toast';
+import AddJamaatTime from './Pages/Dashboard/ManageJamaatTime/AddJamaatTime';
+import ManageJamaatTime from './Pages/Dashboard/ManageJamaatTime/ManageJamaatTime';
+import UpdateJamaatTime from './Pages/Dashboard/ManageJamaatTime/UpdateJamaatTime';
 
 
 function App() {
@@ -53,12 +56,15 @@ function App() {
           <Route path="manageevent" element={<RequireAdmin><ManageEvent></ManageEvent></RequireAdmin>} />
           <Route path="managekhutba" element={<RequireAdmin><ManageKhutba></ManageKhutba></RequireAdmin>} />
 
+          <Route path="managejamaat" element={<RequireAdmin><ManageJamaatTime></ManageJamaatTime></RequireAdmin>} />
+
           <Route path="profile" element={<Info></Info>} />
 
           <Route path="imam" element={<RequireAdmin><AddImam></AddImam></RequireAdmin>} />
           <Route path="addscolar" element={<RequireAdmin><AddExpert></AddExpert></RequireAdmin>} />
 
           <Route path="addkhutba" element={<RequireAdmin><Khutba></Khutba></RequireAdmin>} />
+          <Route path="addjamaattime" element={<RequireAdmin><AddJamaatTime></AddJamaatTime></RequireAdmin>} />
 
 
 
@@ -68,6 +74,8 @@ function App() {
 
 
           <Route path='updateevent/:id' element={<RequireAdmin><UpdateEvent></UpdateEvent></RequireAdmin>}></Route>
+
+          <Route path='jamaattime/:id' element={<RequireAdmin><UpdateJamaatTime></UpdateJamaatTime></RequireAdmin>}></Route>
 
         </Route>
 

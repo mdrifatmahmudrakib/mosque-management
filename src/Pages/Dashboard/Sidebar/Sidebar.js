@@ -218,9 +218,13 @@ const Sidebar = () => {
                                     <span className='nav-link-name'>User</span>
                                 </Link>
 
-                                <Link to="/dashboard/users" className='nav-link' >
+                                {/* <Link to="/dashboard/addjamaattime" className='nav-link' >
                                     <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>AddImam</span>
+                                    <span className='nav-link-name'>Add Jamaat Time</span>
+                                </Link> */}
+                                <Link to="/dashboard/managejamaat" className='nav-link' >
+                                    <FontAwesomeIcon icon={faChartBar} />
+                                    <span className='nav-link-name'>Update Jamaat Time</span>
                                 </Link>
 
 
@@ -228,6 +232,9 @@ const Sidebar = () => {
                                     <FontAwesomeIcon icon={faChartBar} />
                                     <span className='nav-link-name'>Add Khutba</span>
                                 </Link>
+
+
+
 
                                 <Link to="/dashboard/managekhutba" className='nav-link' >
                                     <FontAwesomeIcon icon={faChartBar} />
