@@ -47,35 +47,54 @@ const ManageSingleCampaign = ({ cause }) => {
 
     return (
         <>
-            <div className=' col-md-4 py-3 px-3 d-flex justify-content-center'>
+            <div className=' col-md-6 col-lg-4  py-3 px-3 justify-content-center' >
                 <div class="help_card_shadow">
-                    <div class="card_banner card-img-top help-banner"
-                        style={{
-                            background: `url(${img}) `
-                        }}
-                    >
+                    <div
+                    // style={{
+                    //     background: `url(${img}) `
+                    // }}
+
+                    > <img style={{ width: "400px", height: "350px" }} className='img-fluid w-52 h-96' src={img} alt="" />
 
 
 
                     </div>
 
-                    <div class="card-body p-2">
-                        <h5 class="help_card_title ps-1 pe-1">{name}</h5>
-                        <p class="help_card_text ps-2 pe-2">
-                            {short_description.slice(0, 40)}
 
 
 
-                        </p>
 
-                    </div>
+
 
                     <div className="row">
 
+
+
+
+
                         <div className='col d-flex justify-content-center'>
-                            <button type="button" class="btn btn-success m-2  " onClick={() => handlenavigateToHelpDetails(_id)}><RemoveRedEyeIcon /></button>
-                            <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" class="btn btn-primary m-2 "> <CreateIcon /></button>
-                            <button type="button" class="btn btn-danger m-2" onClick={() => handleDelete(cause._id)}><DeleteOutlineIcon /></button>
+
+
+
+                            <div>
+
+                                <div class="card-body p-2">
+                                    <h5 class="help_card_title ps-1 pe-1">{name}</h5>
+                                    <p class="help_card_text ps-2 pe-2">
+                                        {short_description.slice(0, 40)}
+
+
+
+                                    </p>
+
+                                </div>
+                                <button type="button" class="btn btn-success m-2  " onClick={() => handlenavigateToHelpDetails(_id)}><RemoveRedEyeIcon /></button>
+                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" class="btn btn-primary m-2 "> <CreateIcon /></button>
+                                <button type="button" class="btn btn-danger m-2" onClick={() => handleDelete(cause._id)}><DeleteOutlineIcon /></button>
+
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
