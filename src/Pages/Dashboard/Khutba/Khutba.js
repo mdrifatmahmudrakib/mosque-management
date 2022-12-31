@@ -1,47 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
+
 
 const Khutba = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    // const handleAddKhutba = (event) => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const month = form.month.value;
-    //     const about = form.about.value;
-    //     const speaker = form.speaker.value;
-    //     const link = form.link.value;
 
-
-
-    //     const newKhutba = {
-    //         month,
-    //         about,
-    //         speaker,
-    //         link
-
-    //     };
-    //     fetch("http://localhost:5000/addKhutba", {
-    //         method: "POST",
-    //         headers: {
-    //             "content-type": "application/json",
-    //             // authorization: bearer ${localStorage.getItem("accessToken")},
-    //         },
-    //         body: JSON.stringify(newKhutba),
-    //     })
-    //         .then((res) => res.json())
-    //         .then((data) => {
-    //             console.log(data);
-    //             if (data.acknowledged) {
-    //                 toast.success("Succesfully Added Product");
-    //                 form.reset();
-
-
-    //             }
-    //         })
-    //         .catch((er) => console.error(er));
-    // };
 
 
     const handleAddCampaign = async data => {
@@ -87,67 +52,7 @@ const Khutba = () => {
 
 
     return (
-        // <form onSubmit={handleAddKhutba}>
-        //     <div className='container border shadow mt-5 py-3'>
-        //         <div className='row'>
-        //             <div className="mb-3 mx-auto  col-lg-6 col-sm-12 ">
-        //                 <div >
-        //                     <label
-        //                         for="exampleFormControlInput1"
-        //                         className="form-label">Jummah Khutba Data</label>
-        //                     <input
-        //                         type="datetime-local"
-        //                         name='month'
-        //                         className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
-        //                 </div>
-        //                 <div >
-        //                     <label
-        //                         for="exampleFormControlInput1"
-        //                         className="form-label"
 
-        //                     >About</label>
-        //                     <input
-        //                         type="text"
-        //                         name='about'
-        //                         className="form-control"
-        //                         id="exampleFormControlInput1"
-        //                         placeholder="Jummah Khutba About Crisis"
-
-        //                     />
-        //                 </div>
-        //                 <div >
-        //                     <label
-
-        //                         for="exampleFormControlInput1"
-        //                         className="form-label">Speaker</label>
-
-        //                     <input
-        //                         type="text"
-        //                         name='speaker'
-        //                         className="form-control" id="exampleFormControlInput1"
-        //                         placeholder="MD Imtius Ahammed"
-
-        //                     />
-        //                 </div>
-        //                 <div className="mb-3">
-        //                     <label
-        //                         for="exampleFormControlTextarea1"
-        //                         className="form-label">Example textarea</label>
-        //                     <input
-        //                         type="text"
-        //                         name='link'
-        //                         className="form-control"
-        //                         id="exampleFormControlInput1"
-        //                         placeholder="link.mp3"
-
-        //                     />
-
-        //                 </div>
-        //                 <button className='btn btn-primary'>Add Khutba</button>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </form>
 
         <>
             <section className="content-main " style={{ maxWidth: "1200px" }}>
@@ -156,8 +61,8 @@ const Khutba = () => {
                         {/* <Link to="" className="btn btn-danger text-white">
         Go to products
       </Link> */}
-                        <button className='btn btn-danger text-white'>Go to Campaigns</button>
-                        <h2 className="content-title">Add Campaign</h2>
+                        {/* <button className='btn btn-danger text-white'>All Khutba</button> */}
+                        <h2 className="content-title">Upload Recent Khutba</h2>
                         <div>
                             <button type="submit" className="btn btn-primary">
                                 Publish now
@@ -172,21 +77,20 @@ const Khutba = () => {
                                     <div className="mb-4">
                                         <label htmlFor="product_title" for="exampleFormControlTextarea1"
                                             className="form-label">
-                                            Khutba Name
+                                            Khutba Topic Name
                                         </label>
                                         <input
 
                                             type="text"
                                             // name='name'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Add your Khutba Name "
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Add Khutba Topic Name "
 
                                             required
 
                                             {...register("name", {
                                                 required: {
-                                                    // value: true,
-
-                                                    message: 'Name is Required'
+                                                    value: true,
+                                                    message: 'Khutba Name is Required'
                                                 }
                                             })}
 
@@ -197,14 +101,14 @@ const Khutba = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Campaign Details</label>
+                                            className="form-label">Details About Khutba</label>
                                         <textarea
 
 
 
                                             type="text"
                                             // name='short_description'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Jummah Khutba About Crisis"
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Please give details about Khutba"
                                             rows="7"
 
 
@@ -251,7 +155,7 @@ const Khutba = () => {
                                             type="text"
                                             name='speaker'
 
-                                            placeholder="Speaker name please"
+                                            placeholder="Speaker name "
 
 
                                             // name='Goal'
@@ -271,14 +175,14 @@ const Khutba = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Upload Khutba's Photo </label>
+                                            className="form-label">Khutba's Audio </label>
                                         <input
-                                            // type="link"
-                                            type="file"
+                                            type="text"
+                                            // type="file"
                                             // name='img'
                                             className="form-control"
                                             id="exampleFormControlInput1"
-                                            placeholder="link.mp3"
+                                            placeholder="Upload Khutba's Audio"
                                             required
 
                                             {...register("img", {
@@ -325,7 +229,7 @@ const Khutba = () => {
 
                             </div>
                             <button type="submit" className="btn btn-primary">
-                                Publish now
+                                Upload Khutba
                             </button>
                         </div>
                     </div>

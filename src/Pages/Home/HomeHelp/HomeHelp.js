@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowRight, faQuran, faMosque, faHands, faHand, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
-// import hstry from "../../../1_images/2_historyOFcenter/1_hstry-img.png";
-import banner from "../../../1_images/istockphoto-1252924066-170667a.jpg";
-import "./Help.css"
-import SingleHelp from './SingleHelp';
+import React from 'react';
 import AllCampaigns from '../../../hooks/AllCampaigns';
-const Help = () => {
+import SingleHelp from '../Help/SingleHelp';
+
+const HomeHelp = () => {
 
     const [causes] = AllCampaigns()
 
 
-
-
     return (
-
-
         <div>
             <section class="container pt-5 pb-5 poppins">
 
@@ -39,7 +31,7 @@ const Help = () => {
 
                     <div class="row pt-3">
                         {
-                            causes.map(cause => <SingleHelp
+                            causes.slice(0, 6).map(cause => <SingleHelp
                                 key={cause._id}
                                 cause={cause}
                             ></SingleHelp>)
@@ -54,8 +46,7 @@ const Help = () => {
 
             </section>
         </div>
-
     );
 };
 
-export default Help;
+export default HomeHelp;

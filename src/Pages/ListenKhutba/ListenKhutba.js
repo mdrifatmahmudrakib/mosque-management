@@ -64,7 +64,7 @@ const ListenKhutba = () => {
                     </p>
                 </div>
             </div>
-            <div className='container ' style={{ height: '60vh' }}>
+            <div className='container pt-4' >
                 {
                     allKhutba.map(khutba =>
                         <div key={khutba._id} className=' mx-auto mb-5 m-2 shadow-lg'>
@@ -103,7 +103,7 @@ const ListenKhutba = () => {
             </div>
 
             {/* <KhutbaContact></KhutbaContact> */}
-            <Footer></Footer>
+
 
         </div>
 

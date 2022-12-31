@@ -76,7 +76,7 @@ const HelpDetails = () => {
                             <h5><b>{name}</b></h5>
                             <p>{short_description}</p>
                         </div>
-                        <div class="row ps-2 pe-3 pt-3 raised bg-white my-2 m-0 rounded">
+                        {/* <div class="row ps-2 pe-3 pt-3 raised bg-white my-2 m-0 rounded">
                             <p class="col-6 text-start">
                                 {" "}
                                 <b>Raised: </b>
@@ -87,7 +87,7 @@ const HelpDetails = () => {
                                 <b> Goal: </b>
                                 <span style={{ color: "#D1AD3C" }}>{Goal} </span>{" "}
                             </p>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="col-lg-6">
                         <div className="bg-white rounded p-4 lg-m-4 text-start">

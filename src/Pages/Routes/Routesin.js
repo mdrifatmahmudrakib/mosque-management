@@ -16,6 +16,9 @@ import Side from '../Dashboard/Side/Side';
 import Khutba from '../Dashboard/Khutba/Khutba';
 import ListenKhutba from '../ListenKhutba/ListenKhutba';
 import TestUpdate from '../Dashboard/ManageCampaign/TestUpdate';
+import TestLogin from '../Login/Login/TestLogin';
+import Footer from '../Shared/Footer/Footer';
+
 
 const Routesin = () => {
     return (
@@ -33,8 +36,9 @@ const Routesin = () => {
                 <Route path="/side" element={<Side></Side>}></Route>
                 <Route path='/donate' element={<Donate></Donate>}></Route>
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>
-                {/* <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route> */}
+                <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route>
                 <Route path='/test' element={<TestUpdate></TestUpdate>}></Route>
+                <Route path='/testlogin' element={<TestLogin></TestLogin>}></Route>
 
 
                 <Route path="/login" element={<Login></Login>}></Route>
@@ -52,6 +56,7 @@ const Routesin = () => {
                 <Route path='/event/:id' element={
                     <EventDetails></EventDetails>}></Route>
             </Routes>
+            <Footer></Footer>
             <React.Fragment />
         </div>
     );

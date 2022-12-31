@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
+
 
 const UserRow = ({ user, refetch, i }) => {
 
@@ -56,13 +57,7 @@ const UserRow = ({ user, refetch, i }) => {
 
 
     return (
-        // <tr>
-        //     <th>1</th>
-        //     <td>{email}</td>
-        //     <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-success">Make Admin</button>}</td>
-        //     {/* <td><button onClick={makeAdmin} class="btn btn-success">Make Admin</button></td> */}
-        //     <td><button class="btn btn-danger" onClick={() => handleDelete(user._id)}>Remove User</button></td>
-        // </tr>
+
 
 
         <tr class="table">

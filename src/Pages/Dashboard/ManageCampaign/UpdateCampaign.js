@@ -28,8 +28,8 @@ const UpdateCampaign = () => {
         const form = event.target;
         const name = form.name.value;
         const short_description = form.short_description.value;
-        const Raised = form.Raised.value;
-        const Goal = form.Goal.value;
+        // const Raised = form.Raised.value;
+        // const Goal = form.Goal.value;
         const img = form.img.value;
 
 
@@ -37,8 +37,8 @@ const UpdateCampaign = () => {
             name,
             img,
             short_description,
-            Raised,
-            Goal
+            // Raised,
+            // Goal
 
         };
         fetch(`http://localhost:5000/campaign/${id}`, {
@@ -114,7 +114,7 @@ const UpdateCampaign = () => {
                                         ></textarea>
                                     </div>
 
-                                    <div className="mb-4">
+                                    {/* <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
                                             className="form-label">Amout Rise </label>
                                         <input
@@ -141,7 +141,7 @@ const UpdateCampaign = () => {
                                             required
                                         />
 
-                                    </div>
+                                    </div> */}
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"

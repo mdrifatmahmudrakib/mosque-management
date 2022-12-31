@@ -46,12 +46,12 @@ const ManageSingleEvent = ({ event }) => {
             <div className=' col-md-4 py-3 px-3 d-flex justify-content-center'>
                 <div class="help_card_shadow">
                     <div class="card_banner card-img-top help-banner"
-                        style={{
-                            background: `url(${img}) `
-                        }}
+                    // style={{
+                    //     background: `url(${img}) `
+                    // }}
                     >
 
-
+                        <img style={{ width: "400px", height: "350px" }} className='img-fluid w-52 h-96' src={img} alt="" />
 
                     </div>
 

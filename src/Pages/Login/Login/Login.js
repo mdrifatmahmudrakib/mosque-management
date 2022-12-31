@@ -106,7 +106,9 @@ const Login = () => {
                             {errorElement}
                             <p className='text-light'>You don't have an account? <Link to='/register' className='text-danger pe-auto text-decoration-none ' onClick={navigateRegister}>Please Register</Link></p>
 
-                            <p className='text-light'>Forget your password? <button to='/register ' className='btn btn-link text-danger pe-auto text-decoration-none ' onClick={resetPassword}>Reset Password</button></p>
+                            <p className='text-light'>Forget your password?
+
+                                <button className='btn btn-link text-danger pe-auto text-decoration-none ' onClick={resetPassword}>Reset Password</button></p>
 
                             <button onClick={() => signInWithGoogle()} className="btn btn-success ">Continue With Google</button>
                             {/* <SocialLogin></SocialLogin> */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 import './AddCampaign.css'
 
 const AddCampaign = () => {
@@ -28,8 +29,8 @@ const AddCampaign = () => {
                     const img = result.data.url;
                     const imam = {
                         name: data.name,
-                        Goal: data.Goal,
-                        Raised: data.Raised,
+                        // Goal: data.Goal,
+                        // Raised: data.Raised,
                         email: data.email,
                         short_description: data.short_description,
                         img: img
@@ -72,12 +73,12 @@ const AddCampaign = () => {
                         {/* <Link to="" className="btn btn-danger text-white">
             Go to products
           </Link> */}
-                        <button className='btn btn-danger text-white'>Go to Campaigns</button>
+
                         <h2 className="content-title">Add Campaign</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
-                                Publish now
-                            </button>
+                            <Link to="/donate" className="btn btn-primary">
+                                All Campaigns
+                            </Link>
                         </div>
                     </div>
 
@@ -94,7 +95,7 @@ const AddCampaign = () => {
 
                                             type="text"
                                             // name='name'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Add your Campaign Name "
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Add Campaign Name "
 
                                             required
 
@@ -118,7 +119,7 @@ const AddCampaign = () => {
 
                                             type="text"
                                             // name='short_description'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Jummah Khutba About Crisis"
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Detils about campaign here"
                                             rows="7"
 
 
@@ -135,7 +136,7 @@ const AddCampaign = () => {
                                         ></textarea>
                                     </div>
 
-                                    <div className="mb-4">
+                                    {/* <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
                                             className="form-label">Amout Rise </label>
                                         <input
@@ -173,7 +174,7 @@ const AddCampaign = () => {
                                             })}
                                         />
 
-                                    </div>
+                                    </div> */}
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"

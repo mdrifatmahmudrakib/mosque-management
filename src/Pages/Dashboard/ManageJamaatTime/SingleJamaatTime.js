@@ -16,16 +16,10 @@ const SingleJamaatTime = ({ jamaat }) => {
 
         <form  >
             <div className="content-header">
-                {/* <Link to="" className="btn btn-danger text-white">
-Go to products
-</Link> */}
-                <button className='btn btn-danger text-white'>Go to Campaigns</button>
-                <h2 className="content-title">Add Jammat Time</h2>
-                <div>
-                    <button onClick={() => handlenavigateToupdateDetails(_id)} className="btn btn-primary">
-                        Update Jamaat Time
-                    </button>
-                </div>
+
+
+                <h2 className="content-title">Update Jamaat Time</h2>
+
             </div>
 
             <div className="row mb-4  ">
@@ -39,7 +33,7 @@ Go to products
                             <div className="mb-4">
                                 <label htmlFor="product_title" for="exampleFormControlTextarea1"
                                     className="form-label">
-                                    Fajr Time {_id}
+                                    Fajr Time
                                 </label>
                                 <input
                                     value={fajr}

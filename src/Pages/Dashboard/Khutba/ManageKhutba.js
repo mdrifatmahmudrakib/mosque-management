@@ -1,6 +1,7 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { useQuery } from 'react-query';
-import { toast } from 'react-toastify';
+
 import Loading from '../../Shared/Loading/Loading';
 
 const ManageKhutba = () => {
