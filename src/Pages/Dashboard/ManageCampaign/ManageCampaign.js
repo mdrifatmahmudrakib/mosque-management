@@ -4,7 +4,7 @@ import AllCampaigns from '../../../hooks/AllCampaigns';
 import SingleHelp from '../../Home/Help/SingleHelp';
 import ManageSingleCampaign from './ManageSingleCampaign';
 import "./ManageCampaign.css"
-const ManageCampaign = ({ refetch }) => {
+const ManageCampaign = () => {
     // const [causes] = AllCampaigns();
     const [causes, setCauses] = useState([])
     const [pageCount, setPageCount] = useState(0);
@@ -75,7 +75,7 @@ const ManageCampaign = ({ refetch }) => {
                         {
                             causes?.map(cause => <ManageSingleCampaign
                                 key={cause._id}
-
+                                // refetch={refetch}
                                 cause={cause}
                             ></ManageSingleCampaign>)
                         }

@@ -28,20 +28,20 @@ const Header = () => {
                     <Nav className="mx-auto ">
 
                         <Nav.Link className='text-light' as={Link} to="home">Home</Nav.Link>
-                        <Nav.Link className='text-light' as={Link} to="donate">Donate</Nav.Link>
+                        <Nav.Link className='text-light' as={Link} to="donate">Campaigns</Nav.Link>
+                        <Nav.Link className='text-light' as={Link} to="events">Events</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="scolar">Scolar</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="khutba">Khutba</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="testlogin">test login</Nav.Link>
 
-
                         {
                             user && <>
-                                <Nav.Link className='text-light' as={Link} to="allevent">All Event</Nav.Link>
+
 
                                 <Nav.Link className='text-light' as={Link} to="dashboard">Dashboard</Nav.Link>
 
 
-                                <Nav.Link className='text-light' as={Link} to="addcampaign">Add Campaign</Nav.Link>
+
                             </>
                         }
                     </Nav>

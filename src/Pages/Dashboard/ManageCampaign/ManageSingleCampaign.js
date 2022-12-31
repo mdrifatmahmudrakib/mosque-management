@@ -8,9 +8,10 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import React, { useState } from 'react';
 
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 
-const ManageSingleCampaign = ({ cause }) => {
+const ManageSingleCampaign = ({ cause, refetch }) => {
 
     const { _id, img, name, short_description, Raised, Goal } = cause;
     const { id } = useParams();
@@ -36,8 +37,12 @@ const ManageSingleCampaign = ({ cause }) => {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
+
                     const remaining = causes.filter(cause => cause._id !== id)
                     setCauses(remaining);
+                    toast.success('Imam added successfully')
+                    // refetch();
+
                 })
 
         }

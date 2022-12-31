@@ -1,28 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const AddEvent = () => {
 
 
-    // const { register, handleSubmit, reset } = useForm();
-    // const onSubmit = data => {
-    //     console.log(data);
-    //     const url = `http://localhost:5000/events`;
-    //     fetch(url, {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(data)
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             console.log(result)
-    //             toast.success("Campaign added successfully");
-    //             reset();
-    //         })
-    // }
 
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -55,8 +38,6 @@ const AddEvent = () => {
                         img: img
 
 
-
-
                     }
                     // send to your database 
                     fetch('http://localhost:5000/events', {
@@ -84,69 +65,8 @@ const AddEvent = () => {
     }
 
     return (
-        // <div className='container '>
-        //     <h1 className='text-danger m-4'> Please add Your Event</h1>
-        //     <div className="card border-0 m-4" >
-        //         <div className="row g-0">
-
-        //             <div className='lg:w-75 mx-auto align-items-center  '>
-
-        //                 <form className='d-flex flex-column lg:mx-3 shadow p-4 border rounded' onSubmit={handleSubmit(onSubmit)} >
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Campaign Name</h6>
-        //                     </label>
-        //                     <input required className='mb-2 form-input' placeholder='Campaign Name'  {...register("name")} />
 
 
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Item Photo URL</h6>
-        //                     </label>
-
-        //                     <input required className='mb-2 form-input' placeholder='Campaign Photo URL' type="text" {...register("img")} />
-
-
-
-
-
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Date</h6>
-        //                     </label>
-        //                     <input required className='mb-2 form-input' type="date" {...register("date")} />
-
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Time</h6>
-        //                     </label>
-        //                     <input required className='mb-2 form-input' type="time" {...register("time")} />
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Location</h6>
-        //                     </label>
-        //                     <input required className='mb-2 form-input' type="text" {...register("location")} />
-
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Organizer By</h6>
-        //                     </label>
-        //                     <input required className='mb-2 form-input' type="text" {...register("orgBy")} />
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Organizer Phone</h6>
-        //                     </label>
-        //                     <input required className='mb-2 form-input' type="number" {...register("orgPhone")} />
-        //                     <label className="lg:text-left text-start ">
-        //                         <h6>Organizer Email</h6>
-        //                     </label>
-        //                     <input required className='mb-2 form-input' type="email" {...register("orgEmail")} />
-
-        //                     <label className="lg:text-left text-start  ">
-        //                         <h6>Add Description</h6>
-        //                     </label>
-        //                     <textarea required className='mb-2 form-input form-input-des' placeholder='Campaign Description' {...register("short_description")} />
-
-        //                     <input className='mt-2 form-button-add text-center w-25' type="submit" value='Submit' />
-        //                 </form>
-        //             </div>
-
-        //         </div>
-        //     </div>
-        // </div>
 
 
 
@@ -157,12 +77,14 @@ const AddEvent = () => {
                         {/* <Link to="" className="btn btn-danger text-white">
         Go to products
       </Link> */}
-                        <button className='btn btn-danger text-white'>Go to Event</button>
-                        <h2 className="content-title">Add Event</h2>
+
+
+
+                        <h2 className="content-title">Create Event</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
-                                Publish now
-                            </button>
+                            <Link to="/events" className="btn btn-primary">
+                                All Events
+                            </Link>
                         </div>
                     </div>
 
@@ -173,19 +95,19 @@ const AddEvent = () => {
                                     <div className="mb-4">
                                         <label htmlFor="product_title" for="exampleFormControlTextarea1"
                                             className="form-label">
-                                            Campaign Name
+                                            Event Name
                                         </label>
                                         <input
 
                                             type="text"
                                             // name='name'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Add your Campaign Name "
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Add Event Name "
 
                                             required
 
                                             {...register("name", {
                                                 required: {
-                                                    // value: true,
+                                                    value: true,
 
                                                     message: 'Name is Required'
                                                 }
@@ -198,12 +120,12 @@ const AddEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Campaign Details</label>
+                                            className="form-label">Event Details</label>
                                         <textarea
 
                                             type="text"
                                             // name='short_description'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Jummah Khutba About Crisis"
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Details About Event "
                                             rows="7"
 
 
@@ -212,7 +134,7 @@ const AddEvent = () => {
 
                                             {...register("short_description", {
                                                 required: {
-                                                    // value: true,
+                                                    value: true,
 
                                                     message: 'Name is Required'
                                                 }
@@ -222,7 +144,7 @@ const AddEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Date </label>
+                                            className="form-label">Event Date </label>
                                         <input
                                             type="datetime-local"
                                             // name='date'
@@ -242,12 +164,12 @@ const AddEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Location</label>
+                                            className="form-label">Event Location</label>
                                         <input
                                             type="Text"
                                             // name='location'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="Add Event Location"
                                             required
 
                                             {...register("location", {
@@ -268,7 +190,7 @@ const AddEvent = () => {
                                             type="Text"
                                             // name='location'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="Organiger name"
                                             required
 
                                             {...register("orgBy", {
@@ -283,12 +205,12 @@ const AddEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">phone</label>
+                                            className="form-label">Organiger Phone</label>
                                         <input
                                             type="number"
                                             // name='location'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="Organiger Phone Number"
                                             required
 
                                             {...register("orgPhone", {
@@ -303,12 +225,12 @@ const AddEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Email</label>
+                                            className="form-label">Organizer Email</label>
                                         <input
                                             type="email"
                                             // name='location'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="MD Organizer Email "
                                             required
 
                                             {...register("orgEmail", {
@@ -325,7 +247,7 @@ const AddEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Upload Campaign Photo </label>
+                                            className="form-label">Upload Event Photo </label>
                                         <input
                                             // type="link"
                                             type="file"

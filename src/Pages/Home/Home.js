@@ -4,6 +4,7 @@ import auth from '../../firebase.init';
 import Donate from '../Donate/Donate';
 import Banner from './Banner/Banner';
 import Event from './Event/Event';
+import HomeEvent from './Event/HomeEvent';
 import Feature from './Feature/Feature';
 import Help from './Help/Help';
 import History from './History/History';
@@ -26,7 +27,7 @@ const Home = () => {
             <HomeHelp></HomeHelp>
             <Support></Support>
             <Team></Team>
-            <Event></Event>
+            <HomeEvent></HomeEvent>
             <PrayerInfo></PrayerInfo>
             <Tetimonial></Tetimonial>
 

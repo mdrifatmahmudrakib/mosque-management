@@ -4,6 +4,7 @@ import AddCampaign from '../Dashboard/AddCampaign/AddCampaign';
 import Dashboard from '../Dashboard/Dashboard';
 import Donate from '../Donate/Donate';
 import EventDetails from '../Home/Event/EventDetails';
+import Event from '../Home/Event/Event';
 import HelpDetails from '../Home/Help/HelpDetails';
 import Home from '../Home/Home';
 import Login from '../Login/Login/Login';
@@ -13,11 +14,12 @@ import Header from '../Shared/Header/Header';
 import Info from '../../Pages/Dashboard/Info';
 import Payment from '../Payment/Payment';
 import Side from '../Dashboard/Side/Side';
-import Khutba from '../Dashboard/Khutba/Khutba';
+
 import ListenKhutba from '../ListenKhutba/ListenKhutba';
 import TestUpdate from '../Dashboard/ManageCampaign/TestUpdate';
 import TestLogin from '../Login/Login/TestLogin';
 import Footer from '../Shared/Footer/Footer';
+import RequireAuth from '../Login/RequireAuth';
 
 
 const Routesin = () => {
@@ -35,6 +37,7 @@ const Routesin = () => {
                 <Route path="/home" element={<Home></Home>}></Route>
                 <Route path="/side" element={<Side></Side>}></Route>
                 <Route path='/donate' element={<Donate></Donate>}></Route>
+                <Route path='/events' element={<Event></Event>}></Route>
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>
                 <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route>
                 <Route path='/test' element={<TestUpdate></TestUpdate>}></Route>
@@ -45,7 +48,6 @@ const Routesin = () => {
 
                 <Route path="/register" element={<Register></Register>}></Route>
 
-                <Route path="/addcampaign" element={<AddCampaign></AddCampaign>}></Route>
 
                 <Route path="/payment/:id" element={<Payment></Payment>}></Route>
 
@@ -53,8 +55,8 @@ const Routesin = () => {
                 <Route path='/campaign/:id' element={
                     <HelpDetails></HelpDetails>}></Route>
 
-                <Route path='/event/:id' element={
-                    <EventDetails></EventDetails>}></Route>
+                <Route path='/event/:id' element={<RequireAuth><EventDetails></EventDetails></RequireAuth>
+                }></Route>
             </Routes>
             <Footer></Footer>
             <React.Fragment />

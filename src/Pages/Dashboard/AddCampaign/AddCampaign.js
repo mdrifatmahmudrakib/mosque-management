@@ -30,7 +30,7 @@ const AddCampaign = () => {
                     const imam = {
                         name: data.name,
                         // Goal: data.Goal,
-                        // Raised: data.Raised,
+                        Raised: data.Raised,
                         email: data.email,
                         short_description: data.short_description,
                         img: img
@@ -74,7 +74,7 @@ const AddCampaign = () => {
             Go to products
           </Link> */}
 
-                        <h2 className="content-title">Add Campaign</h2>
+                        <h2 className="content-title">Create Campaign</h2>
                         <div>
                             <Link to="/donate" className="btn btn-primary">
                                 All Campaigns
@@ -119,7 +119,7 @@ const AddCampaign = () => {
 
                                             type="text"
                                             // name='short_description'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Detils about campaign here"
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Details about campaign here"
                                             rows="7"
 
 
