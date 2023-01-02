@@ -30,7 +30,7 @@ const Donate = () => {
 
             </div>
             <div>
-                <History></History>
+
                 <Help></Help>
             </div>
 

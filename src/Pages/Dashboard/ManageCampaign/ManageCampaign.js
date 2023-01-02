@@ -4,6 +4,10 @@ import AllCampaigns from '../../../hooks/AllCampaigns';
 import SingleHelp from '../../Home/Help/SingleHelp';
 import ManageSingleCampaign from './ManageSingleCampaign';
 import "./ManageCampaign.css"
+
+import onelinee from "../../../1_images/1_home/1_line.png"
+
+import donatebanner from "../../../1_images/8_donate_page/1_donate_home.jpg";
 const ManageCampaign = () => {
     // const [causes] = AllCampaigns();
     const [causes, setCauses] = useState([])
@@ -31,43 +35,40 @@ const ManageCampaign = () => {
 
 
     return (
-        <section className="content-main">
-            <div className="content-header">
-                <h2 className="content-title">Campaigns</h2>
-                <div>
-                    <Link to="/dashboard/addcampaign" className="btn btn-primary">
-                        Create Campaign
-                    </Link>
+        <section className="">
+            <div className='home_banner'
+                style={{
+                    background: `url(${donatebanner}) `
+                }}
+                class="pb-5">
+
+                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Manage Campaign</h5>
+
+                <div class="text-center pb-3">
+                    <img src={onelinee} />
                 </div>
+
+                <div class="text-center when_things">
+                    <p class="poppins donate_home_icon">
+                        <Link to="/">Home</Link> / <Link to="/donate"><span class="charity-text" >Campaigns</span></Link>
+                    </p>
+                </div>
+
             </div>
 
-            <div className="card mb-4 shadow-sm shadow-lg p-3 mb-5 bg-white rounded ">
-                {/* <header className="card-header  ">
-                    <div className="row gx-3 py-3">
-                        <div className="col-lg-4 col-md-6 me-auto ">
-                            <input
-                                type="search"
-                                placeholder="Search..."
-                                className="form-control p-2"
-                            />
-                        </div>
-                        <div className="col-lg-2 col-6 col-md-3">
-                            <select className="form-select">
-                                <option>All category</option>
-                                <option>Electronics</option>
-                                <option>Clothings</option>
-                                <option>Something else</option>
-                            </select>
-                        </div>
-                        <div className="col-lg-2 col-6 col-md-3">
-                            <select className="form-select">
-                                <option>Latest added</option>
-                                <option>Cheap first</option>
-                                <option>Most viewed</option>
-                            </select>
-                        </div>
-                    </div>
-                </header> */}
+
+
+
+
+            <div className='pt-2 d-flex justify-content-end' >
+                <Link to="/dashboard/addcampaign" className="btn btn-primary">
+                    Create Campaign
+                </Link>
+            </div>
+
+            <div className="card mb-4 shadow-sm shadow-lg p-3 mb-5 bg-white rounded mt-4 ">
+
+
 
                 <div className="card-body">
                     <div className="row ">

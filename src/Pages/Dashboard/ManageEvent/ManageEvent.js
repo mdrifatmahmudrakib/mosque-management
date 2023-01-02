@@ -3,6 +3,9 @@ import { DataGrid } from '@mui/x-data-grid';
 import AllEvents from '../../../hooks/AllEvents';
 import { Link } from 'react-router-dom';
 import ManageSingleEvent from './ManageSingleEvent';
+import onelinee from "../../../1_images/1_home/1_line.png"
+
+import donatebanner from "../../../1_images/8_donate_page/1_donate_home.jpg";
 
 const ManageEvent = () => {
     // const [events] = AllEvents();
@@ -33,16 +36,32 @@ const ManageEvent = () => {
     }, [])
 
     return (
-        <section className="content-main">
-            <div className="content-header">
-                <h2 className="content-title">Manage Events</h2>
-                <div>
-                    <Link to="/dashboard/addevent" className="btn btn-primary">
-                        Add Event
-                    </Link>
+        <section className="">
+            <div className=''
+                style={{
+                    background: `url(${donatebanner}) `
+                }}
+                class="pb-5">
+
+                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Manage Campaign</h5>
+
+                <div class="text-center pb-3">
+                    <img src={onelinee} />
                 </div>
+
+                <div class="text-center when_things">
+                    <p class="poppins donate_home_icon">
+                        <Link to="/">Home</Link> / <Link to="/donate"><span class="charity-text" >Campaigns</span></Link>
+                    </p>
+                </div>
+
             </div>
 
+            <div className='pt-2 d-flex justify-content-end' >
+                <Link to="/dashboard/addcampaign" className="btn btn-primary">
+                    Create Campaign
+                </Link>
+            </div>
             <div className="card mb-4 shadow-sm ">
 
 

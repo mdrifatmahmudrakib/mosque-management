@@ -14,12 +14,13 @@ import Header from '../Shared/Header/Header';
 import Info from '../../Pages/Dashboard/Info';
 import Payment from '../Payment/Payment';
 import Side from '../Dashboard/Side/Side';
-
 import ListenKhutba from '../ListenKhutba/ListenKhutba';
 import TestUpdate from '../Dashboard/ManageCampaign/TestUpdate';
-import TestLogin from '../Login/Login/TestLogin';
 import Footer from '../Shared/Footer/Footer';
 import RequireAuth from '../Login/RequireAuth';
+import UserDonation from '../UserDonation/UserDonation';
+import DonationFail from '../Home/Help/DonationFail';
+import DonationSuccess from '../Home/Help/DonationSuccess';
 
 
 const Routesin = () => {
@@ -41,7 +42,7 @@ const Routesin = () => {
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>
                 <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route>
                 <Route path='/test' element={<TestUpdate></TestUpdate>}></Route>
-                <Route path='/testlogin' element={<TestLogin></TestLogin>}></Route>
+
 
 
                 <Route path="/login" element={<Login></Login>}></Route>
@@ -57,6 +58,14 @@ const Routesin = () => {
 
                 <Route path='/event/:id' element={<RequireAuth><EventDetails></EventDetails></RequireAuth>
                 }></Route>
+
+                <Route path="/donation/success" element={<DonationSuccess></DonationSuccess>}></Route>
+                <Route path="/donation/fail" element={<DonationFail></DonationFail>}></Route>
+                <Route path="/userDonation" element={<UserDonation></UserDonation>}></Route>
+
+
+
+
             </Routes>
             <Footer></Footer>
             <React.Fragment />

@@ -20,9 +20,9 @@ const ListenKhutba = () => {
                 const res = await fetch(
                     "http://localhost:5000/allKhutba",
                     {
-                        // headers: {
-                        //   authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                        // },
+                        headers: {
+                            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                        },
                     }
                 );
                 const data = await res.json();
@@ -85,8 +85,11 @@ const ListenKhutba = () => {
 
                                         <div className='d-flex w-50 flex-column flex-md-row flex-lg-row gap-2 justify-content-evenly  align-items-center'>
                                             <audio className='bg-warning' controls >
-                                                <source src={khutba.link} type="audio/mpeg" />
+                                                <source src={khutba.link} type="audio/mp3" />
+
+
                                             </audio>
+
 
                                         </div>
                                     </div>

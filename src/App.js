@@ -38,7 +38,10 @@ import { Toaster } from 'react-hot-toast';
 import AddJamaatTime from './Pages/Dashboard/ManageJamaatTime/AddJamaatTime';
 import ManageJamaatTime from './Pages/Dashboard/ManageJamaatTime/ManageJamaatTime';
 import UpdateJamaatTime from './Pages/Dashboard/ManageJamaatTime/UpdateJamaatTime';
-
+import ManageExpert from './Pages/Dashboard/ManageExpert/ManageExpert';
+import UpdateExpert from './Pages/Dashboard/ManageExpert/UpdateExpert';
+import AllUserDonation from './Pages/Dashboard/AllUserDonation/AllUserDonation';
+import UpdateProfile from './Pages/Dashboard/UpdateProfile';
 
 function App() {
   return (
@@ -58,7 +61,17 @@ function App() {
 
           <Route path="managejamaat" element={<RequireAdmin><ManageJamaatTime></ManageJamaatTime></RequireAdmin>} />
 
+
+          <Route path="manageexperts" element={<RequireAdmin><ManageExpert></ManageExpert></RequireAdmin>} />
+
+          <Route path="experts/:id" element={<RequireAdmin><UpdateExpert></UpdateExpert></RequireAdmin>} />
+
+
+
+
+
           <Route path="profile" element={<Info></Info>} />
+          <Route path="updateprofile/:email" element={<UpdateProfile></UpdateProfile>} />
 
           <Route path="imam" element={<RequireAdmin><AddImam></AddImam></RequireAdmin>} />
           <Route path="addscolar" element={<RequireAdmin><AddExpert></AddExpert></RequireAdmin>} />
@@ -77,7 +90,13 @@ function App() {
 
           <Route path='jamaattime/:id' element={<RequireAdmin><UpdateJamaatTime></UpdateJamaatTime></RequireAdmin>}></Route>
 
+
+          <Route path='alluserdonation' element={<RequireAdmin><AllUserDonation></AllUserDonation></RequireAdmin>}></Route>
+
         </Route>
+
+
+
 
         <Route path="*" element={<Routesin></Routesin>} />
       </Routes>

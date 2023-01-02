@@ -18,7 +18,9 @@ const Header = () => {
     return (
 
 
-        <Navbar collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark">
+        <Navbar className='d-print-none'
+            collapseOnSelect sticky='top' expand="lg" bg="dark" variant="dark">
+
             <Container>
                 <Navbar.Brand as={Link} to="/">
                     <img height={70} src="https://i.ibb.co/hBkDVR6/3-logo.png" alt="" />
@@ -32,7 +34,7 @@ const Header = () => {
                         <Nav.Link className='text-light' as={Link} to="events">Events</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="scolar">Scolar</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="khutba">Khutba</Nav.Link>
-                        <Nav.Link className='text-light' as={Link} to="testlogin">test login</Nav.Link>
+
 
                         {
                             user && <>

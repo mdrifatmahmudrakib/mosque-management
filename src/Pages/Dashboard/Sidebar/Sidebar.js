@@ -56,6 +56,10 @@ const Sidebar = () => {
                                     <span className='nav-link-name'>Dashboard</span>
                                 </Link>
 
+                                <Link to="/dashboard/alluserdonation" className="nav-link">
+                                    <FontAwesomeIcon icon={faChartBar} />
+                                    <span className="nav-link-name">AllUserDonation</span>
+                                </Link>
 
                                 <Link to="/dashboard/users" className='nav-link' >
                                     <FontAwesomeIcon icon={faUser} />
@@ -82,7 +86,7 @@ const Sidebar = () => {
 
                                 <Link to="/dashboard/managekhutba" className='nav-link' >
                                     <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>Add Khutba</span>
+                                    <span className='nav-link-name'>Manage Khutba</span>
                                 </Link>
 
 
@@ -91,6 +95,11 @@ const Sidebar = () => {
                                     <span className='nav-link-name'>Add Scolar</span>
                                 </Link>
 
+
+                                <Link to="/dashboard/manageexperts" className="nav-link">
+                                    <FontAwesomeIcon icon={faChartBar} />
+                                    <span className="nav-link-name">ManageExpert</span>
+                                </Link>
 
 
                                 <Link to="managecampaign" className='nav-link' >

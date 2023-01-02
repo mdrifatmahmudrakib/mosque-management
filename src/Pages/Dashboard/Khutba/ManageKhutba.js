@@ -3,7 +3,10 @@ import { toast } from 'react-hot-toast';
 import { useQuery } from 'react-query';
 
 import Loading from '../../Shared/Loading/Loading';
+import onelinee from "../../../1_images/1_home/1_line.png"
 
+import donatebanner from "../../../1_images/8_donate_page/1_donate_home.jpg";
+import { Link } from 'react-router-dom';
 const ManageKhutba = () => {
 
     const {
@@ -60,8 +63,31 @@ const ManageKhutba = () => {
     return (
         <div >
 
+            <div className='home_banner'
+                style={{
+                    background: `url(${donatebanner}) `
+                }}
+                class="pb-5">
 
+                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Manage Khutba</h5>
 
+                <div class="text-center pb-3">
+                    <img src={onelinee} />
+                </div>
+
+                <div class="text-center when_things">
+                    <p class="poppins donate_home_icon">
+                        <Link to="/">Home</Link> / <Link to="/khutba"><span class="charity-text" >Khutba</span></Link>
+                    </p>
+                </div>
+
+            </div>
+
+            <div className='pt-2 d-flex justify-content-end' >
+                <Link to="/dashboard/addcampaign" className="btn btn-primary">
+                    Create Campaign
+                </Link>
+            </div>
 
             <div >
                 <div>

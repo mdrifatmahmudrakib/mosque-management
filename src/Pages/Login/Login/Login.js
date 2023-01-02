@@ -5,11 +5,13 @@ import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from './SocialLogin/SocialLogin';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import login from "../../../1_images/login.jpg"
 import useToken from '../../../hooks/useToken';
 import scolarbanner from "../../../1_images/8_donate_page/1_donate_home.jpg";
 import bsml from "../../../1_images/1_home/2_bsml-txt.png"
+import { toast } from 'react-hot-toast';
+import { ToastContainer } from 'react-toastify';
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
@@ -56,7 +58,15 @@ const Login = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email, password)
+        signInWithEmailAndPassword(email, password);
+        // if (user.emailVerified) {
+        //     navigate(from, { replace: true })
+        // }
+        // else {
+        //     toast.error("Your Email is Not verified! Please verify your mail First")
+        // }
+
+
     }
     const navigateRegister = event => {
         navigate('/register')

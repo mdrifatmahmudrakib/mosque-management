@@ -7,7 +7,7 @@ import bsml from "../../../1_images/1_home/2_bsml-txt.png"
 
 const Footer = () => {
     return (
-        <div className=' bg-black text-warning p-5 mx-auto border shadow  ' style={{
+        <div className=' bg-black text-warning p-5 mx-auto border shadow d-print-none ' style={{
 
 
         }}>

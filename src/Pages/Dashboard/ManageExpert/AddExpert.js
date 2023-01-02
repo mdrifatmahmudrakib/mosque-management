@@ -5,6 +5,7 @@ import { toast } from 'react-hot-toast';
 
 
 const AddExpert = () => {
+
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     // const [user] = useAuthState(auth);
@@ -27,11 +28,13 @@ const AddExpert = () => {
                     const imam = {
                         name: data.name,
                         facebook: data.facebook,
+                        role: data.role,
                         twitter: data.twitter,
                         google: data.google,
-                        description: data.description,
+                        short_description: data.short_description,
                         img: img,
-                        instagram: data.instagram
+                        instagram: data.instagram,
+                        phone: data.phone
 
                     }
                     // send to your database 
@@ -66,8 +69,8 @@ const AddExpert = () => {
                 <form onSubmit={handleSubmit(handleAddCampaign)} >
                     <div className="content-header">
                         {/* <Link to="" className="btn btn-danger text-white">
-        Go to products
-      </Link> */}
+    Go to products
+  </Link> */}
                         <button className='btn btn-danger text-white'>Go to Scolar</button>
                         <h2 className="content-title">Add Scolar</h2>
                         <div>
@@ -81,6 +84,36 @@ const AddExpert = () => {
                         <div className="col-xl-8 col-lg-8">
                             <div className="card mb-4 shadow-sm">
                                 <div className="card-body">
+                                    <div className="mb-4">
+                                        <label htmlFor="product_title" for="exampleFormControlTextarea1"
+                                            className="form-label">
+                                            Select Role
+                                        </label>
+                                        <select
+                                            name='role'
+                                            className="form-control" id="exampleFormControlInput1"
+
+                                            required
+
+                                            {...register("role", {
+                                                required: {
+                                                    // value: true,
+
+                                                    message: 'Role is Required'
+                                                }
+                                            })}>
+                                            <option selected>imam</option>
+                                            <option >muyajjem</option>
+                                            <option >khatib</option>
+                                            <option >khadem</option>
+                                            <option >scolar</option>
+                                            <option >chairman</option>
+                                            <option >viceChairman</option>
+                                            <option >secretaryGeneral</option>
+                                            <option >member</option>
+                                        </select>
+
+                                    </div>
                                     <div className="mb-4">
                                         <label htmlFor="product_title" for="exampleFormControlTextarea1"
                                             className="form-label">
@@ -110,25 +143,45 @@ const AddExpert = () => {
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
                                             className="form-label">Expert Details</label>
-                                        <textarea
+                                        <textarea maxlength="600"
 
                                             type="text"
-                                            name='description'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Jummah Khutba About Crisis"
+                                            name='short_description'
+                                            className="form-control" id="exampleFormControlInput1" placeholder="description"
                                             rows="7"
 
 
                                             required
 
 
-                                            {...register("description", {
+                                            {...register("short_description", {
                                                 required: {
                                                     // value: true,
 
-                                                    message: 'Name is Required'
+                                                    message: 'short_description is Required'
                                                 }
                                             })}
                                         ></textarea>
+                                    </div>
+
+                                    <div className="mb-4">
+                                        <label for="exampleFormControlTextarea1"
+                                            className="form-label">Phone </label>
+                                        <input
+                                            type="number"
+                                            name='phone'
+                                            className="form-control" id="exampleFormControlInput1"
+                                            placeholder="+880...."
+                                            required
+
+                                            {...register("phone", {
+                                                required: {
+                                                    value: true,
+                                                    message: 'phone is Required'
+                                                }
+                                            })}
+                                        />
+
                                     </div>
 
                                     <div className="mb-4">
@@ -138,7 +191,7 @@ const AddExpert = () => {
                                             type="text"
                                             name='facebook'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="facebook link"
                                             required
 
                                             {...register("facebook", {
@@ -158,7 +211,7 @@ const AddExpert = () => {
                                             type="text"
                                             name='twitter'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="twitter link"
                                             required
 
                                             {...register("twitter", {
@@ -179,7 +232,7 @@ const AddExpert = () => {
                                             type="text"
                                             name='instagram'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="instagram link"
                                             required
 
                                             {...register("instagram", {
@@ -197,7 +250,7 @@ const AddExpert = () => {
                                             type="text"
                                             name='google'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="google link"
                                             required
 
                                             {...register("google", {
@@ -221,7 +274,7 @@ const AddExpert = () => {
                                             name='img'
                                             className="form-control"
                                             id="exampleFormControlInput1"
-                                            placeholder="link.mp3"
+                                            placeholder="img.png"
                                             required
 
                                             {...register("img", {

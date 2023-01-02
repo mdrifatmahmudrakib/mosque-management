@@ -11,13 +11,14 @@ const Khutba = () => {
 
     const handleAddCampaign = async data => {
 
-        const url = `https://${data.img[0].name}`;
+        // const url = `https://${data.img[0].name}`;
         const khutba = {
 
             name: data.name,
             speaker: data.speaker,
             month: data.month,
-            img: url,
+            link: data.link,
+            // img: url,
             about: data.about,
 
 
@@ -179,16 +180,16 @@ const Khutba = () => {
                                         <input
                                             type="text"
                                             // type="file"
-                                            // name='img'
+                                            name='link'
                                             className="form-control"
                                             id="exampleFormControlInput1"
                                             placeholder="Upload Khutba's Audio"
                                             required
 
-                                            {...register("img", {
+                                            {...register("link", {
                                                 required: {
                                                     value: true,
-                                                    message: 'Image is Required'
+                                                    message: 'Mp3 is Required'
                                                 }
                                             })}
                                         />

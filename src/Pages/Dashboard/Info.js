@@ -1,69 +1,56 @@
-import React from 'react';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import "../../Pages/Dashboard/Info.css"
+import UserDonation from '../UserDonation/UserDonation';
 const Info = () => {
     const [user] = useAuthState(auth);
     console.log(user)
 
+    const [userInfo, setuserInfo] = useState({});
+
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/puser/${user?.email}`)
+            .then((res) => res.json())
+            .then((result) => {
+                setuserInfo(result);
+                console.log(result);
+            });
+    }, [user?.email]);
+
+
+
     return (
-        // <div className="form-control w-full md:w-9/12 mx-auto bg-base-100 p-5">
-        //     <div>
-        //         <label className="label">
-        //             <span className="label-text-alt text-xl">Name</span>
-        //         </label>
-        //         <input
-        //             type="text"
-        //             value={user ? user?.displayName : "type your Name"}
-        //             className="input input-bordered w-full "
-        //             disabled
-        //         />
-        //     </div>
 
-
-        //     <div>
-        //         <label className="label">
-        //             <span className="label-text-alt text-xl">Email</span>
-        //         </label>
-        //         <input
-        //             type="email"
-        //             value={user ? user?.email : "xxxxxxxx@example.com"}
-        //             className="input input-bordered w-full "
-        //             disabled
-        //         />
-        //     </div>
-        //     <div>
-        //         <label className="label">
-        //             <span className="label-text-alt text-xl">Profile Image</span>
-        //         </label>
-        //         <div className="w-full flex flex-col md:w-6/12 mx-auto">
-        //             <img src={user?.photoURL} alt="Profile pic" />
-        //             <button disabled className="btn text-white text-xl">
-        //                 Change Photo
-        //             </button>
-        //         </div>
-        //         <hr className="mt-5 h-0.5 bg-neutral" />
-        //     </div>
-        // </div>
 
         <div class="container profilebody">
             <div class="userbody">
-
-
-
 
                 <div class="row gutters-sm">
                     <div class="col-md-4 mb-3">
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                    <img src={user?.photoURL || "https://bootdey.com/img/Content/avatar/avatar7.png"} alt="Admin" class="rounded-circle" width="150" />
+                                    <img src={userInfo?.profilelink} alt="Admin" class="rounded-circle" width="150" />
+
+                                    {/* <img src={"https://bootdey.com/img/Content/avatar/avatar7.png"} alt="Admin" class="rounded-circle" width="150" /> */}
                                     {/* <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150" /> */}
                                     <div class="mt-3">
                                         <h4> {user ? user?.displayName : "name"}</h4>
 
-                                        <button class="btn btn-primary">Follow</button>
-                                        <button class="btn btn-outline-primary">Message</button>
+                                        <p> {userInfo?.about}</p>
+
+
+                                    </div>
+                                    <div>
+                                        <a href={userInfo?.link} class="service_read_more_btn p-2 m-1 social_media_icon rounded-3 text-black">
+                                            Social link <FontAwesomeIcon icon={faLink} className="icon" />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -96,31 +83,43 @@ const Info = () => {
                                         <h6 class="mb-0">Phone</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        (239) 816-9029
+                                        {userInfo?.phone}
                                     </div>
                                 </div>
                                 <hr />
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Mobile</h6>
+                                        <h6 class="mb-0">Date of Birth</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        (320) 380-4539
+                                        {userInfo?.birth}
                                     </div>
                                 </div>
+                                <hr />
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Gender</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        {userInfo?.gender}
+                                    </div>
+                                </div>
+
+
                                 <hr />
                                 <div class="row">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Address</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        Bay Area, San Francisco, CA
+
+                                        {userInfo?.street} ,  {userInfo?.state} ,  {userInfo?.city} ,  {userInfo?.zip}
                                     </div>
                                 </div>
                                 <hr />
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <a class="btn btn-info " target="__blank" href="#">Edit</a>
+                                        <Link class="btn btn-info " target="__blank" to={`/dashboard/updateprofile/${user?.email}`} > Edit</Link>
                                     </div>
                                 </div>
                             </div>
@@ -133,6 +132,7 @@ const Info = () => {
                 </div>
 
             </div>
+            <UserDonation></UserDonation>
         </div>
     );
 };
