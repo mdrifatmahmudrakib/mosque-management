@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Scolar = () => {
     const [allScolar, setScolar] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/experts/scolar')
+        fetch('https://mosque-management-server.vercel.app/experts/scolar')
             .then(res => res.json())
             .then(data => setScolar(data))
     }, [])

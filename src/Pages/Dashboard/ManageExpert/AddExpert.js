@@ -39,7 +39,7 @@ const AddExpert = () => {
 
                     }
                     // send to your database 
-                    fetch('http://localhost:5000/experts', {
+                    fetch('https://mosque-management-server.vercel.app/experts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -73,7 +73,7 @@ const AddExpert = () => {
 
                         <h2 className="content-title">Add Expert</h2>
                         <div>
-                            <Link to="/allexperts" className="btn btn-primary">
+                            <Link to="/allexperts" className=" btn btn-warning">
                                 All Experts
                             </Link>
                         </div>
@@ -277,7 +277,7 @@ const AddExpert = () => {
                                 </div>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

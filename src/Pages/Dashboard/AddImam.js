@@ -31,7 +31,7 @@ const AddImam = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch('http://localhost:5000/imam', {
+                    fetch('https://mosque-management-server.vercel.app/imam', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -67,7 +67,7 @@ const AddImam = () => {
                         <button className='btn btn-danger text-white'>Go to Campaigns</button>
                         <h2 className="content-title">Add Campaign</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>
@@ -195,7 +195,7 @@ const AddImam = () => {
                                 </div>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

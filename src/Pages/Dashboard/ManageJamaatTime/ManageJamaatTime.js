@@ -9,7 +9,7 @@ const ManageJamaatTime = () => {
     // const [jamaat, setJamaat] = useState([])
 
     // useEffect(() => {
-    //     fetch('http://localhost:5000/jamaattime')
+    //     fetch('https://mosque-management-server.vercel.app/jamaattime')
     //         .then(res => res.json())
     //         .then(data => setJamaat(data))
     // }, [jamaat, setJamaat])
@@ -30,7 +30,7 @@ const ManageJamaatTime = () => {
     //     queryFn: async () => {
     //         try {
     //             const res = await fetch(
-    //                 "http://localhost:5000/jamaattime",
+    //                 "https://mosque-management-server.vercel.app/jamaattime",
     //                 {
     //                     // headers: {
     //                     //   authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -48,7 +48,7 @@ const ManageJamaatTime = () => {
     const [jamaattime, setJamaattime] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/jamaattime')
+        fetch('https://mosque-management-server.vercel.app/jamaattime')
             .then(res => res.json())
             .then(data => setJamaattime(data))
     }, [jamaattime, setJamaattime])

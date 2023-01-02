@@ -42,9 +42,9 @@ const Login = () => {
     if (loading) {
         return <Loading></Loading>
     }
-    // if (user) {
-    //     navigate(from, { replace: true });
-    // }
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
 
     if (error) {
@@ -65,6 +65,7 @@ const Login = () => {
         // else {
         //     toast.error("Your Email is Not verified! Please verify your mail First")
         // }
+
 
 
     }

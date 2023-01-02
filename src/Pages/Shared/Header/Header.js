@@ -6,9 +6,9 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 
 import "./Header.css"
+import useAdmin from '../../../hooks/useAdmin';
 const Header = () => {
     const navigate = useNavigate();
-
 
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
@@ -20,6 +20,7 @@ const Header = () => {
         navigate("/login")
     }
 
+    const [admin] = useAdmin(user);
     return (
 
 
@@ -28,7 +29,7 @@ const Header = () => {
 
             <Container>
                 <Navbar.Brand as={Link} to="/">
-                    <img height={70} src="https://i.ibb.co/hBkDVR6/3-logo.png" alt="" />
+                    <img height={100} src="https://i.ibb.co/WgNvdgG/Mosque-orange-and-red-logo-design-1.png" alt="" />
                 </Navbar.Brand>
                 <Navbar.Toggle className='text-dark' aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse className='text-dark' id="responsive-navbar-nav">
@@ -40,23 +41,29 @@ const Header = () => {
                         <Nav.Link className='text-light' as={Link} to="allexperts">Experts</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="khutba">Khutba</Nav.Link>
 
-
+                        {/* <Nav.Link className='text-light' as={Link} to="dashboard">Dashboard</Nav.Link> */}
                         {
-                            user && <>
+                            admin ? <>
+                                <Nav.Link className='text-light' as={Link} to="dashboard">Dashboard</Nav.Link> </>
+                                :
+                                <>
+
+                                </>
 
 
-                                <Nav.Link className='text-light' as={Link} to="dashboard">Dashboard</Nav.Link>
 
-
-
-                            </>
                         }
                     </Nav>
                     <Nav>
                         {
                             user ?
-                                <button className='text-light btn btn-link text-white text-decoration-none' onClick={handleSignOut}>Log Out</button>
+                                <>
+                                    <Nav.Link className='text-light' as={Link} to="/dashboard/profile">Profile </Nav.Link>
+                                    <Nav.Link className=' btn btn-warning text-black ' onClick={handleSignOut}>Log Out</Nav.Link>
+                                </>
+
                                 :
+
 
                                 <Nav.Link className='text-light' as={Link} to="login">
                                     Login

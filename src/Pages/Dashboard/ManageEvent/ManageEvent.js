@@ -18,7 +18,7 @@ const ManageEvent = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/events?page=${page}&size=${size}`)
+        fetch(`https://mosque-management-server.vercel.app/events?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setEvents(data));
     }, [page, size]);
@@ -26,7 +26,7 @@ const ManageEvent = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/campaignCount')
+        fetch('https://mosque-management-server.vercel.app/campaignCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;
@@ -37,13 +37,13 @@ const ManageEvent = () => {
 
     return (
         <section className="">
-            <div className=''
+            <div className="pb-5"
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                className="pb-5">
+            >
 
-                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Manage Campaign</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Manage Events</h5>
 
                 <div className="text-center pb-3">
                     <img src={onelinee} />
@@ -51,15 +51,15 @@ const ManageEvent = () => {
 
                 <div className="text-center when_things">
                     <p className="poppins donate_home_icon">
-                        <Link to="/">Home</Link> / <Link to="/donate"><span className="charity-text" >Campaigns</span></Link>
+                        <Link to="/">Home</Link> / <Link to="/events"><span className="charity-text" >Events</span></Link>
                     </p>
                 </div>
 
             </div>
 
             <div className='pt-2 d-flex justify-content-end' >
-                <Link to="/dashboard/addcampaign" className="btn btn-primary">
-                    Create Campaign
+                <Link to="/dashboard/addevent" className=" btn btn-warning">
+                    Create Event
                 </Link>
             </div>
             <div className="card mb-4 shadow-sm ">

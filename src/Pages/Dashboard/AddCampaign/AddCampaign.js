@@ -36,7 +36,7 @@ const AddCampaign = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch('http://localhost:5000/campaigns', {
+                    fetch('https://mosque-management-server.vercel.app/campaigns', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -76,7 +76,7 @@ const AddCampaign = () => {
 
                         <h2 className="content-title">Create Campaign</h2>
                         <div>
-                            <Link to="/donate" className="btn btn-primary">
+                            <Link to="/donate" className=" btn btn-warning">
                                 All Campaigns
                             </Link>
                         </div>
@@ -203,7 +203,7 @@ const AddCampaign = () => {
                                 </div>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

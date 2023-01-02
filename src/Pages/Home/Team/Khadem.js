@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Khadem = () => {
     const [allKhadem, setKhadem] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/experts/khadem')
+        fetch('https://mosque-management-server.vercel.app/experts/khadem')
             .then(res => res.json())
             .then(data => setKhadem(data))
     }, [])

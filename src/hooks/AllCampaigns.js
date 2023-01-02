@@ -4,7 +4,7 @@ const AllCampaigns = () => {
     const [causes, setCauses] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/campaigns')
+        fetch('https://mosque-management-server.vercel.app/campaigns')
             .then(res => res.json())
             .then(data => setCauses(data))
     }, [])

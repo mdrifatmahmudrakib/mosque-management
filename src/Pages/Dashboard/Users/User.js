@@ -20,7 +20,7 @@ const User = () => {
 
     const [user, loading] = useAuthState(auth);
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://mosque-management-server.vercel.app/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

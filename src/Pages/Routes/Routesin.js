@@ -54,7 +54,7 @@ const Routesin = () => {
 
 
                 <Route path='/campaign/:id' element={
-                    <HelpDetails></HelpDetails>}></Route>
+                    <RequireAuth><HelpDetails></HelpDetails></RequireAuth>}></Route>
 
                 <Route path='/event/:id' element={<RequireAuth><EventDetails></EventDetails></RequireAuth>
                 }></Route>

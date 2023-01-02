@@ -42,13 +42,17 @@ import ManageExpert from './Pages/Dashboard/ManageExpert/ManageExpert';
 import UpdateExpert from './Pages/Dashboard/ManageExpert/UpdateExpert';
 import AllUserDonation from './Pages/Dashboard/AllUserDonation/AllUserDonation';
 import UpdateProfile from './Pages/Dashboard/UpdateProfile';
+import Testdash from './Pages/Dashboard/MainDashboard';
+import MainDashboard from './Pages/Dashboard/MainDashboard';
 
 function App() {
   return (
 
     <div>
       <Routes>
-        <Route path="/dashboard" element={<Sidebar></Sidebar>}  >
+        <Route path="/dashboard" element={<MainDashboard></MainDashboard>} >
+
+          <Route path="/dashboard" element={<RequireAdmin><Sidebar></Sidebar></RequireAdmin>} />
           <Route path="addcampaign" element={<AddCampaign></AddCampaign>} />
           <Route path="users" element={<RequireAdmin> <User></User> </RequireAdmin>} />
           <Route path="addevent" element={<RequireAdmin><AddEvent></AddEvent></RequireAdmin>} />

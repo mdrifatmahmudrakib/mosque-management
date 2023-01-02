@@ -29,7 +29,7 @@ const Khutba = () => {
         }
         console.log(khutba);
         // send to your database 
-        fetch('http://localhost:5000/allKhutba', {
+        fetch('https://mosque-management-server.vercel.app/allKhutba', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -67,7 +67,7 @@ const Khutba = () => {
                         <h2 className="content-title">Upload Recent Khutba</h2>
                         <div>
 
-                            <Link to="/khutba" className="btn btn-primary">
+                            <Link to="/khutba" className=" btn btn-warning">
                                 All Khutba
                             </Link>
 
@@ -232,7 +232,7 @@ const Khutba = () => {
                                 </div>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Upload Khutba
                             </button>
                         </div>

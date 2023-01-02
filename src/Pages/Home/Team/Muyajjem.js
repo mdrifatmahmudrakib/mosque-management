@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Muyajjem = () => {
     const [allMember, setMember] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/experts/muyajjem')
+        fetch('https://mosque-management-server.vercel.app/experts/muyajjem')
             .then(res => res.json())
             .then(data => setMember(data))
     }, [])
@@ -22,7 +22,7 @@ const Muyajjem = () => {
 
 
                 <div className="text-center">
-                    <h5 className="main_heading">Muyajjem</h5>
+                    <h5 className="main_heading">Our Muyajjem</h5>
                 </div>
 
                 <div className="d-flex justify-content-center mt-4">

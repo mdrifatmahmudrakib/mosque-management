@@ -43,7 +43,7 @@ const SingleEvent = ({ event }) => {
                             </label>
                         </div>
                     </p>
-                    <button className="btn btn-success mb-4" onClick={() => handlenavigateToeventDetails(_id)} >Learn More</button>
+                    <button className="btn btn-warning text-white mb-4" onClick={() => handlenavigateToeventDetails(_id)} >Learn More</button>
                 </div>
             </div>
         </div>

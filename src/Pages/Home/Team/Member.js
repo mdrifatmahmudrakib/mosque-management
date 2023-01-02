@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Member = () => {
     const [allMember, setMember] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/experts/member')
+        fetch('https://mosque-management-server.vercel.app/experts/member')
             .then(res => res.json())
             .then(data => setMember(data))
     }, [])

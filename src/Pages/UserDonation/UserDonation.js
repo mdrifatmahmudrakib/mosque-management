@@ -11,7 +11,7 @@ const UserDonation = () => {
 
     const [donation, setDonation] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/checkout/${user?.email}/true`)
+        fetch(`https://mosque-management-server.vercel.app/checkout/${user?.email}/true`)
             .then(res => res.json())
             .then(data => setDonation(data))
         console.log(setDonation);
@@ -28,15 +28,16 @@ const UserDonation = () => {
                         <thead>
                             <tr className='bg-dark text-white'>
 
-                                <th scope="col">Name</th>
-                                <th scope="col">Phone</th>
-                                <th scope="col">Role</th>
-                                <th scope="col">Update</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">SL</th>
+                                <th scope="col">Campaign Name </th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Transaction Id</th>
+
+                                <th scope="col">Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {donation.map(donate => <UserDonationData key={donate._id} donate={donate}></UserDonationData>)}
+                            {donation.map((donate, i) => <UserDonationData i={i} key={donate._id} donate={donate}></UserDonationData>)}
                         </tbody>
                     </table>
 

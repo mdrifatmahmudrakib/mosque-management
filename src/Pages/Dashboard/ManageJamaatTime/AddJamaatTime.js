@@ -6,7 +6,7 @@ const AddJamaatTime = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/jamaattime`;
+        const url = `https://mosque-management-server.vercel.app/jamaattime`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -31,10 +31,10 @@ const AddJamaatTime = () => {
                         {/* <Link to="" className="btn btn-danger text-white">
         Go to products
       </Link> */}
-                        <button className='btn btn-danger text-white'>Go to Campaigns</button>
+
                         <h2 className="content-title">Add Jammat Time</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>
@@ -176,7 +176,7 @@ const AddJamaatTime = () => {
 
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

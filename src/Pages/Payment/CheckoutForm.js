@@ -13,7 +13,7 @@ const CheckoutForm = ({ datas }) => {
     const { amount, name, telEmail } = datas;
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intent", {
+        fetch("https://mosque-management-server.vercel.app/create-payment-intent", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ amount }),
@@ -109,7 +109,7 @@ const CheckoutForm = ({ datas }) => {
                             },
                         }}
                     />
-                    <button className='btn btn-primary mt-5' type="submit" disabled={!stripe || !clientSecret || transactionId}>
+                    <button className=' btn btn-warning mt-5' type="submit" disabled={!stripe || !clientSecret || transactionId}>
                         Pay
                     </button>
                 </form>

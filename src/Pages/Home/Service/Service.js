@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowRight, faQuran, faMosque, faHands, faHand, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowRight, faQuran, faMosque, faHands, faHand, faHandsHelping, faLightbulb, faStar, faStarAndCrescent } from '@fortawesome/free-solid-svg-icons';
 import "./Service.css"
 {/* <FontAwesomeIcon icon={faLongArrowRight} /></a> */ }
 const Service = () => {
@@ -29,12 +29,12 @@ const Service = () => {
 
                     <div className="col-12 card_shadow pt-5 pb-5 ps-3 pe-3 service_card">
 
-                        <FontAwesomeIcon icon={faMosque} className="service_icon " />
+                        <FontAwesomeIcon icon={faQuran} className="service_icon " />
                         <h5 className="service_heading mt-4">Quran Learning</h5>
                         <p className="service_body mt-3">
                             Learning Quran facility dolor sit amet, consectetur adipisicing elit, sed do eiu
                         </p>
-                        <a href="Read More" className="service_read_more_btn ">Read More
+                        <a href="/khutba" className="service_read_more_btn ">Read More
                             <FontAwesomeIcon icon={faLongArrowRight} className="ml-2" /></a>
 
                     </div>
@@ -46,12 +46,12 @@ const Service = () => {
 
                     <div className="col-12 card_shadow pt-5 pb-5 ps-3 pe-3 service_card">
                         <i className="fal fa-quran service_icon"></i>
-                        <FontAwesomeIcon icon={faQuran} className="service_icon " />
+                        <FontAwesomeIcon icon={faStarAndCrescent} className="service_icon " />
                         <h5 className="service_heading mt-4">Funeral Service</h5>
                         <p className="service_body mt-3">
                             Funeral facility dolor sit amet, consectetur adipisicing elit, sed do eiusmod te
                         </p>
-                        <a href="Read More" className="service_read_more_btn ">Read More
+                        <a href="/events" className="service_read_more_btn ">Read More
                             <FontAwesomeIcon icon={faLongArrowRight} /></a>
                     </div>
 
@@ -67,7 +67,7 @@ const Service = () => {
                         <p className="service_body mt-3">
                             Mosque rebuild facility dol sit amet, consectetur adipisicing elit, sed do eiusm
                         </p>
-                        <a href="Read More" className="service_read_more_btn">Read More
+                        <a href="/donate" className="service_read_more_btn">Read More
                             <FontAwesomeIcon icon={faLongArrowRight} />
                         </a>
                     </div>
@@ -84,7 +84,7 @@ const Service = () => {
                         <p className="service_body mt-3">
                             Poor rehab facility dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         </p>
-                        <a href="Read More" className="service_read_more_btn">Read More
+                        <a href="/donate" className="service_read_more_btn">Read More
                             <FontAwesomeIcon icon={faLongArrowRight} />
 
                         </a>

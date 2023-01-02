@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Imam = () => {
     const [allImam, setImam] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/experts/imam')
+        fetch('https://mosque-management-server.vercel.app/experts/imam')
             .then(res => res.json())
             .then(data => setImam(data))
     }, [])

@@ -8,7 +8,10 @@ import img from '../../1_images/11_audio-tilwat/1_audio-img2.jpg'
 import onelinee from "../../1_images/1_home/1_line.png";
 
 import scolarbanner from "../../1_images/8_donate_page/1_donate_home.jpg"
+import Title from '../../hooks/Title';
 const ListenKhutba = () => {
+
+    Title("Khutbas");
     const {
         data: allKhutba = [],
         isLoading,
@@ -18,7 +21,7 @@ const ListenKhutba = () => {
         queryFn: async () => {
             try {
                 const res = await fetch(
-                    "http://localhost:5000/allKhutba",
+                    "https://mosque-management-server.vercel.app/allKhutba",
                     {
                         headers: {
                             authorization: `Bearer ${localStorage.getItem('accessToken')}`

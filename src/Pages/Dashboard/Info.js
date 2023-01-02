@@ -15,7 +15,7 @@ const Info = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/puser/${user?.email}`)
+        fetch(`https://mosque-management-server.vercel.app/puser/${user?.email}`)
             .then((res) => res.json())
             .then((result) => {
                 setuserInfo(result);
@@ -119,7 +119,7 @@ const Info = () => {
                                 <hr />
                                 <div className="row">
                                     <div className="col-sm-12">
-                                        <Link className="btn btn-info " target="__blank" to={`/dashboard/updateprofile/${user?.email}`} > Edit</Link>
+                                        <Link className="btn btn-warning " target="__blank" to={`/dashboard/updateprofile/${user?.email}`} > Edit</Link>
                                     </div>
                                 </div>
                             </div>

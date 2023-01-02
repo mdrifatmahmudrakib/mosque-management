@@ -18,7 +18,7 @@ const ManageKhutba = () => {
         queryFn: async () => {
             try {
                 const res = await fetch(
-                    "http://localhost:5000/allKhutba",
+                    "https://mosque-management-server.vercel.app/allKhutba",
                     {
                         headers: {
                             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const ManageKhutba = () => {
         console.log(khutba);
 
         fetch(
-            `http://localhost:5000/allKhutba/${khutba._id}`,
+            `https://mosque-management-server.vercel.app/allKhutba/${khutba._id}`,
             {
                 method: "DELETE",
                 headers: {
@@ -84,7 +84,7 @@ const ManageKhutba = () => {
             </div>
 
             <div className='pt-2 d-flex justify-content-end' >
-                <Link to="/dashboard/addkhutba" className="btn btn-primary">
+                <Link to="/dashboard/addkhutba" className=" btn btn-warning">
                     Create Khutba
                 </Link>
             </div>
@@ -115,7 +115,7 @@ const ManageKhutba = () => {
                                     </td>
                                     <td>{khutba.speaker}</td>
                                     <td>{khutba.month}</td>
-                                    <td><button className='btn btn-warning' onClick={() => handleDeleteKhutba(khutba)}>Delete</button></td>
+                                    <td><button className='btn btn-danger' onClick={() => handleDeleteKhutba(khutba)}>Delete</button></td>
 
 
 

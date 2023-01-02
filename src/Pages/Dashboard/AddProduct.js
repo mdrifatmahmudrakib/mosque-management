@@ -20,7 +20,7 @@ const AddProduct = () => {
             link
 
         };
-        fetch("http://localhost:5000/addKhutba", {
+        fetch("https://mosque-management-server.vercel.app/addKhutba", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -52,7 +52,7 @@ const AddProduct = () => {
                         <button className='btn btn-danger text-white'>Go to Products</button>
                         <h2 className="content-title">Add product</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

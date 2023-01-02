@@ -17,11 +17,13 @@ const AllUserDonation = () => {
 
     const [allDonation, setAllDonation] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/checkout/true`)
+        fetch(`https://mosque-management-server.vercel.app/checkout/true`)
             .then(res => res.json())
             .then(data => setAllDonation(data))
         console.log(setAllDonation);
     }, [user?.email])
+
+
     return (
         <div>
             <div className='home_banner pb-5'
@@ -49,10 +51,10 @@ const AllUserDonation = () => {
                     <tr className='bg-dark text-white'>
 
                         <th scope="col">SL</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Campaign Name</th>
+                        <th scope="col">User Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Amount</th>
-                        <th scope="col">PostCode</th>
                         <th scope="col">Date</th>
                     </tr>
                 </thead>

@@ -16,14 +16,14 @@ const ManageCampaign = () => {
     const [size, setSize] = useState(3);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/campaigns?page=${page}&size=${size}`)
+        fetch(`https://mosque-management-server.vercel.app/campaigns?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setCauses(data));
     }, [page, size]);
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/campaignCount')
+        fetch('https://mosque-management-server.vercel.app/campaignCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;
@@ -60,7 +60,7 @@ const ManageCampaign = () => {
 
 
             <div className='pt-2 d-flex justify-content-end' >
-                <Link to="/dashboard/addcampaign" className="btn btn-primary">
+                <Link to="/dashboard/addcampaign" className=" btn btn-warning">
                     Create Campaign
                 </Link>
             </div>

@@ -27,7 +27,7 @@ const ModifyTable = ({ experts, i, handleDeleteExpert }) => {
             <td>{phone}</td>
             <td>{role}</td>
             <td><button onClick={() => handlenavigateToupdate(experts._id)} className='btn btn-success'>Update</button></td>
-            <td><button className='btn btn-warning' onClick={() => handleDeleteExpert(experts)}>Delete</button></td>
+            <td><button className='btn btn-danger' onClick={() => handleDeleteExpert(experts)}>Delete</button></td>
 
 
 

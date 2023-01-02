@@ -7,7 +7,7 @@ const UserRow = ({ user, refetch, i }) => {
     const [users, setUsers] = useState([]);
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://mosque-management-server.vercel.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -34,7 +34,7 @@ const UserRow = ({ user, refetch, i }) => {
         // const proceed = window.confirm('Are you Sure?');
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
-            const url = `http://localhost:5000/user/${email}`;
+            const url = `https://mosque-management-server.vercel.app/user/${email}`;
             fetch(url, {
                 method: 'DELETE'
             })

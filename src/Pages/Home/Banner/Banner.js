@@ -3,6 +3,7 @@ import bsml from "../../../1_images/1_home/2_bsml-txt.png"
 import oneline from "../../../1_images/1_home/1_line.png"
 import banner from "../../../1_images/1_home/1_background-image.jpg";
 import "./Banner.css"
+import { Link } from 'react-router-dom';
 const Banner = () => {
     return (
 
@@ -35,11 +36,11 @@ const Banner = () => {
 
 
                     <div className="text-center quran_online_container mt-5">
-                        <a className="quran_online ps-5 pe-5 pt-3 pb-3"
+                        <Link to="/khutba" className="quran_online ps-5 pe-5 pt-3 pb-3"
 
-                        >Quran Online</a>
+                        >Quran Online</Link>
 
-                        {/* style="font-size: 15px; font-weight:400;" */}
+
                     </div>
 
 

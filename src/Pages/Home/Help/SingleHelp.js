@@ -30,7 +30,7 @@ const SingleHelp = ({ cause }) => {
 
                 </div>
                 <div>
-                    <button className="btn btn-success mb-4" onClick={() => handlenavigateToHelpDetails(_id)}>Donate</button>
+                    <button className="btn btn-warning text-white mb-4" onClick={() => handlenavigateToHelpDetails(_id)}>Donate</button>
                 </div>
             </div>
         </div>

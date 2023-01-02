@@ -9,7 +9,7 @@ const UpdateJamaatTime = () => {
     // const { id } = useParams();
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/jamaattime/${id}`)
+    //     fetch(`https://mosque-management-server.vercel.app/jamaattime/${id}`)
     //         .then(res => res.json())
     //         .then(result => {
     //             setUpdateItem(result);
@@ -25,7 +25,7 @@ const UpdateJamaatTime = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/jamaattime/${id}`)
+        fetch(`https://mosque-management-server.vercel.app/jamaattime/${id}`)
             .then(res => res.json())
             .then(result => {
                 setUpdateItem(result);
@@ -48,7 +48,7 @@ const UpdateJamaatTime = () => {
             fajr, zuhr, asr, isha, magrib,
 
         };
-        fetch(`http://localhost:5000/jamaattime/${id}`, {
+        fetch(`https://mosque-management-server.vercel.app/jamaattime/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -64,41 +64,6 @@ const UpdateJamaatTime = () => {
     };
 
 
-
-
-
-    // const handleUpdateJamaat = (event) => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const fajr = form.fajr.value;
-    //     const zuhr = form.zuhr.value;
-    //     const asr = form.asr.value;
-    //     const magrib = form.magrib.value;
-    //     const isha = form.isha.value;
-
-
-    //     const UpdateJamaat = {
-    //         fajr,
-    //         zuhr,
-    //         asr,
-    //         magrib,
-    //         isha
-
-    //     };
-    //     fetch(`http://localhost:5000/jamaattime/${id}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(UpdateJamaat)
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             console.log(result);
-    //             // reset();
-    //             toast.success("Jamaat Time Successfully");
-    //         })
-    // };
 
 
 
@@ -121,13 +86,9 @@ const UpdateJamaatTime = () => {
                         {/* <Link to="" className="btn btn-danger text-white">
     Go to products
   </Link> */}
-                        <button className='btn btn-danger text-white'>Go to Campaigns</button>
+
                         <h2 className="content-title">Add Jammat Time</h2>
-                        <div>
-                            <button type="submit" className="btn btn-primary">
-                                Publish now
-                            </button>
-                        </div>
+
                     </div>
 
                     <div className="row mb-4  ">
@@ -236,7 +197,7 @@ const UpdateJamaatTime = () => {
 
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Update now
                             </button>
                         </div>

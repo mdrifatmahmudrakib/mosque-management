@@ -29,7 +29,7 @@ const ManageSingleCampaign = ({ cause, refetch }) => {
         console.log(id);
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
-            const url = `http://localhost:5000/campaign/${id}`;
+            const url = `https://mosque-management-server.vercel.app/campaign/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -40,7 +40,7 @@ const ManageSingleCampaign = ({ cause, refetch }) => {
 
                     const remaining = causes.filter(cause => cause._id !== id)
                     setCauses(remaining);
-                    toast.success('Imam added successfully')
+                    toast.success('Campaign delete successfully')
                     // refetch();
 
                 })
@@ -79,8 +79,8 @@ const ManageSingleCampaign = ({ cause, refetch }) => {
 
                                 </div>
 
-                                <button type="button" className="btn btn-success m-2  " onClick={() => handlenavigateToHelpDetails(_id)}><RemoveRedEyeIcon /></button>
-                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" className="btn btn-primary m-2 "> <CreateIcon /></button>
+                                <button type="button" className="btn btn-primary m-2  " onClick={() => handlenavigateToHelpDetails(_id)}><RemoveRedEyeIcon /></button>
+                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" className=" btn btn-success m-2 "> <CreateIcon /></button>
                                 <button type="button" className="btn btn-danger m-2" onClick={() => handleDelete(cause._id)}><DeleteOutlineIcon /></button>
 
                             </div>

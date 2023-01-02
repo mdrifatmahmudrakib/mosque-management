@@ -10,7 +10,7 @@ const UpdateEvent = () => {
     // const { id } = useParams();
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/event/${id}`)
+    //     fetch(`https://mosque-management-server.vercel.app/event/${id}`)
     //         .then(res => res.json())
     //         .then(result => {
     //             setUpdateItem(result);
@@ -28,7 +28,7 @@ const UpdateEvent = () => {
     //         date: data.date,
     //         time: data.time
     //     }
-    //     fetch(`http://localhost:5000/event/${id}`, {
+    //     fetch(`https://mosque-management-server.vercel.app/event/${id}`, {
     //         method: "PUT",
     //         headers: {
     //             'content-type': 'application/json'
@@ -51,7 +51,7 @@ const UpdateEvent = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/event/${id}`)
+        fetch(`https://mosque-management-server.vercel.app/event/${id}`)
             .then(res => res.json())
             .then(result => {
                 setUpdateItem(result);
@@ -88,7 +88,7 @@ const UpdateEvent = () => {
 
 
         };
-        fetch(`http://localhost:5000/event/${id}`, {
+        fetch(`https://mosque-management-server.vercel.app/event/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -116,7 +116,7 @@ const UpdateEvent = () => {
                         <button className='btn btn-danger text-white'>Go to Event</button>
                         <h2 className="content-title">Add Event</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>
@@ -266,7 +266,7 @@ const UpdateEvent = () => {
                                 </div>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

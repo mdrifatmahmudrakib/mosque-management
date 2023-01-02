@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const SecretaryGeneral = () => {
     const [allSecretary, setSecretary] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/experts/secretaryGeneral')
+        fetch('https://mosque-management-server.vercel.app/experts/secretaryGeneral')
             .then(res => res.json())
             .then(data => setSecretary(data))
     }, [])

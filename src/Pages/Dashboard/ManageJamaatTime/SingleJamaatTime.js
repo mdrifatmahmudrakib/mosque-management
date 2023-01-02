@@ -135,7 +135,7 @@ const SingleJamaatTime = ({ jamaat }) => {
                         </div>
 
                     </div>
-                    <button onClick={() => handlenavigateToupdateDetails(_id)} className="btn btn-primary">
+                    <button onClick={() => handlenavigateToupdateDetails(_id)} className=" btn btn-warning">
                         Update Jamaat Time
                     </button>
                 </div>

@@ -18,7 +18,7 @@ const ManageExpert = () => {
         queryFn: async () => {
             try {
                 const res = await fetch(
-                    "http://localhost:5000/experts",
+                    "https://mosque-management-server.vercel.app/experts",
                     {
                         // headers: {
                         //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const ManageExpert = () => {
         console.log(expert);
 
         fetch(
-            `http://localhost:5000/experts/${expert._id}`,
+            `https://mosque-management-server.vercel.app/experts/${expert._id}`,
             {
                 method: "DELETE",
                 // headers: {
@@ -81,7 +81,7 @@ const ManageExpert = () => {
 
 
             <div className='pt-2 d-flex justify-content-end' >
-                <Link to="/dashboard/addscolar" className="btn btn-primary">
+                <Link to="/dashboard/addscolar" className=" btn btn-warning">
                     Add Expert
                 </Link>
             </div>
@@ -95,7 +95,7 @@ const ManageExpert = () => {
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone</th>
                                 <th scope="col">Role</th>
-                                <th scope="col">Update</th>
+                                <th scope="col">Modify</th>
                                 <th scope="col">Handle</th>
                             </tr>
                         </thead>

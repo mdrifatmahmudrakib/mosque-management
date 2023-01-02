@@ -6,8 +6,9 @@ import banner from "../../../1_images/istockphoto-1252924066-170667a.jpg";
 import "./Help.css"
 import SingleHelp from './SingleHelp';
 import AllCampaigns from '../../../hooks/AllCampaigns';
+import Title from '../../../hooks/Title';
 const Help = () => {
-
+    Title("Campaigns");
     const [causes] = AllCampaigns()
 
 

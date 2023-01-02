@@ -16,13 +16,13 @@ const AllUserDonationTable = ({ donation, i }) => {
             </td>
 
             <td>
-                <p>{donation.name}</p>
+                <p>{donation.campaignname}</p>
 
 
             </td>
+            <td>{donation.name}</td>
             <td>{donation.telEmail}</td>
             <td>{donation.amount}</td>
-            <td>{donation.postCode}</td>
             <td>{donation.paidAt}</td>
 
 

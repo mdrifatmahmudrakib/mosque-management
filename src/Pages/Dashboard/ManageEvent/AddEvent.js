@@ -40,7 +40,7 @@ const AddEvent = () => {
 
                     }
                     // send to your database 
-                    fetch('http://localhost:5000/events', {
+                    fetch('https://mosque-management-server.vercel.app/events', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
@@ -82,7 +82,7 @@ const AddEvent = () => {
 
                         <h2 className="content-title">Create Event</h2>
                         <div>
-                            <Link to="/events" className="btn btn-primary">
+                            <Link to="/events" className=" btn btn-warning">
                                 All Events
                             </Link>
                         </div>
@@ -272,7 +272,7 @@ const AddEvent = () => {
                                 </div>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

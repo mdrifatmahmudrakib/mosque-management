@@ -88,7 +88,7 @@ const UpdateSingleProfile = ({ expert }) => {
                             <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div className="text-right p-2">
 
-                                    <button type="button" id="submit" name="submit" className="btn btn-primary">Update</button>
+                                    <button type="button" id="submit" name="submit" className=" btn btn-warning">Update</button>
                                 </div>
                             </div>
                         </div>

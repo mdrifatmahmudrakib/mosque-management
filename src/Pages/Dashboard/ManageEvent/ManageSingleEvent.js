@@ -25,7 +25,7 @@ const ManageSingleEvent = ({ event }) => {
         console.log(id);
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
-            const url = `http://localhost:5000/event/${id}`;
+            const url = `https://mosque-management-server.vercel.app/event/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -74,8 +74,8 @@ const ManageSingleEvent = ({ event }) => {
                                 </div>
 
 
-                                <button type="button" className="btn btn-success m-2  " onClick={() => handlenavigateToEventDetails(_id)}><RemoveRedEyeIcon /></button>
-                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" className="btn btn-primary m-2 "> <CreateIcon /></button>
+                                <button type="button" className="btn btn-primary m-2  " onClick={() => handlenavigateToEventDetails(_id)}><RemoveRedEyeIcon /></button>
+                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" className=" btn btn-success m-2 "> <CreateIcon /></button>
                                 <button type="button" className="btn btn-danger m-2" onClick={() => handleDelete(event._id)}><DeleteOutlineIcon /></button>
                             </div>
 

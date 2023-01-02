@@ -44,7 +44,7 @@ const PrayerTime = () => {
     const [jamaattime, setJamaattime] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/jamaattime')
+        fetch('https://mosque-management-server.vercel.app/jamaattime')
             .then(res => res.json())
             .then(data => setJamaattime(data))
     }, [jamaattime, setJamaattime])
@@ -171,9 +171,8 @@ const PrayerTime = () => {
             </div>
 
             <div className="bg-light ps-5 pe-5 pt-4 pb-3">
-                <p className="text-center event_location">Location: London, UK</p>
+                <p className="text-center event_location">Location: Uttara , Dhaka </p>
                 <p className="text-center event_regular_date">{moment(date).format("MMMM DD, YYYY")}</p>
-                <p className="text-center evente_arabic_date">(21th Shawwal, 1443)</p>
                 <p className="text-center evente_arabic_date"> {moment().format('iYYYY/iM/iD')}</p>
 
 

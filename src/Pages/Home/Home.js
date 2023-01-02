@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import Title from '../../hooks/Title';
 import Donate from '../Donate/Donate';
 import Scolar from '../Scolar/TeamScolar';
 import Banner from './Banner/Banner';
@@ -17,13 +18,14 @@ import Team from './Team/Team';
 import Tetimonial from './Tetimonial/Tetimonial';
 
 const Home = () => {
-    const [user, loading] = useAuthState(auth);
-    console.log(user);
+
+
+    Title("Home");
     return (
         <div>
             <Banner></Banner>
             <History></History>
-            <Feature></Feature>
+            {/* <Feature></Feature> */}
             <Service></Service>
             <HomeHelp></HomeHelp>
             <Support></Support>

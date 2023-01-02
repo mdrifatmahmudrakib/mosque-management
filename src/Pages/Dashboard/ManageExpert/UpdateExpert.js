@@ -8,7 +8,7 @@ const UpdateExpert = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/expertSingle/${id}`)
+        fetch(`https://mosque-management-server.vercel.app/expertSingle/${id}`)
             .then((res) => res.json())
             .then((result) => {
                 setUpdateExpert(result);
@@ -40,7 +40,7 @@ const UpdateExpert = () => {
             instagram,
             phone,
         };
-        fetch(`http://localhost:5000/experts/${id}`, {
+        fetch(`https://mosque-management-server.vercel.app/experts/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -66,7 +66,7 @@ const UpdateExpert = () => {
                         <button className="btn btn-danger text-white">Go to Scolar</button>
                         <h2 className="content-title">Add Scolar</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>
@@ -238,7 +238,7 @@ const UpdateExpert = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

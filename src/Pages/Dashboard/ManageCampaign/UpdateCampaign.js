@@ -13,7 +13,7 @@ const UpdateCampaign = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/campaign/${id}`)
+        fetch(`https://mosque-management-server.vercel.app/campaign/${id}`)
             .then(res => res.json())
             .then(result => {
                 setUpdateItem(result);
@@ -41,7 +41,7 @@ const UpdateCampaign = () => {
             // Goal
 
         };
-        fetch(`http://localhost:5000/campaign/${id}`, {
+        fetch(`https://mosque-management-server.vercel.app/campaign/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -73,7 +73,7 @@ const UpdateCampaign = () => {
                         <button className='btn btn-danger text-white'>Go to Campaigns</button>
                         <h2 className="content-title">Add Campaign</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>
@@ -163,7 +163,7 @@ const UpdateCampaign = () => {
                                 </div>
 
                             </div>
-                            <button type="submit" className="btn btn-primary">
+                            <button type="submit" className=" btn btn-warning">
                                 Publish now
                             </button>
                         </div>

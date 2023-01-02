@@ -10,11 +10,11 @@ const Donate = () => {
         <div >
 
 
-            <div className='home_banner'
+            <div className='home_banner pb-5'
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                className="pb-5">
+            >
 
                 <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Charity Campaigns</h5>
 

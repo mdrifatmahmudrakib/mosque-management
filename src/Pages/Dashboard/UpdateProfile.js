@@ -19,7 +19,7 @@ const UpdateProfile = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/puser/${user?.email}`)
+        fetch(`https://mosque-management-server.vercel.app/puser/${user?.email}`)
             .then((res) => res.json())
             .then((result) => {
                 setUpdateExpert(result);
@@ -62,7 +62,7 @@ const UpdateProfile = () => {
 
 
         };
-        fetch(`http://localhost:5000/puser/${user?.email}`, {
+        fetch(`https://mosque-management-server.vercel.app/puser/${user?.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -249,7 +249,7 @@ const UpdateProfile = () => {
                                     <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div className="text-right p-2">
 
-                                            <button className="btn btn-primary">Update</button>
+                                            <button className=" btn btn-warning">Update</button>
                                         </div>
                                     </div>
                                 </div>

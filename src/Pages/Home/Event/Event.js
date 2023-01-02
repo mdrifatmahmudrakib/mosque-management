@@ -8,11 +8,12 @@ import SingleEvent from './SingleEvent';
 import onelinee from "../../../1_images/1_home/1_line.png"
 
 import donatebanner from "../../../1_images/8_donate_page/1_donate_home.jpg";
+import Title from '../../../hooks/Title';
 
 const Event = () => {
 
     const [events] = AllEvents()
-
+    Title("Events");
     return (
 
 
@@ -22,11 +23,11 @@ const Event = () => {
         <div className='ml-4 mr-4'>
 
 
-            <div className='home_banner'
+            <div className='home_banner pb-5'
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                className="pb-5">
+            >
 
                 <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Upcoming Events</h5>
 

@@ -1,6 +1,6 @@
 
 
-import { faAssistiveListeningSystems, faBars, faChartBar, faHome, faSignOut, faTachometer, faUser, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faAssistiveListeningSystems, faBars, faCalendarDay, faChartBar, faDonate, faHandHoldingDollar, faHome, faMusic, faPeopleGroup, faPray, faSignOut, faTachometer, faUser, faUsersCog, faXmark } from '@fortawesome/free-solid-svg-icons';
 import "./Sidebar.css"
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import useAdmin from "../../../hooks/useAdmin";
@@ -9,7 +9,9 @@ import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import DashNavbar from "../DashNavbar/DashNavbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
+import Chart from './Chart';
 
 const Sidebar = () => {
 
@@ -38,173 +40,125 @@ const Sidebar = () => {
 
 
 
+    // const data = [
+    //     {
+    //         "month": "Mar",
+    //         "investment": 100000,
+    //         "sell": 241,
+    //         "revenue": 10401
+    //     },
+    //     {
+    //         "month": "Apr",
+    //         "investment": 200000,
+    //         "sell": 423,
+    //         "revenue": 24500
+    //     },
+    //     {
+    //         "month": "May",
+    //         "investment": 500000,
+    //         "sell": 726,
+    //         "revenue": 67010
+    //     },
+    //     {
+    //         "month": "Jun",
+    //         "investment": 500000,
+    //         "sell": 529,
+    //         "revenue": 40405
+    //     },
+    //     {
+    //         "month": "Jul",
+    //         "investment": 600000,
+    //         "sell": 601,
+    //         "revenue": 50900
+    //     },
+    //     {
+    //         "month": "Aug",
+    //         "investment": 700000,
+    //         "sell": 670,
+    //         "revenue": 61000
+    //     }
+    // ]
 
+
+    // const [user] = useAuthState(auth)
+    // console.log(user)
+
+    const [allDonation, setAllDonation] = useState([]);
+    useEffect(() => {
+        fetch(`https://mosque-management-server.vercel.app/checkout/true`)
+            .then(res => res.json())
+            .then(data => setAllDonation(data))
+        console.log(allDonation);
+    }, [user?.email])
+
+    const data = allDonation;
     return (
 
+        // <>
+        //     {allDonation.map(donation => <Chart
+        //         donation={donation}
+        //         key={donation._id}
+        //     >
 
-        <main className={show ? 'space-toggle' : null}>
-            <header className={`header ${show ? 'space-toggle' : null}`}>
-                <div className='header-toggle' onClick={() => setShow(!show)}>
-                    {/* <i className={`fas fa-bars ${show ? 'fa-solid fa-xmark' : null}`}></i> */}
-                    <FontAwesomeIcon icon={faBars}  ></FontAwesomeIcon>
+        //     </Chart>
+
+        //     )}
+
+        // </>
+
+
+        <main
+            className={show ? 'space-toggle' : null}>
+
+
+            <div className='flex m-20'>
+                <div className='mt-5'>
+                    <h1 className='text-2xl font-bold m-4 text-orange-500'>Campaign Wise Donation</h1>
+
+                    <LineChart
+                        width={500}
+                        height={300}
+                        data={data}
+
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="campaignname" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Line type="monotone" dataKey="amount" stroke="#8884d8" activeDot={{ r: 8 }} />
+                        <Line type="monotone" dataKey="revenue" stroke="#82ca9d" />
+                    </LineChart>
 
                 </div>
-            </header>
-
-            <aside className={`sidebar ${show ? 'show' : null}`}>
-                <nav className='nav test'>
-                    <div className="test">
-                        <Link to='/' className='nav-logo'>
-                            {/* <i className={`fas fa-home-alt nav-logo-icon`}></i> */}
-                            <FontAwesomeIcon className='nav-logo-icon' icon={faHome} />
-                            <span className='nav-logo-name'>Homepage</span>
-                        </Link>
-
-                        <div className='nav-list'>
-
-                            {admin && <>
-                                <Link to='/dashboard' className='nav-link active'>
-                                    <FontAwesomeIcon icon={faTachometer} />
-                                    {/* <i className='fas fa-tachometer-alt nav-link-icon'></i> */}
-                                    <span className='nav-link-name'>Dashboard</span>
-                                </Link>
-
-                                <Link to="/dashboard/alluserdonation" className="nav-link">
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className="nav-link-name">AllUserDonation</span>
-                                </Link>
-
-                                <Link to="/dashboard/users" className='nav-link' >
-                                    <FontAwesomeIcon icon={faUser} />
-                                    <span className='nav-link-name'>Manage Users</span>
-                                </Link>
-
-                                {/* <Link to="/dashboard/addjamaattime" className='nav-link' >
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>Add Jamaat Time</span>
-                                </Link> */}
-                                <Link to="/dashboard/managejamaat" className='nav-link' >
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>Update Jamaat Time</span>
-                                </Link>
-
-
-
-
-
-
-
-                                <Link to="/dashboard/managekhutba" className='nav-link' >
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>Manage Khutba</span>
-                                </Link>
-
-
-
-
-                                <Link to="/dashboard/manageexperts" className="nav-link">
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className="nav-link-name">Manage Expert</span>
-                                </Link>
-
-
-                                <Link to="managecampaign" className='nav-link' >
-
-                                    <FontAwesomeIcon icon={faChartBar} />
-
-                                    <span className='nav-link-name'>Manage Campaign</span>
-
-
-                                </Link>
-
-                                <Link to="manageevent" className='nav-link' >
-
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>Manage Event</span>
-
-                                </Link>
-
-
-                            </>
-                            }
-                            <Link to="profile" className='nav-link' >
-
-                                <FontAwesomeIcon icon={faChartBar} />
-                                <span className='nav-link-name'>Profile</span>
-
-                            </Link>
-
-                            {
-                                user ?
-                                    // <Link className='text-light btn btn-link text-white text-decoration-none' onClick={handleSignOut}> <FontAwesomeIcon className='nav-logo-icon mr-2 ' icon={faSignOut} />Log Out</Link>
-
-                                    <Link className='nav-link' onClick={handleSignOut}>
-
-                                        <FontAwesomeIcon className='nav-logo-icon ' icon={faSignOut} />
-                                        <h5 className='nav-link-name fw-bold  '>Log Out</h5>
-
-                                    </Link>
-
-                                    :
-
-                                    // <Link className='text-light' as={Link} to="/login">
-                                    //     Login
-                                    // </Link>
-                                    navigate("/login")
-
-
-
-
-
-
-
-                            }
-
-
-
-                            {/* <Link className='nav-link bg-warning' onClick={handleSignOut}>
-                                <FontAwesomeIcon className='nav-logo-icon mr-2 ' onClick={handleSignOut} icon={faSignOut} />
-
-                                <span className='nav-link-name text-black' onClick={handleSignOut}>Sign Out</span>
-
-                            </Link> */}
-
-
-
-
-                            {/* <FontAwesomeIcon icon={faSignOut} onClick={handleSignOut} />
-                            {
-
-                                <span onClick={handleSignOut}>Logout</span>
-
-                            } */}
-
-
-                            {/* 
-                             <Link to='/' className='nav-logo '>
-                                
-                                <button className='btn btn-warning'>  <FontAwesomeIcon className='nav-logo-icon mr-2 ' icon={faSignOut} />Sign Out </button>
-                            </Link>  */}
-
-
-                        </div>
+                <div className='mt-5'>
+                    <h1 className='text-2xl font-bold m-4 text-orange-500'>Campaign Wise Donation</h1>
+                    <div className="m-8">
+                        <BarChart className="mx-auto" width={730} height={250} data={data}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="campaignname" />
+                            <YAxis />
+                            <Tooltip />
+                            <Legend />
+                            <Bar dataKey="amount" fill="#8884d8" />
+                            <Bar dataKey="revenue" fill="#82ca9d" />
+                        </BarChart>
                     </div>
-
-                    {/* <Link to='/logout' className='nav-link'>
-                        <i className='fas fa-sign-out nav-link-icon'></i>
-                        <span className='nav-link-name'>Logout</span>
-                    </Link> */}
-                </nav>
-            </aside>
-
-            <div className='dashboard mt-4 pt-4'>
-
-                <div className="dashboardContainer">
-                    <DashNavbar></DashNavbar>
-                    <Outlet></Outlet>
                 </div>
+
+
             </div>
+
+
+
         </main>
+
     );
 };
 
