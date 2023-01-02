@@ -24,21 +24,21 @@ const AllUserDonation = () => {
     }, [user?.email])
     return (
         <div>
-            <div className='home_banner'
+            <div className='home_banner pb-5'
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                class="pb-5">
+            >
 
-                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">AllUserDonation</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">All Donations</h5>
 
-                <div class="text-center pb-3">
+                <div className="text-center pb-3">
                     <img src={onelinee} />
                 </div>
 
-                <div class="text-center when_things">
-                    <p class="poppins donate_home_icon">
-                        <Link to='/'>Home</Link> / <span class="charity-text" >AllUserDonation</span>
+                <div className="text-center when_things">
+                    <p className="poppins donate_home_icon">
+                        <Link to='/'>Home</Link>
                     </p>
                 </div>
 

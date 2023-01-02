@@ -20,22 +20,34 @@ const UserDonation = () => {
     return (
         <div>
 
-            <table className=' container mx-auto table table-striped shadow m-4 p-4'>
-                <thead>
-                    <tr className='bg-dark text-white'>
+            {
+                donation.length < 1 ? (<> </>) : (
 
-                        <th scope="col">Name</th>
-                        <th scope="col">Phone</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Update</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {donation.map(donate => <UserDonationData key={donate._id} donate={donate}></UserDonationData>)}
-                </tbody>
-            </table>
 
+                    <table className=' container mx-auto table table-striped shadow m-4 p-4'>
+                        <thead>
+                            <tr className='bg-dark text-white'>
+
+                                <th scope="col">Name</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Update</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {donation.map(donate => <UserDonationData key={donate._id} donate={donate}></UserDonationData>)}
+                        </tbody>
+                    </table>
+
+                )
+
+
+
+
+
+
+            }
 
         </div>
     );

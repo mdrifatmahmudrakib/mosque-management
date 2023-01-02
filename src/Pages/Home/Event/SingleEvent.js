@@ -11,9 +11,9 @@ const SingleEvent = ({ event }) => {
         navigate(`/event/${id}`)
     }
     return (
-        <div class="col-12 col-md-6 col-lg-6 col-xl-6 justify-content-center ">
-            <div class="div-card-bg"  >
-                <div class="card_banner card-img-top div-banner-bg"
+        <div className="col-12 col-md-6 col-lg-6 col-xl-6 justify-content-center ">
+            <div className="div-card-bg"  >
+                <div className="card_banner card-img-top div-banner-bg"
                     style={{
                         background: `url(${img}) `
                     }}
@@ -21,22 +21,22 @@ const SingleEvent = ({ event }) => {
 
                 </div>
 
-                <div class="card-body p-4">
-                    <a href="#" class="help_card_title ps-1 pe-1 scholar-meet">
+                <div className="card-body p-4">
+                    <a href="#" className="help_card_title ps-1 pe-1 scholar-meet">
 
                         {name}</a>
-                    <p class="help_card_text ps-2 pe-2">
+                    <p className="help_card_text ps-2 pe-2">
                         {short_description.slice(0, 70)}
 
 
-                        <div class="row ps-2 pe-3 pt-3 scholar-meet-time"  >
-                            <label class="col-6 text-start" style={{ color: "#D1AD3C" }}>
+                        <div className="row ps-2 pe-3 pt-3 scholar-meet-time"  >
+                            <label className="col-6 text-start" style={{ color: "#D1AD3C" }}>
                                 <FontAwesomeIcon icon={faCalendar} />
                                 <span style={{ color: "black" }}>
                                     {date}
                                 </span>
                             </label>
-                            <label class="col-6 text-start" style={{ color: "#D1AD3C" }}>
+                            <label className="col-6 text-start" style={{ color: "#D1AD3C" }}>
 
                                 <FontAwesomeIcon icon={faClock} className="pe-1" />
                                 <span style={{ color: "black" }}>{time}</span>

@@ -83,7 +83,6 @@ function App() {
 
           <Route path='updatecampaign/:id' element={<RequireAdmin><UpdateCampaign></UpdateCampaign></RequireAdmin>}></Route>
 
-          {/* <Route path='updatecampaign/:id' element={<RequireAdmin><TestUpdate></TestUpdate></RequireAdmin>}></Route> */}
 
 
           <Route path='updateevent/:id' element={<RequireAdmin><UpdateEvent></UpdateEvent></RequireAdmin>}></Route>

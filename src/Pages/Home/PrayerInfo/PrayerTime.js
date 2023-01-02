@@ -54,15 +54,15 @@ const PrayerTime = () => {
 
 
     return (
-        <div class="col-12 col-md-12 col-lg-3 col-xl-3 mt-5 mt-md-5 mt-lg-0 mt-xl-0 ">
+        <div className="col-12 col-md-12 col-lg-3 col-xl-3 mt-5 mt-md-5 mt-lg-0 mt-xl-0 ">
             <div>
-                <div class="">
-                    <h5 class="main_heading"><span style={{ color: "#2A486C" }}>Prayer</span> Waqt and Jamaat</h5>
+                <div className="">
+                    <h5 className="main_heading"><span style={{ color: "#2A486C" }}>Prayer</span> Waqt and Jamaat</h5>
                     <p>Prayer times for {moment(date).format("MMMM DD, YYYY")}</p>
                 </div>
 
-                <div class="mt-4">
-                    <div class="heading_line card-heading-div"  ></div>
+                <div className="mt-4">
+                    <div className="heading_line card-heading-div"  ></div>
                 </div>
             </div>
 
@@ -72,9 +72,9 @@ const PrayerTime = () => {
                     jamaattime.map(jamaat =>
 
 
-                        <table key={jamaat._id} class="table table-hover mt-5 justify-content-center">
+                        <table key={jamaat._id} className="table table-hover mt-5 justify-content-center">
                             <thead>
-                                <tr class="prayer_time_table_heading">
+                                <tr className="prayer_time_table_heading">
                                     <th scope="col">Salat</th>
                                     <th scope="col">Waqt Start</th>
                                     <th scope="col" >Jamaat Time</th>
@@ -82,10 +82,10 @@ const PrayerTime = () => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="salat_color">Fajr</td>
-                                    {/* <td class="slat_time">12:27 AM</td> */}
-                                    <td class="slat_time">{moment(prayerTimes.fajr).format(" h:mm A")}</td>
-                                    {/* <td class="slat_time">{jamaat.fajr}</td> */}
+                                    <td className="salat_color">Fajr</td>
+                                    {/* <td className="slat_time">12:27 AM</td> */}
+                                    <td className="slat_time">{moment(prayerTimes.fajr).format(" h:mm A")}</td>
+                                    {/* <td className="slat_time">{jamaat.fajr}</td> */}
 
 
                                     <input
@@ -99,9 +99,9 @@ const PrayerTime = () => {
 
                                 </tr>
                                 <tr>
-                                    <td class="salat_color">Zuhr</td>
-                                    <td class="slat_time">{moment(prayerTimes.dhuhr).format(" h:mm A")}</td>
-                                    {/* <td class="slat_time">{jamaat.zuhr}</td> */}
+                                    <td className="salat_color">Zuhr</td>
+                                    <td className="slat_time">{moment(prayerTimes.dhuhr).format(" h:mm A")}</td>
+                                    {/* <td className="slat_time">{jamaat.zuhr}</td> */}
                                     <input
                                         className='text-2 border border-0 slat_time'
                                         type="time"
@@ -112,9 +112,9 @@ const PrayerTime = () => {
 
                                 </tr>
                                 <tr>
-                                    <td class="salat_color">Asr</td>
-                                    <td class="slat_time">{moment(prayerTimes.asr).format(" h:mm A")}</td>
-                                    {/* <td class="slat_time">{jamaat.asr}</td> */}
+                                    <td className="salat_color">Asr</td>
+                                    <td className="slat_time">{moment(prayerTimes.asr).format(" h:mm A")}</td>
+                                    {/* <td className="slat_time">{jamaat.asr}</td> */}
 
                                     <input
                                         className='text-2 border border-0 slat_time'
@@ -127,11 +127,11 @@ const PrayerTime = () => {
 
                                 </tr>
                                 <tr>
-                                    <td class="salat_color">Magrib</td>
-                                    <td class="slat_time">{moment(prayerTimes.maghrib).format(" h:mm A")}</td>
-                                    {/* <td class="text-end slat_time">12:27 AM</td> */}
+                                    <td className="salat_color">Magrib</td>
+                                    <td className="slat_time">{moment(prayerTimes.maghrib).format(" h:mm A")}</td>
+                                    {/* <td className="text-end slat_time">12:27 AM</td> */}
 
-                                    {/* <td class="slat_time">{jamaat.magrib}</td> */}
+                                    {/* <td className="slat_time">{jamaat.magrib}</td> */}
                                     <input
                                         className='text-2 border border-0 slat_time'
                                         type="time"
@@ -142,10 +142,10 @@ const PrayerTime = () => {
 
                                 </tr>
                                 <tr>
-                                    <td class="salat_color">Isha</td>
-                                    <td class="slat_time">{moment(prayerTimes.isha).format(" h:mm A")}</td>
-                                    {/* <td class="text-end slat_time">12:27 AM</td> */}
-                                    {/* <td class="slat_time" type="time">{jamaat.isha} </td> */}
+                                    <td className="salat_color">Isha</td>
+                                    <td className="slat_time">{moment(prayerTimes.isha).format(" h:mm A")}</td>
+                                    {/* <td className="text-end slat_time">12:27 AM</td> */}
+                                    {/* <td className="slat_time" type="time">{jamaat.isha} </td> */}
                                     <input
                                         className='text-2 border border-0 slat_time'
                                         type="time"
@@ -156,9 +156,9 @@ const PrayerTime = () => {
 
                                 </tr>
                                 {/* <tr>
-            <td class="salat_color">Jumah</td>
-            <td class="slat_time">12:27 AM</td>
-            <td class="text-end slat_time">12:27 AM</td>
+            <td className="salat_color">Jumah</td>
+            <td className="slat_time">12:27 AM</td>
+            <td className="text-end slat_time">12:27 AM</td>
         </tr> */}
                             </tbody>
                         </table>)
@@ -170,11 +170,11 @@ const PrayerTime = () => {
 
             </div>
 
-            <div class="bg-light ps-5 pe-5 pt-4 pb-3">
-                <p class="text-center event_location">Location: London, UK</p>
-                <p class="text-center event_regular_date">{moment(date).format("MMMM DD, YYYY")}</p>
-                <p class="text-center evente_arabic_date">(21th Shawwal, 1443)</p>
-                <p class="text-center evente_arabic_date"> {moment().format('iYYYY/iM/iD')}</p>
+            <div className="bg-light ps-5 pe-5 pt-4 pb-3">
+                <p className="text-center event_location">Location: London, UK</p>
+                <p className="text-center event_regular_date">{moment(date).format("MMMM DD, YYYY")}</p>
+                <p className="text-center evente_arabic_date">(21th Shawwal, 1443)</p>
+                <p className="text-center evente_arabic_date"> {moment().format('iYYYY/iM/iD')}</p>
 
 
             </div>

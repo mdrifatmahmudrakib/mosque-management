@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Donate from '../Donate/Donate';
+import Scolar from '../Scolar/TeamScolar';
 import Banner from './Banner/Banner';
 import Event from './Event/Event';
 import HomeEvent from './Event/HomeEvent';
@@ -26,9 +27,10 @@ const Home = () => {
             <Service></Service>
             <HomeHelp></HomeHelp>
             <Support></Support>
-            <Team></Team>
+            {/* <Team></Team> */}
+            <Scolar></Scolar>
             <HomeEvent></HomeEvent>
-            <PrayerInfo></PrayerInfo>
+            {/* <PrayerInfo></PrayerInfo> */}
             <Tetimonial></Tetimonial>
 
         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 // import { toast } from 'react-toastify';
 
 
@@ -49,11 +50,11 @@ const AddExpert = () => {
                         .then(res => res.json())
                         .then(inserted => {
                             if (inserted.insertedId) {
-                                toast.success('Imam added successfully')
+                                toast.success('Expert added successfully')
                                 reset();
                             }
                             else {
-                                toast.success('Failed to add the Imam');
+                                toast.success('Failed to add the Expert');
                             }
                         })
 
@@ -68,15 +69,13 @@ const AddExpert = () => {
             <section className="content-main " style={{ maxWidth: "1200px" }}>
                 <form onSubmit={handleSubmit(handleAddCampaign)} >
                     <div className="content-header">
-                        {/* <Link to="" className="btn btn-danger text-white">
-    Go to products
-  </Link> */}
-                        <button className='btn btn-danger text-white'>Go to Scolar</button>
-                        <h2 className="content-title">Add Scolar</h2>
+
+
+                        <h2 className="content-title">Add Expert</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
-                                Publish now
-                            </button>
+                            <Link to="/allexperts" className="btn btn-primary">
+                                All Experts
+                            </Link>
                         </div>
                     </div>
 
@@ -172,7 +171,7 @@ const AddExpert = () => {
                                             name='phone'
                                             className="form-control" id="exampleFormControlInput1"
                                             placeholder="+880...."
-                                            required
+                                            // required
 
                                             {...register("phone", {
                                                 required: {
@@ -192,13 +191,10 @@ const AddExpert = () => {
                                             name='facebook'
                                             className="form-control" id="exampleFormControlInput1"
                                             placeholder="facebook link"
-                                            required
+                                            // required
 
                                             {...register("facebook", {
-                                                required: {
-                                                    value: true,
-                                                    message: 'facebook is Required'
-                                                }
+
                                             })}
                                         />
 
@@ -212,13 +208,10 @@ const AddExpert = () => {
                                             name='twitter'
                                             className="form-control" id="exampleFormControlInput1"
                                             placeholder="twitter link"
-                                            required
+                                            // required
 
                                             {...register("twitter", {
-                                                required: {
-                                                    value: true,
-                                                    message: 'Number is Required'
-                                                }
+
                                             })}
                                         />
 
@@ -233,13 +226,10 @@ const AddExpert = () => {
                                             name='instagram'
                                             className="form-control" id="exampleFormControlInput1"
                                             placeholder="instagram link"
-                                            required
+                                            // required
 
                                             {...register("instagram", {
-                                                required: {
-                                                    value: true,
-                                                    message: 'instagram is Required'
-                                                }
+
                                             })}
                                         />
 
@@ -251,13 +241,10 @@ const AddExpert = () => {
                                             name='google'
                                             className="form-control" id="exampleFormControlInput1"
                                             placeholder="google link"
-                                            required
+                                            // required
 
                                             {...register("google", {
-                                                required: {
-                                                    value: true,
-                                                    message: 'instagram is Required'
-                                                }
+
                                             })}
                                         />
 
@@ -267,7 +254,7 @@ const AddExpert = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Expert  Photo </label>
+                                            className="form-label">Expert Photo </label>
                                         <input
                                             // type="link"
                                             type="file"
@@ -284,9 +271,7 @@ const AddExpert = () => {
                                                 }
                                             })}
                                         />
-                                        <label className="label">
-                                            {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
-                                        </label>
+
                                     </div>
 
                                 </div>

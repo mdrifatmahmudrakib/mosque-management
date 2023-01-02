@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 
 const Khutba = () => {
@@ -65,9 +66,11 @@ const Khutba = () => {
                         {/* <button className='btn btn-danger text-white'>All Khutba</button> */}
                         <h2 className="content-title">Upload Recent Khutba</h2>
                         <div>
-                            <button type="submit" className="btn btn-primary">
-                                Publish now
-                            </button>
+
+                            <Link to="/khutba" className="btn btn-primary">
+                                All Khutba
+                            </Link>
+
                         </div>
                     </div>
 

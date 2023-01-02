@@ -44,7 +44,7 @@ const ManageSingleEvent = ({ event }) => {
     return (
         <>
             <div className=' col-md-4 py-3 px-3 d-flex justify-content-center'>
-                <div class="help_card_shadow">
+                <div className="help_card_shadow">
                     <div
                     // style={{
                     //     background: `url(${img}) `
@@ -64,9 +64,9 @@ const ManageSingleEvent = ({ event }) => {
 
 
                             <div>
-                                <div class="card-body p-2">
-                                    <h5 class="help_card_title ps-1 pe-1">{name}</h5>
-                                    <p class="help_card_text ps-2 pe-2">
+                                <div className="card-body p-2">
+                                    <h5 className="help_card_title ps-1 pe-1">{name}</h5>
+                                    <p className="help_card_text ps-2 pe-2">
                                         {short_description.slice(0, 40)}
 
                                     </p>
@@ -74,9 +74,9 @@ const ManageSingleEvent = ({ event }) => {
                                 </div>
 
 
-                                <button type="button" class="btn btn-success m-2  " onClick={() => handlenavigateToEventDetails(_id)}><RemoveRedEyeIcon /></button>
-                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" class="btn btn-primary m-2 "> <CreateIcon /></button>
-                                <button type="button" class="btn btn-danger m-2" onClick={() => handleDelete(event._id)}><DeleteOutlineIcon /></button>
+                                <button type="button" className="btn btn-success m-2  " onClick={() => handlenavigateToEventDetails(_id)}><RemoveRedEyeIcon /></button>
+                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" className="btn btn-primary m-2 "> <CreateIcon /></button>
+                                <button type="button" className="btn btn-danger m-2" onClick={() => handleDelete(event._id)}><DeleteOutlineIcon /></button>
                             </div>
 
                         </div>

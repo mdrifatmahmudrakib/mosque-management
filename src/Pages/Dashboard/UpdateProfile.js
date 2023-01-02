@@ -42,13 +42,7 @@ const UpdateProfile = () => {
         const city = form.city.value;
         const state = form.state.value;
         const zip = form.zip.value;
-        // const date = form.date.value;
-        // const location = form.location.value;
-        // const orgBy = form.orgBy.value;
-        // const orgEmail = form.orgEmail.value;
-        // const orgPhone = form.orgPhone.value;
-        // const short_description = form.short_description.value;
-        // const img = form.img.value;
+
 
 
 
@@ -65,14 +59,6 @@ const UpdateProfile = () => {
             state,
             zip
 
-
-            // date,
-            // location,
-            // orgBy,
-            // orgEmail,
-            // orgPhone,
-            // short_description,
-            // img
 
 
         };
@@ -104,29 +90,23 @@ const UpdateProfile = () => {
 
 
     return (
-        <div class="">
-            {/* {
-    UpdateExpert.map(expert=><UpdateSingleProfile>
+        <div className="">
 
-    </UpdateSingleProfile>)
-
-    
-} */}
             <form onSubmit={handleUpdateEvent}>
-                <div class="row gutters">
-                    <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="account-settings">
-                                    <div class="user-profile">
-                                        <div class="user-avatar">
-                                            <img src={UpdateExpert?.profilelink} alt="profile" />
+                <div className="row gutters">
+                    <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                        <div className="card h-100">
+                            <div className="card-body">
+                                <div className="account-settings">
+                                    <div className="user-profile">
+                                        <div className="user-avatar">
+                                            <img src={UpdateExpert?.profilelink || "https://bootdey.com/img/Content/avatar/avatar7.png"} alt="profile" />
                                             {/* <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin" /> */}
                                         </div>
-                                        <h5 class="user-name">{user ? user?.displayName : "name"} </h5>
-                                        <h6 class="user-email">{user ? user?.email : "xxxxxxxx@example.com"}</h6>
+                                        <h5 className="user-name">{user ? user?.displayName : "name"} </h5>
+                                        <h6 className="user-email">{user ? user?.email : "xxxxxxxx@example.com"}</h6>
                                     </div>
-                                    <div class="about">
+                                    <div className="about">
                                         <h5>About</h5>
                                         <p>{UpdateExpert?.about}</p>
                                     </div>
@@ -135,18 +115,18 @@ const UpdateProfile = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="row gutters">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <h6 class="mb-2 text-primary">Personal Details</h6>
+                    <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                        <div className="card h-100">
+                            <div className="card-body">
+                                <div className="row gutters">
+                                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <h6 className="mb-2 text-primary">Personal Details</h6>
                                     </div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <label for="fullName">About</label>
                                         <textarea rows="5"
                                             type="text"
-                                            class="form-control "
+                                            className="form-control "
                                             id="fullName"
                                             placeholder="Enter full name"
                                             defaultValue={UpdateExpert?.about}
@@ -154,33 +134,33 @@ const UpdateProfile = () => {
                                             name='about'
                                         />
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="website">Update Profile Photo</label>
                                             <input
                                                 type="url"
                                                 name="profilelink"
                                                 defaultValue={UpdateExpert?.profilelink}
-                                                class="form-control"
+                                                className="form-control"
                                                 id="website"
                                                 placeholder="Add Social Link" />
                                         </div>
                                     </div>
 
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="eMail">Date of Birth</label>
                                             <input
                                                 type="date"
                                                 defaultValue={UpdateExpert?.birth}
 
                                                 name='birth'
-                                                class="form-control" id="eMail" />
+                                                className="form-control" id="eMail" />
                                         </div>
                                     </div>
 
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="phone">Phone</label>
                                             <input
 
@@ -188,25 +168,25 @@ const UpdateProfile = () => {
                                                 defaultValue={UpdateExpert?.phone}
                                                 name='phone'
                                                 type="number"
-                                                class="form-control"
+                                                className="form-control"
                                                 id="phone"
                                                 placeholder="Enter phone number" />
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="website">Social Link</label>
                                             <input
                                                 type="url"
                                                 name="link"
                                                 defaultValue={UpdateExpert?.link}
-                                                class="form-control"
+                                                className="form-control"
                                                 id="website"
                                                 placeholder="Add Social Link" />
                                         </div>
                                     </div>
 
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div  >
 
                                             <label for="gender">Choose Gender:</label>
@@ -220,56 +200,56 @@ const UpdateProfile = () => {
                                     </div>
 
                                 </div>
-                                <div class="row gutters">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <h6 class="mt-3 mb-2 text-primary">Address</h6>
+                                <div className="row gutters">
+                                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <h6 className="mt-3 mb-2 text-primary">Address</h6>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="Street">Street</label>
                                             <input
                                                 name="street"
                                                 defaultValue={UpdateExpert?.street}
                                                 type="text"
-                                                class="form-control"
+                                                className="form-control"
                                                 id="Street" placeholder="Enter Street" />
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="ciTy">City</label>
                                             <input
                                                 name="city"
                                                 defaultValue={UpdateExpert?.city}
                                                 type="text"
-                                                class="form-control" id="ciTy" placeholder="Enter City" />
+                                                className="form-control" id="ciTy" placeholder="Enter City" />
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="sTate">State</label>
                                             <input
                                                 name="state"
                                                 defaultValue={UpdateExpert?.state}
-                                                type="text" class="form-control" id="sTate" placeholder="Enter State" />
+                                                type="text" className="form-control" id="sTate" placeholder="Enter State" />
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                        <div class="form-group">
+                                    <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div className="form-group">
                                             <label for="zIp">Zip Code</label>
                                             <input
                                                 name="zip"
                                                 defaultValue={UpdateExpert?.zip}
                                                 type="text"
-                                                class="form-control" id="zIp" placeholder="Zip Code" />
+                                                className="form-control" id="zIp" placeholder="Zip Code" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row gutters">
-                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                        <div class="text-right p-2">
+                                <div className="row gutters">
+                                    <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div className="text-right p-2">
 
-                                            <button class="btn btn-primary">Update</button>
+                                            <button className="btn btn-primary">Update</button>
                                         </div>
                                     </div>
                                 </div>

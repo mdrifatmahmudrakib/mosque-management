@@ -6,6 +6,7 @@ import ModifyTable from "./ModifyTable"
 import onelinee from "../../../1_images/1_home/1_line.png"
 
 import donatebanner from "../../../1_images/8_donate_page/1_donate_home.jpg";
+import { Link } from 'react-router-dom';
 const ManageExpert = () => {
 
     const {
@@ -58,28 +59,32 @@ const ManageExpert = () => {
 
     return (
         <div >
-            <div className='home_banner'
+            <div className='home_banner pb-5'
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                class="pb-5">
+            >
 
-                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">ModifyExpert</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Manage Expert</h5>
 
-                <div class="text-center pb-3">
-                    <img src={onelinee} />
+                <div className="text-center pb-3">
+                    <img src={onelinee} alt="photo" />
                 </div>
 
-                <div class="text-center when_things">
-                    <p class="poppins donate_home_icon">
-                        <a href="#">Home</a> / <span class="charity-text" >ModifyExpert</span>
+                <div className="text-center when_things">
+                    <p className="poppins donate_home_icon">
+                        <a href="#">Home</a> / <span className="charity-text" >Manage Expert</span>
                     </p>
                 </div>
 
             </div>
 
 
-
+            <div className='pt-2 d-flex justify-content-end' >
+                <Link to="/dashboard/addscolar" className="btn btn-primary">
+                    Add Expert
+                </Link>
+            </div>
 
             <div >
                 <div>

@@ -41,17 +41,17 @@ const ManageEvent = () => {
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                class="pb-5">
+                className="pb-5">
 
-                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Manage Campaign</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Manage Campaign</h5>
 
-                <div class="text-center pb-3">
+                <div className="text-center pb-3">
                     <img src={onelinee} />
                 </div>
 
-                <div class="text-center when_things">
-                    <p class="poppins donate_home_icon">
-                        <Link to="/">Home</Link> / <Link to="/donate"><span class="charity-text" >Campaigns</span></Link>
+                <div className="text-center when_things">
+                    <p className="poppins donate_home_icon">
+                        <Link to="/">Home</Link> / <Link to="/donate"><span className="charity-text" >Campaigns</span></Link>
                     </p>
                 </div>
 

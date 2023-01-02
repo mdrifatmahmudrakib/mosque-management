@@ -14,7 +14,7 @@ const ModifyTable = ({ experts, i, handleDeleteExpert }) => {
     }
 
     return (
-        <tr key={experts._id} class="table">
+        <tr key={experts._id} className="table">
 
 
 

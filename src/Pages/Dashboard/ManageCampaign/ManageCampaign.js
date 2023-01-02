@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import AllCampaigns from '../../../hooks/AllCampaigns';
-import SingleHelp from '../../Home/Help/SingleHelp';
+
 import ManageSingleCampaign from './ManageSingleCampaign';
 import "./ManageCampaign.css"
 
@@ -36,21 +35,21 @@ const ManageCampaign = () => {
 
     return (
         <section className="">
-            <div className='home_banner'
+            <div className='home_banner pb-5'
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                class="pb-5">
+            >
 
-                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Manage Campaign</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Manage Campaign</h5>
 
-                <div class="text-center pb-3">
+                <div className="text-center pb-3">
                     <img src={onelinee} />
                 </div>
 
-                <div class="text-center when_things">
-                    <p class="poppins donate_home_icon">
-                        <Link to="/">Home</Link> / <Link to="/donate"><span class="charity-text" >Campaigns</span></Link>
+                <div className="text-center when_things">
+                    <p className="poppins donate_home_icon">
+                        <Link to="/">Home</Link> / <Link to="/donate"><span className="charity-text" >Campaigns</span></Link>
                     </p>
                 </div>
 

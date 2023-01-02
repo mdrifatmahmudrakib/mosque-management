@@ -63,29 +63,29 @@ const ManageKhutba = () => {
     return (
         <div >
 
-            <div className='home_banner'
+            <div className='home_banner pb-5'
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                class="pb-5">
+            >
 
-                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Manage Khutba</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Manage Khutba</h5>
 
-                <div class="text-center pb-3">
+                <div className="text-center pb-3">
                     <img src={onelinee} />
                 </div>
 
-                <div class="text-center when_things">
-                    <p class="poppins donate_home_icon">
-                        <Link to="/">Home</Link> / <Link to="/khutba"><span class="charity-text" >Khutba</span></Link>
+                <div className="text-center when_things">
+                    <p className="poppins donate_home_icon">
+                        <Link to="/">Home</Link> / <Link to="/khutba"><span className="charity-text" >Khutba</span></Link>
                     </p>
                 </div>
 
             </div>
 
             <div className='pt-2 d-flex justify-content-end' >
-                <Link to="/dashboard/addcampaign" className="btn btn-primary">
-                    Create Campaign
+                <Link to="/dashboard/addkhutba" className="btn btn-primary">
+                    Create Khutba
                 </Link>
             </div>
 
@@ -103,7 +103,7 @@ const ManageKhutba = () => {
                         </thead>
                         <tbody>
                             {
-                                allKhutba.map((khutba, i) => <tr key={khutba._id} class="table">
+                                allKhutba.map((khutba, i) => <tr key={khutba._id} className="table">
 
 
 

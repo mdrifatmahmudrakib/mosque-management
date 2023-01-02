@@ -2,7 +2,7 @@
 
 import { faAssistiveListeningSystems, faBars, faChartBar, faHome, faSignOut, faTachometer, faUser, faXmark } from '@fortawesome/free-solid-svg-icons';
 import "./Sidebar.css"
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import useAdmin from "../../../hooks/useAdmin";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -14,9 +14,22 @@ import { useState } from "react";
 const Sidebar = () => {
 
     const [show, setShow] = useState(false);
+
+    // const handleSignOut = () => {
+    //     signOut(auth);
+    //     localStorage.removeItem('accessToken');
+    // }
+
+    const navigate = useNavigate();
+
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const handleSignOut = () => {
         signOut(auth);
         localStorage.removeItem('accessToken');
+        navigate("/login")
     }
 
     const [user] = useAuthState(auth);
@@ -76,10 +89,7 @@ const Sidebar = () => {
                                 </Link>
 
 
-                                <Link to="/dashboard/addkhutba" className='nav-link' >
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>Add Khutba</span>
-                                </Link>
+
 
 
 
@@ -90,15 +100,11 @@ const Sidebar = () => {
                                 </Link>
 
 
-                                <Link to="/dashboard/addscolar" className='nav-link' >
-                                    <FontAwesomeIcon icon={faChartBar} />
-                                    <span className='nav-link-name'>Add Scolar</span>
-                                </Link>
 
 
                                 <Link to="/dashboard/manageexperts" className="nav-link">
                                     <FontAwesomeIcon icon={faChartBar} />
-                                    <span className="nav-link-name">ManageExpert</span>
+                                    <span className="nav-link-name">Manage Expert</span>
                                 </Link>
 
 
@@ -128,23 +134,57 @@ const Sidebar = () => {
 
                             </Link>
 
+                            {
+                                user ?
+                                    // <Link className='text-light btn btn-link text-white text-decoration-none' onClick={handleSignOut}> <FontAwesomeIcon className='nav-logo-icon mr-2 ' icon={faSignOut} />Log Out</Link>
+
+                                    <Link className='nav-link' onClick={handleSignOut}>
+
+                                        <FontAwesomeIcon className='nav-logo-icon ' icon={faSignOut} />
+                                        <h5 className='nav-link-name fw-bold  '>Log Out</h5>
+
+                                    </Link>
+
+                                    :
+
+                                    // <Link className='text-light' as={Link} to="/login">
+                                    //     Login
+                                    // </Link>
+                                    navigate("/login")
 
 
 
-                            <FontAwesomeIcon icon={faSignOut} onClick={handleSignOut} />
+
+
+
+
+                            }
+
+
+
+                            {/* <Link className='nav-link bg-warning' onClick={handleSignOut}>
+                                <FontAwesomeIcon className='nav-logo-icon mr-2 ' onClick={handleSignOut} icon={faSignOut} />
+
+                                <span className='nav-link-name text-black' onClick={handleSignOut}>Sign Out</span>
+
+                            </Link> */}
+
+
+
+
+                            {/* <FontAwesomeIcon icon={faSignOut} onClick={handleSignOut} />
                             {
 
                                 <span onClick={handleSignOut}>Logout</span>
 
-                            }
+                            } */}
 
 
-                            {
-
-                                <span className='icon' onClick={handleSignOut}>Logout</span>
-
-                            }
-
+                            {/* 
+                             <Link to='/' className='nav-logo '>
+                                
+                                <button className='btn btn-warning'>  <FontAwesomeIcon className='nav-logo-icon mr-2 ' icon={faSignOut} />Sign Out </button>
+                            </Link>  */}
 
 
                         </div>

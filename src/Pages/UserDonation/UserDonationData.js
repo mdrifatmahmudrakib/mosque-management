@@ -3,7 +3,7 @@ import React from 'react';
 const UserDonationData = ({ donate, i }) => {
     return (
 
-        <tr key={donate._id} class="table">
+        <tr key={donate._id} className="table">
 
             <td>
                 <p>{donate.name}</p>

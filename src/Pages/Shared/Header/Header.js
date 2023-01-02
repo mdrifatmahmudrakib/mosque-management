@@ -1,18 +1,23 @@
 import React, { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 
 import "./Header.css"
 const Header = () => {
+    const navigate = useNavigate();
 
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
 
     const [user] = useAuthState(auth)
     const handleSignOut = () => {
         signOut(auth);
         localStorage.removeItem('accessToken');
+        navigate("/login")
     }
 
     return (
@@ -32,7 +37,7 @@ const Header = () => {
                         <Nav.Link className='text-light' as={Link} to="home">Home</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="donate">Campaigns</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="events">Events</Nav.Link>
-                        <Nav.Link className='text-light' as={Link} to="scolar">Scolar</Nav.Link>
+                        <Nav.Link className='text-light' as={Link} to="allexperts">Experts</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="khutba">Khutba</Nav.Link>
 
 

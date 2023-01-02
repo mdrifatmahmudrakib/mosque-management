@@ -68,17 +68,17 @@ const ListenKhutba = () => {
                 {
                     allKhutba.map(khutba =>
                         <div key={khutba._id} className=' mx-auto mb-5 m-2 shadow-lg'>
-                            <div class="card">
-                                <h5 class="card-header text-center">{khutba.about}</h5>
+                            <div className="card">
+                                <h5 className="card-header text-center">{khutba.about}</h5>
 
-                                <div class="card-body">
+                                <div className="card-body">
 
                                     <div className='d-flex flex-lg-row gap-2 flex-column  align-items-center '>
                                         <div className='w-50 d-flex flex-column flex-md-row gap-2 flex-lg-row justify-content-evenly align-items-center'>
                                             <img src={img} alt='' style={{ width: '80px' }} />
                                             <div>
-                                                <h5 class="card-title">{khutba.speaker}</h5>
-                                                <p class="card-text">{khutba.month}</p>
+                                                <h5 className="card-title">{khutba.speaker}</h5>
+                                                <p className="card-text">{khutba.month}</p>
                                             </div>
                                         </div>
 

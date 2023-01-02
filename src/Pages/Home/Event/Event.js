@@ -26,17 +26,17 @@ const Event = () => {
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                class="pb-5">
+                className="pb-5">
 
-                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Upcoming Events</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Upcoming Events</h5>
 
-                <div class="text-center pb-3">
+                <div className="text-center pb-3">
                     <img src={onelinee} />
                 </div>
 
-                <div class="text-center when_things">
-                    <p class="poppins donate_home_icon">
-                        <a href="#">Home</a> / <span class="charity-text" >Upcoming Events</span>
+                <div className="text-center when_things">
+                    <p className="poppins donate_home_icon">
+                        <a href="#">Home</a> / <span className="charity-text" >Upcoming Events</span>
                     </p>
                 </div>
 
@@ -50,27 +50,27 @@ const Event = () => {
 
                 {/* //TEST */}
                 <div>
-                    <section class="container pt-5 pb-5 poppins">
+                    <section className="container pt-5 pb-5 poppins">
 
-                        <div class="mini_title">
-                            <p class="text-center">Need Help For Help</p>
+                        <div className="mini_title">
+                            <p className="text-center">Need Help For Help</p>
                         </div>
 
-                        <div class="text-center">
-                            <h5 class="main_heading">Our Causes</h5>
+                        <div className="text-center">
+                            <h5 className="main_heading">Our Causes</h5>
                         </div>
 
-                        <div class="d-flex justify-content-center mt-4">
-                            <div class="heading_line"></div>
+                        <div className="d-flex justify-content-center mt-4">
+                            <div className="heading_line"></div>
                         </div>
 
-                        <div class="mt-3">
-                            <p class="text-center help_section_body_text">
+                        <div className="mt-3">
+                            <p className="text-center help_section_body_text">
                                 Join hands with us to accomplish all these projects of serving humanity and <br></br> making this world a
                                 better place to live.
                             </p>
 
-                            <div class="row pt-3">
+                            <div className="row pt-3">
                                 {
                                     events.map(event => <SingleEvent
                                         key={event._id}

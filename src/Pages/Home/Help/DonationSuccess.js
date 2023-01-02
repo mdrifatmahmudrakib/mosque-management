@@ -44,7 +44,7 @@ const DonationSuccess = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="table">
+                        <tr className="table">
 
 
 

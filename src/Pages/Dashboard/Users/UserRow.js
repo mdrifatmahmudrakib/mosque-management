@@ -31,6 +31,7 @@ const UserRow = ({ user, refetch, i }) => {
 
     const handleDelete = id => {
         console.log(id);
+        // const proceed = window.confirm('Are you Sure?');
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
             const url = `http://localhost:5000/user/${email}`;
@@ -60,7 +61,7 @@ const UserRow = ({ user, refetch, i }) => {
 
 
 
-        <tr class="table">
+        <tr className="table">
 
 
 
@@ -70,8 +71,8 @@ const UserRow = ({ user, refetch, i }) => {
 
 
             </td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-success">Make Admin</button>}</td>
-            <td><button class="btn btn-danger" onClick={() => handleDelete(user._id)}>Remove User</button></td>
+            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-success">Make Admin</button>}</td>
+            <td><button className="btn btn-danger" onClick={() => handleDelete(user._id)}>Remove User</button></td>
 
 
 

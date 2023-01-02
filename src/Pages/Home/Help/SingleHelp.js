@@ -9,9 +9,9 @@ const SingleHelp = ({ cause }) => {
         navigate(`/campaign/${id}`)
     }
     return (
-        <div class="col-12 col-md-6 col-lg-4 col-xl-4 p-3 justify-content-center  mt-3 mt-md-3 mt-lg-0">
-            <div class="help_card_shadow">
-                <div class="card_banner card-img-top help-banner"
+        <div className="col-12 col-md-6 col-lg-4 col-xl-4 p-3 justify-content-center  mt-3 mt-md-3 mt-lg-0">
+            <div className="help_card_shadow">
+                <div className="card_banner card-img-top help-banner"
                     style={{
                         background: `url(${img}) `
 
@@ -21,9 +21,9 @@ const SingleHelp = ({ cause }) => {
 
                 </div>
 
-                <div class="card-body pt-2 ">
-                    <h5 class="help_card_title ps-1 pe-1">{name}</h5>
-                    <p class="help_card_text ps-2 pe-2">
+                <div className="card-body pt-2 ">
+                    <h5 className="help_card_title ps-1 pe-1">{name}</h5>
+                    <p className="help_card_text ps-2 pe-2">
                         {short_description.slice(0, 20)}
 
                     </p>

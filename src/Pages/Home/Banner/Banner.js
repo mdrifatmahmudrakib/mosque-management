@@ -12,30 +12,30 @@ const Banner = () => {
             }}
         >
 
-            <section class="home_text_container pt-5">
-                <div class="bsml_container pt-5 mt-5">
-                    <img src={bsml} class="pt-5" alt="bismillah photo" />
+            <section className="home_text_container pt-5">
+                <div className="bsml_container pt-5 mt-5">
+                    <img src={bsml} className="pt-5" alt="bismillah photo" />
                     {/* <br> */}
                 </div>
                 <div>
-                    <p class="poppins text-center knwo_the_real">Know the Real</p>
-                    <p class="poppins text-center tafseer">Tafseer of Qur'an</p>
-                    <div class="text-center pt-1 pb-3">
+                    <p className="poppins text-center knwo_the_real">Know the Real</p>
+                    <p className="poppins text-center tafseer">Tafseer of Qur'an</p>
+                    <div className="text-center pt-1 pb-3">
                         <img src={oneline} />
                     </div>
 
-                    <div class="text-center when_things">
-                        <p class="poppins ">
+                    <div className="text-center when_things">
+                        <p className="poppins ">
                             When things are too hard to handle,
                         </p>
-                        <p class="poppins ">
+                        <p className="poppins ">
                             retreat and count your blessings instead
                         </p>
                     </div>
 
 
-                    <div class="text-center quran_online_container mt-5">
-                        <a class="quran_online ps-5 pe-5 pt-3 pb-3"
+                    <div className="text-center quran_online_container mt-5">
+                        <a className="quran_online ps-5 pe-5 pt-3 pb-3"
 
                         >Quran Online</a>
 

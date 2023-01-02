@@ -4,7 +4,7 @@ const AllUserDonationTable = ({ donation, i }) => {
     return (
 
 
-        <tr key={donation._id} class="table">
+        <tr key={donation._id} className="table">
 
 
 

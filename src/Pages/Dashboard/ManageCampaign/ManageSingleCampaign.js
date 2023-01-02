@@ -53,7 +53,7 @@ const ManageSingleCampaign = ({ cause, refetch }) => {
     return (
         <>
             <div className=' col-md-6 col-lg-4  py-3 px-3 justify-content-center' >
-                <div class="help_card_shadow">
+                <div className="help_card_shadow">
                     <div
                     > <img style={{ width: "400px", height: "350px" }} className='img-fluid w-52 h-96' src={img} alt="" />
 
@@ -70,18 +70,18 @@ const ManageSingleCampaign = ({ cause, refetch }) => {
 
                             <div>
 
-                                <div class="card-body p-2">
-                                    <h5 class="help_card_title ps-1 pe-1">{name}</h5>
-                                    <p class="help_card_text ps-2 pe-2">
+                                <div className="card-body p-2">
+                                    <h5 className="help_card_title ps-1 pe-1">{name}</h5>
+                                    <p className="help_card_text ps-2 pe-2">
                                         {short_description.slice(0, 40)}
 
                                     </p>
 
                                 </div>
 
-                                <button type="button" class="btn btn-success m-2  " onClick={() => handlenavigateToHelpDetails(_id)}><RemoveRedEyeIcon /></button>
-                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" class="btn btn-primary m-2 "> <CreateIcon /></button>
-                                <button type="button" class="btn btn-danger m-2" onClick={() => handleDelete(cause._id)}><DeleteOutlineIcon /></button>
+                                <button type="button" className="btn btn-success m-2  " onClick={() => handlenavigateToHelpDetails(_id)}><RemoveRedEyeIcon /></button>
+                                <button onClick={() => handlenavigateToupdateDetails(_id)} type="button" className="btn btn-primary m-2 "> <CreateIcon /></button>
+                                <button type="button" className="btn btn-danger m-2" onClick={() => handleDelete(cause._id)}><DeleteOutlineIcon /></button>
 
                             </div>
 

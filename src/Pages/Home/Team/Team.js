@@ -20,25 +20,25 @@ const Team = () => {
 	return (
 
 		<div>
-			{/* <section class="container pt-5 pb-5 ">
+			{/* <section className="container pt-5 pb-5 ">
 
-				<div class="mini_title">
-					<p class="text-center">Our Expert</p>
+				<div className="mini_title">
+					<p className="text-center">Our Expert</p>
 				</div>
 
-				<div class="text-center">
-					<h5 class="main_heading">Islamic Scholars</h5>
+				<div className="text-center">
+					<h5 className="main_heading">Islamic Scholars</h5>
 				</div>
 
-				<div class="d-flex justify-content-center mt-4">
-					<div class="heading_line"></div>
+				<div className="d-flex justify-content-center mt-4">
+					<div className="heading_line"></div>
 				</div>
-				<p class="text-center help_section_body_text mt-3">
+				<p className="text-center help_section_body_text mt-3">
 					Highly Qualified Team Supervises psum dolor sit amet, consectetur adipisicing elit, sed do <br></br> eiusmod
 					tempor incididunt ut labore et dolore magna aliqua.
 				</p>
 
-				<div class="row mt-5 d-flex justify-content-center text-center poppins">
+				<div className="row mt-5 d-flex justify-content-center text-center poppins">
 
 
 

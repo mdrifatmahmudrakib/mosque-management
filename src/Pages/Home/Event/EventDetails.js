@@ -37,17 +37,17 @@ const EventDetails = () => {
                 style={{
                     background: `url(${donatebanner}) `
                 }}
-                class="pb-5">
+                className="pb-5">
 
-                <h5 class="poppins text-center charity_campaing_heading pt-5 mt-">Charity Campaigns</h5>
+                <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">Charity Campaigns</h5>
 
-                <div class="text-center pb-3">
+                <div className="text-center pb-3">
                     <img src={onelinee} />
                 </div>
 
-                <div class="text-center when_things">
-                    <p class="poppins donate_home_icon">
-                        <a href="#">Home</a> / <span class="charity-text" >Charity Campaigns</span>
+                <div className="text-center when_things">
+                    <p className="poppins donate_home_icon">
+                        <a href="#">Home</a> / <span className="charity-text" >Charity Campaigns</span>
                     </p>
                 </div>
 
@@ -60,7 +60,7 @@ const EventDetails = () => {
                         <p><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> {location}</p>
                         <div >
                             <p><FontAwesomeIcon icon={faClock}></FontAwesomeIcon> {time}</p>
-                            <a class="btn btn-primary px-2 mb-2" href="#" role="button">JOIN NOW</a>
+                            <a className="btn btn-primary px-2 mb-2" href="#" role="button">JOIN NOW</a>
                         </div>
                     </div>
                     <div className="col-lg-4 text-start">
