@@ -53,7 +53,7 @@ const EventDetails = () => {
                         <h3>{name}</h3>
                         <p><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> {location}</p>
                         <div >
-                            <p><FontAwesomeIcon icon={faClock}></FontAwesomeIcon> {time}</p>
+                            {/* <p><FontAwesomeIcon icon={faClock}></FontAwesomeIcon> {time}</p> */}
                             <Link to="/donate" className=" btn btn-warning px-2 mb-2" href="#" role="button">Donate Now</Link>
                         </div>
                     </div>

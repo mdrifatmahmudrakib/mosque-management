@@ -6,8 +6,7 @@ import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from './SocialLogin/SocialLogin';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 // import { ToastContainer, toast } from 'react-toastify';
-import login from "../../../1_images/login.jpg"
-import useToken from '../../../hooks/useToken';
+
 import scolarbanner from "../../../1_images/8_donate_page/1_donate_home.jpg";
 import bsml from "../../../1_images/1_home/2_bsml-txt.png"
 import { toast } from 'react-hot-toast';
@@ -29,15 +28,15 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [token] = useToken(user || gUser); // token
+    // const [token] = useToken(user || gUser); // token
 
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-    useEffect(() => {
-        if (token) {
-            navigate(from, { replace: true });
-        }
-    }, [token, from, navigate])
+    // useEffect(() => {
+    //     if (token) {
+    //         navigate(from, { replace: true });
+    //     }
+    // }, [token, from, navigate])
 
     if (loading) {
         return <Loading></Loading>
@@ -59,6 +58,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         signInWithEmailAndPassword(email, password);
+        // navigate(from, { replace: true });
         // if (user.emailVerified) {
         //     navigate(from, { replace: true })
         // }
@@ -87,7 +87,7 @@ const Login = () => {
     return (
 
         <div className='text-white text-start ' style={{
-            backgroundImage: `url(${scolarbanner})`, backgroundRepeat: 'no-repeat', height: "1000px", paddingTop: "5%",
+            backgroundImage: `url(${scolarbanner})`, backgroundRepeat: 'no-repeat', height: "100vh", paddingTop: "5%",
         }}>
             <div className="container mx-auto " >
                 <div className="row content justify-content-center ">

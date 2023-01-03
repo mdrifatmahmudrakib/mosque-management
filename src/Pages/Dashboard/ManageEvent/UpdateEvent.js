@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 import { useParams } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
 
 const UpdateEvent = () => {
 
@@ -99,7 +100,7 @@ const UpdateEvent = () => {
             .then(result => {
                 console.log(result);
                 // reset();
-                toast.success("Campaign Update Successfully");
+                toast("Event Update Successfully");
             })
     };
 
@@ -113,13 +114,10 @@ const UpdateEvent = () => {
                         {/* <Link to="" className="btn btn-danger text-white">
     Go to products
   </Link> */}
-                        <button className='btn btn-danger text-white'>Go to Event</button>
-                        <h2 className="content-title">Add Event</h2>
-                        <div>
-                            <button type="submit" className=" btn btn-warning">
-                                Publish now
-                            </button>
-                        </div>
+
+                        <h2 className="content-title">Update Event</h2>
+
+
                     </div>
 
                     <div className="row mb-4">
@@ -267,7 +265,7 @@ const UpdateEvent = () => {
 
                             </div>
                             <button type="submit" className=" btn btn-warning">
-                                Publish now
+                                Update Event
                             </button>
                         </div>
                     </div>

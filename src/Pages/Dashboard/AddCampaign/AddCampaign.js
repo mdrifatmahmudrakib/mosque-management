@@ -40,18 +40,19 @@ const AddCampaign = () => {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
-                            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                            // 'Accept': 'application/json'
+                            // authorization: `Bearer ${localStorage.getItem('accessToken')}`
                         },
                         body: JSON.stringify(imam)
                     })
                         .then(res => res.json())
                         .then(inserted => {
                             if (inserted.insertedId) {
-                                toast.success('Imam added successfully')
+                                toast.success('Campaign added successfully')
                                 reset();
                             }
                             else {
-                                toast.error('Failed to add the Imam');
+                                toast.error('Failed to add the Campaign');
                             }
                         })
 

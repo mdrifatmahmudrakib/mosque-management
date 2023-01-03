@@ -170,7 +170,7 @@
 // export default Register;
 
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../Login/SocialLogin/SocialLogin';
@@ -185,10 +185,10 @@ import { sendEmailVerification } from 'firebase/auth';
 import { ToastContainer } from 'react-toastify';
 
 const Register = () => {
+
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [agree, setAgree] = useState(false);
-    let errorElement;
+    const [agree, setAgree] = useState(false)
     const [
         createUserWithEmailAndPassword,
         user,
@@ -201,9 +201,14 @@ const Register = () => {
 
 
     //user info save krbo
-    const [token] = useToken(user || gUser); // token
+    // const [token] = useToken(user || gUser); // token
     console.log(user)
     const navigate = useNavigate();
+
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
 
     let signInError;
     if (error || gError || updating) {
@@ -224,9 +229,11 @@ const Register = () => {
     }
 
 
-    if (token) {
-        navigate('/home');
-    }
+    // if (token) {
+    //     // navigate('/home');
+    //     navigate(from, { replace: true });
+
+    // }
 
 
     const handleRegister = async (event) => {
@@ -237,27 +244,96 @@ const Register = () => {
         // const agree = event.target.terms.checked;
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName });
+        // verifyEmail();
+        // toast.success('Please Verfify Your Email address before Login')
         console.log('Updated profile');
         console.log(event)
-        // navigate('/home')
-        verifyEmail()
+        navigate('/')
+
 
 
     }
 
-    const verifyEmail = () => {
-        sendEmailVerification(auth.currentUser)
-            .then(() => {
-                alert('please check your email and verify')
-            })
-    }
+    // const verifyEmail = () => {
+    //     sendEmailVerification(auth.currentUser)
+    //         .then(() => {
+    //             console.log('Email Verification Sent');
+    //         })
+    // }
+
+    // const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    // const { register, formState: { errors }, handleSubmit } = useForm();
+    // const [agree, setAgree] = useState(false);
+    // let errorElement;
+    // const [
+    //     createUserWithEmailAndPassword,
+    //     user,
+    //     loading,
+    //     error,
+    // ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    // const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+
+
+
+    // //user info save krbo
+    // const [token] = useToken(user || gUser); // token
+    // console.log(user)
+    // const navigate = useNavigate();
+
+    // let signInError;
+    // if (error || gError || updating) {
+    //     signInError = <p className='text-red-500'><small>{error?.message || gError?.message || updateError?.message}</small> </p>
+    // }
+
+
+
+    // const navigateLogin = () => {
+    //     navigate('/login')
+    // }
+
+
+
+
+    // if (loading || gLoading || updating) {
+    //     return <Loading></Loading>
+    // }
+
+
+    // if (token) {
+    //     navigate('/home');
+    // }
+
+
+    // const handleRegister = async (event) => {
+    //     event.preventDefault();
+    //     const displayName = event.target.displayName.value;
+    //     const email = event.target.email.value;
+    //     const password = event.target.password.value;
+    //     // const agree = event.target.terms.checked;
+    //     await createUserWithEmailAndPassword(email, password)
+    //     await updateProfile({ displayName });
+    //     console.log('Updated profile');
+    //     console.log(event)
+    //     navigate('/home')
+    //     verifyEmail()
+
+
+    // }
+
+    // const verifyEmail = () => {
+    //     sendEmailVerification(auth.currentUser)
+    //         .then(() => {
+    //             alert('please check your email and verify')
+    //         })
+    // }
 
 
 
 
     return (
         <div className='text-white text-start ' style={{
-            backgroundImage: `url(${scolarbanner})`, backgroundRepeat: 'no-repeat', height: "1000px", paddingTop: "5%",
+            backgroundImage: `url(${scolarbanner})`, backgroundRepeat: 'no-repeat', height: "100vh", paddingTop: "5%",
         }}>
             <div className="container mx-auto " >
                 <div className="row content justify-content-center ">
@@ -293,7 +369,7 @@ const Register = () => {
                                 value="Register" />
                         </form>
                         <div style={{ width: '80%', marginLeft: "10%", marginTop: "10%", paddingBottom: "10%" }} >
-                            {errorElement}
+                            {/* {errorElement} */}
                             <p className='text-light'>Already have an account? <Link to='/login' className='text-warning pe-auto text-decoration-none ' onClick={navigateLogin}>Please Login</Link></p>
 
 

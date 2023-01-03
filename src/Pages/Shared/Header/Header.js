@@ -16,7 +16,7 @@ const Header = () => {
     const [user] = useAuthState(auth)
     const handleSignOut = () => {
         signOut(auth);
-        localStorage.removeItem('accessToken');
+        // localStorage.removeItem('accessToken');
         navigate("/login")
     }
 
@@ -35,7 +35,7 @@ const Header = () => {
                 <Navbar.Collapse className='text-dark' id="responsive-navbar-nav">
                     <Nav className="mx-auto ">
 
-                        <Nav.Link className='text-light' as={Link} to="home">Home</Nav.Link>
+                        <Nav.Link className='text-light' as={Link} to="/">Home</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="donate">Campaigns</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="events">Events</Nav.Link>
                         <Nav.Link className='text-light' as={Link} to="allexperts">Experts</Nav.Link>

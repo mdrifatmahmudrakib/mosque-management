@@ -30,7 +30,7 @@ const Sidebar = () => {
 
     const handleSignOut = () => {
         signOut(auth);
-        localStorage.removeItem('accessToken');
+        // localStorage.removeItem('accessToken');
         navigate("/login")
     }
 

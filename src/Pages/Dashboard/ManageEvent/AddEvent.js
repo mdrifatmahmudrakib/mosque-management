@@ -32,7 +32,7 @@ const AddEvent = () => {
                         date: data.date,
                         location: data.location,
                         orgBy: data.orgBy,
-                        email: data.email,
+                        orgEmail: data.orgEmail,
                         orgPhone: data.orgPhone,
                         short_description: data.short_description,
                         img: img
@@ -44,18 +44,18 @@ const AddEvent = () => {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',
-                            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                            // authorization: `Bearer ${localStorage.getItem('accessToken')}`
                         },
                         body: JSON.stringify(eventdata)
                     })
                         .then(res => res.json())
                         .then(inserted => {
                             if (inserted.insertedId) {
-                                toast.success('Imam added successfully')
+                                toast.success('Event added successfully')
                                 reset();
                             }
                             else {
-                                toast.error('Failed to add the Imam');
+                                toast.error('Failed to add the Event');
                             }
                         })
 

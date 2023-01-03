@@ -21,7 +21,7 @@ const ManageKhutba = () => {
                     "https://mosque-management-server.vercel.app/allKhutba",
                     {
                         headers: {
-                            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                            // authorization: `Bearer ${localStorage.getItem('accessToken')}`
                         },
                     }
                 );
@@ -43,7 +43,7 @@ const ManageKhutba = () => {
             {
                 method: "DELETE",
                 headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    // authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 },
             }
         )

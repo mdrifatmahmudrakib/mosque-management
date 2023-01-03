@@ -31,15 +31,15 @@ const SingleEvent = ({ event }) => {
 
                         <div className="row ps-2 pe-3 pt-3 scholar-meet-time"  >
                             <label className="col-6 text-start" style={{ color: "#D1AD3C" }}>
-                                <FontAwesomeIcon icon={faCalendar} />
-                                <span style={{ color: "black" }}>
-                                    {date}
-                                </span>
+                                {/* <FontAwesomeIcon icon={faCalendar} /> */}
+                                {/* <span style={{ color: "black" }}> */}
+
+                                {/* </span> */}
                             </label>
                             <label className="col-6 text-start" style={{ color: "#D1AD3C" }}>
 
-                                <FontAwesomeIcon icon={faClock} className="pe-1" />
-                                <span style={{ color: "black" }}>{time}</span>
+                                {/* <FontAwesomeIcon icon={faClock} className="pe-1" /> */}
+                                {/* <span style={{ color: "black" }}>{time}</span> */}
                             </label>
                         </div>
                     </p>

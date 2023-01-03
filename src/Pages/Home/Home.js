@@ -30,9 +30,9 @@ const Home = () => {
             <HomeHelp></HomeHelp>
             <Support></Support>
             {/* <Team></Team> */}
-            <Scolar></Scolar>
+            {/* <Scolar></Scolar> */}
             <HomeEvent></HomeEvent>
-            {/* <PrayerInfo></PrayerInfo> */}
+
             <Tetimonial></Tetimonial>
 
         </div>

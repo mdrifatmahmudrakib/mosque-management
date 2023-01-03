@@ -73,7 +73,7 @@ const UpdateProfile = () => {
             .then(result => {
                 console.log(result);
                 // reset();
-                toast.success("Campaign Update Successfully");
+                toast.success("Profile Updated Successfully");
             })
     };
 

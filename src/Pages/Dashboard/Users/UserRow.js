@@ -10,7 +10,7 @@ const UserRow = ({ user, refetch, i }) => {
         fetch(`https://mosque-management-server.vercel.app/user/admin/${email}`, {
             method: 'PUT',
             headers: {
-                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                // authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
             .then(res => {

@@ -8,10 +8,10 @@ const useAdmin = user => {
         if (email) {
             fetch(`https://mosque-management-server.vercel.app/admin/${email}`, {
                 method: 'GET',
-                headers: {
-                    'content-type': 'application/json',
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
+                // headers: {
+                //     'content-type': 'application/json',
+                //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                // }
             })
                 .then(res => res.json())
                 .then(data => {

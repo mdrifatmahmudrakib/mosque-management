@@ -332,7 +332,7 @@ const HelpDetails = () => {
                 <div className="row">
                     <div className="col-lg-6">
                         <img
-                            className="my-4 shadow-sm rounded img-fluid"
+                            className='img-fluid w-52 h-96'
                             src={img}
                             alt=""
                         />
@@ -345,13 +345,13 @@ const HelpDetails = () => {
                         <div class="row ps-2 pe-3 pt-3 raised bg-white my-2 m-0 rounded">
                             <p class="col-6 text-start">
                                 {" "}
-                                <b>Raised: </b>
-                                <span style={{ color: "#D1AD3C" }}>{Raised} </span>{" "}
+
+                                <span style={{ color: "#D1AD3C" }}> </span>{" "}
                             </p>
 
                             <p class="col-6 text-end">
-                                <b> Goal: </b>
-                                <span style={{ color: "#D1AD3C" }}>{Goal} </span>{" "}
+
+                                <span style={{ color: "#D1AD3C" }}> </span>{" "}
                             </p>
                         </div>
                     </div>

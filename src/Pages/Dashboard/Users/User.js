@@ -23,7 +23,7 @@ const User = () => {
     const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://mosque-management-server.vercel.app/user', {
         method: 'GET',
         headers: {
-            authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            // authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
 

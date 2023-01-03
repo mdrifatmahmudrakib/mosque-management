@@ -11,13 +11,10 @@ const SingleHelp = ({ cause }) => {
     return (
         <div className="col-12 col-md-6 col-lg-4 col-xl-4 p-3 justify-content-center  mt-3 mt-md-3 mt-lg-0">
             <div className="help_card_shadow">
-                <div className="card_banner card-img-top help-banner"
-                    style={{
-                        background: `url(${img}) `
+                <div
+                > <img style={{ width: "400px", height: "250px" }} className='img-fluid w-52 h-96' src={img} alt="" />
 
 
-                    }}
-                >
 
                 </div>
 
