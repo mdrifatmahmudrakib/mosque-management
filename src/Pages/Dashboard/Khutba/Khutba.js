@@ -29,7 +29,7 @@ const Khutba = () => {
         }
         console.log(khutba);
         // send to your database 
-        fetch('https://mosque-management-server.vercel.app/allKhutba', {
+        fetch('https://mosque-management.onrender.com/allKhutba', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

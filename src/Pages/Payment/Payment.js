@@ -14,7 +14,7 @@ const Payment = () => {
     const { isLoading, error, data } = useQuery({
         queryKey: ['grant-info'],
         queryFn: () =>
-            fetch(`https://mosque-management-server.vercel.app/grant-info/${id}`).then(res =>
+            fetch(`https://mosque-management.onrender.com/grant-info/${id}`).then(res =>
                 res.json()
             )
     })

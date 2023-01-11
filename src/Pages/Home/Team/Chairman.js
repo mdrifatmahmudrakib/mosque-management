@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Chairman = () => {
     const [allChairman, setChairman] = useState([])
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/experts/chairman')
+        fetch('https://mosque-management.onrender.com/experts/chairman')
             .then(res => res.json())
             .then(data => setChairman(data))
     }, [])
@@ -57,7 +57,7 @@ const Chairman = () => {
                                 <h5 className="team_heading mt-4">{chairman.name}</h5>
 
                                 <p className="team_body mt-3 about-scholar"  >
-                                    {chairman.short_description}
+                                    {chairman.short_description.slice(0, 70)}
                                 </p>
                                 <a href={chairman.facebook} className="service_read_more_btn p-2 m-1 social_media_icon rounded-circle">
 

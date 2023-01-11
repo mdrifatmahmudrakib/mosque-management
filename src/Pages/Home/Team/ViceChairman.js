@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const ViceChairman = () => {
     const [allViceChairman, setViceChairman] = useState([])
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/experts/viceChairman')
+        fetch('https://mosque-management.onrender.com/experts/viceChairman')
             .then(res => res.json())
             .then(data => setViceChairman(data))
     }, [])

@@ -29,7 +29,7 @@ const ManageSingleCampaign = ({ cause, refetch }) => {
         console.log(id);
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
-            const url = `https://mosque-management-server.vercel.app/campaign/${id}`;
+            const url = `https://mosque-management.onrender.com/campaign/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

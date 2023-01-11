@@ -25,7 +25,7 @@ const ManageSingleEvent = ({ event }) => {
         console.log(id);
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
-            const url = `https://mosque-management-server.vercel.app/event/${id}`;
+            const url = `https://mosque-management.onrender.com/event/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

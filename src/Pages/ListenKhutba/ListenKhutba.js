@@ -21,7 +21,7 @@ const ListenKhutba = () => {
         queryFn: async () => {
             try {
                 const res = await fetch(
-                    "https://mosque-management-server.vercel.app/allKhutba",
+                    "https://mosque-management.onrender.com/allKhutba",
                     {
                         headers: {
                             // authorization: `Bearer ${localStorage.getItem('accessToken')}`

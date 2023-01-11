@@ -6,7 +6,7 @@ const AddJamaatTime = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data);
-        const url = `https://mosque-management-server.vercel.app/jamaattime`;
+        const url = `https://mosque-management.onrender.com/jamaattime`;
         fetch(url, {
             method: 'POST',
             headers: {

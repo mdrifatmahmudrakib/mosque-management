@@ -85,7 +85,7 @@ const Sidebar = () => {
 
     const [allDonation, setAllDonation] = useState([]);
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/checkout/true`)
+        fetch(`https://mosque-management.onrender.com/checkout/true`)
             .then(res => res.json())
             .then(data => setAllDonation(data))
         console.log(allDonation);

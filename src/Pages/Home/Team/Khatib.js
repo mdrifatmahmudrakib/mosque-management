@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Khatib = () => {
     const [allKhatib, setKhatib] = useState([])
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/experts/khatib')
+        fetch('https://mosque-management.onrender.com/experts/khatib')
             .then(res => res.json())
             .then(data => setKhatib(data))
     }, [])
@@ -57,7 +57,7 @@ const Khatib = () => {
                                 <h5 className="team_heading mt-4">{khatib.name}</h5>
 
                                 <p className="team_body mt-3 about-scholar"  >
-                                    {khatib.short_description}
+                                    {khatib.short_description.slice(0, 70)}
                                 </p>
                                 <a href={khatib.facebook} className="service_read_more_btn p-2 m-1 social_media_icon rounded-circle">
 

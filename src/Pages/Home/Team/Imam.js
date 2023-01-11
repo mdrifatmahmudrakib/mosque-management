@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Imam = () => {
     const [allImam, setImam] = useState([])
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/experts/imam')
+        fetch('https://mosque-management.onrender.com/experts/imam')
             .then(res => res.json())
             .then(data => setImam(data))
     }, [])
@@ -57,7 +57,7 @@ const Imam = () => {
                                 <h5 className="team_heading mt-4">{imam.name}</h5>
 
                                 <p className="team_body mt-3 about-scholar"  >
-                                    {imam.short_description}
+                                    {imam.short_description.slice(0, 70)}
                                 </p>
                                 <a href={imam.facebook} className="service_read_more_btn p-2 m-1 social_media_icon rounded-circle">
 

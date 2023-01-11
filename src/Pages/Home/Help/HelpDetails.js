@@ -12,7 +12,7 @@
 //     const [cause, setCauses] = useState({});
 
 //     useEffect(() => {
-//         const url = `https://mosque-management-server.vercel.app/campaign/${id}`;
+//         const url = `https://mosque-management.onrender.com/campaign/${id}`;
 //         fetch(url)
 //             .then((res) => res.json())
 //             .then((data) => setCauses(data));
@@ -46,7 +46,7 @@
 //             postCode,
 //             currency,
 //         };
-//         fetch("https://mosque-management-server.vercel.app/checkout", {
+//         fetch("https://mosque-management.onrender.com/checkout", {
 //             method: "POST",
 //             headers: {
 //                 "content-type": "application/json",
@@ -255,7 +255,7 @@ const HelpDetails = () => {
     const [cause, setCauses] = useState({});
 
     useEffect(() => {
-        const url = `https://mosque-management-server.vercel.app/campaign/${id}`;
+        const url = `https://mosque-management.onrender.com/campaign/${id}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setCauses(data));
@@ -288,7 +288,7 @@ const HelpDetails = () => {
             address,
             campaignname,
         };
-        fetch("https://mosque-management-server.vercel.app/checkout", {
+        fetch("https://mosque-management.onrender.com/checkout", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -375,14 +375,14 @@ const HelpDetails = () => {
                             >
                                 <img src="https://img.freepik.com/premium-vector/muslim-people-donate-pay-zakat-ramadan-concept-illustration_101179-1318.jpg?w=1060" alt="" />
                                 <h1 className="text-center  py-2 fst-italic" style={{ textShadow: "3px 2px #558ABB" }}>Please Donate</h1>
-                                <select className="shadow border-0 py-2 " name="currency" id="cars">
+                                <select hidden className="shadow border-0 py-2 " name="currency" id="cars">
                                     <option defaultValue="BDT" value="BDT">
                                         BDT
                                     </option>
                                     <option value="USD">USD</option>
                                 </select>
                                 <label className="text-left ">
-                                    <h5>Grant amount *</h5>
+                                    <h5>Donation amount *</h5>
                                 </label>
                                 <input
                                     {...register("amount")}
@@ -444,7 +444,7 @@ const HelpDetails = () => {
                                 <input
                                     className="mt-2 btn btn-dark"
                                     type="submit"
-                                    value="Pay"
+                                    value="Donate"
                                 />
                             </form>
                         </div>

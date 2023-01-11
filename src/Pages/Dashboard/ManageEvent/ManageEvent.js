@@ -18,7 +18,7 @@ const ManageEvent = () => {
 
 
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/events?page=${page}&size=${size}`)
+        fetch(`https://mosque-management.onrender.com/events?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setEvents(data));
     }, [page, size]);
@@ -26,7 +26,7 @@ const ManageEvent = () => {
 
 
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/campaignCount')
+        fetch('https://mosque-management.onrender.com/campaignCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;

@@ -12,7 +12,7 @@
 //     const { id } = useParams();
 
 //     useEffect(() => {
-//         fetch(`https://mosque-management-server.vercel.app/campaign/${id}`)
+//         fetch(`https://mosque-management.onrender.com/campaign/${id}`)
 //             .then(res => res.json())
 //             .then(result => {
 //                 setUpdateItem(result);
@@ -44,7 +44,7 @@
 //                     }
 //                     console.log(imam)
 //                     // send to your database
-//                     fetch(`https://mosque-management-server.vercel.app/campaign/${id}`, {
+//                     fetch(`https://mosque-management.onrender.com/campaign/${id}`, {
 //                         method: 'PUT',
 //                         headers: {
 //                             'content-type': 'application/json',

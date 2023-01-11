@@ -11,7 +11,7 @@ const UpdateEvent = () => {
     // const { id } = useParams();
 
     // useEffect(() => {
-    //     fetch(`https://mosque-management-server.vercel.app/event/${id}`)
+    //     fetch(`https://mosque-management.onrender.com/event/${id}`)
     //         .then(res => res.json())
     //         .then(result => {
     //             setUpdateItem(result);
@@ -29,7 +29,7 @@ const UpdateEvent = () => {
     //         date: data.date,
     //         time: data.time
     //     }
-    //     fetch(`https://mosque-management-server.vercel.app/event/${id}`, {
+    //     fetch(`https://mosque-management.onrender.com/event/${id}`, {
     //         method: "PUT",
     //         headers: {
     //             'content-type': 'application/json'
@@ -52,7 +52,7 @@ const UpdateEvent = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/event/${id}`)
+        fetch(`https://mosque-management.onrender.com/event/${id}`)
             .then(res => res.json())
             .then(result => {
                 setUpdateItem(result);
@@ -89,7 +89,7 @@ const UpdateEvent = () => {
 
 
         };
-        fetch(`https://mosque-management-server.vercel.app/event/${id}`, {
+        fetch(`https://mosque-management.onrender.com/event/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -143,12 +143,12 @@ const UpdateEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Campaign Details</label>
+                                            className="form-label">Event Details</label>
                                         <textarea
                                             defaultValue={updateItem.short_description}
                                             type="text"
                                             name='short_description'
-                                            className="form-control" id="exampleFormControlInput1" placeholder="Jummah Khutba About Crisis"
+                                            className="form-control" id="exampleFormControlInput1" placeholder="Update event details"
                                             rows="7"
 
 
@@ -168,7 +168,7 @@ const UpdateEvent = () => {
                                             type="datetime-local"
                                             name='date'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="update event date"
 
 
 
@@ -184,7 +184,7 @@ const UpdateEvent = () => {
                                             type="Text"
                                             name='location'
                                             className="form-control" id="exampleFormControlInput1"
-                                            placeholder="MD Imtius Ahammed"
+                                            placeholder="update location"
                                             required
 
 
@@ -244,7 +244,7 @@ const UpdateEvent = () => {
 
                                     <div className="mb-4">
                                         <label for="exampleFormControlTextarea1"
-                                            className="form-label">Upload Campaign Photo </label>
+                                            className="form-label">Upload Event Photo </label>
                                         <input
 
                                             defaultValue={updateItem.img}

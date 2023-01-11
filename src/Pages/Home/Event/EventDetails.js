@@ -15,7 +15,7 @@ const EventDetails = () => {
 
 
     useEffect(() => {
-        const url = `https://mosque-management-server.vercel.app/event/${id}`;
+        const url = `https://mosque-management.onrender.com/event/${id}`;
 
         fetch(url)
             .then(res => res.json())

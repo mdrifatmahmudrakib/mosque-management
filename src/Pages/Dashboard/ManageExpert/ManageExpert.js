@@ -18,7 +18,7 @@ const ManageExpert = () => {
         queryFn: async () => {
             try {
                 const res = await fetch(
-                    "https://mosque-management-server.vercel.app/experts",
+                    "https://mosque-management.onrender.com/experts",
                     {
                         // headers: {
                         //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -35,7 +35,7 @@ const ManageExpert = () => {
         console.log(expert);
 
         fetch(
-            `https://mosque-management-server.vercel.app/experts/${expert._id}`,
+            `https://mosque-management.onrender.com/experts/${expert._id}`,
             {
                 method: "DELETE",
                 // headers: {

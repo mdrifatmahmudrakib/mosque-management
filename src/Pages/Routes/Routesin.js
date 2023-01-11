@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AddCampaign from '../Dashboard/AddCampaign/AddCampaign';
-import Dashboard from '../Dashboard/Dashboard';
 import Donate from '../Donate/Donate';
 import EventDetails from '../Home/Event/EventDetails';
 import Event from '../Home/Event/Event';
@@ -9,13 +7,14 @@ import HelpDetails from '../Home/Help/HelpDetails';
 import Home from '../Home/Home';
 import Login from '../Login/Login/Login';
 import Register from '../Login/Register/Register';
+
 import Scolar from '../Scolar/Scolar';
 import Header from '../Shared/Header/Header';
 import Info from '../../Pages/Dashboard/Info';
 import Payment from '../Payment/Payment';
 import Side from '../Dashboard/Side/Side';
 import ListenKhutba from '../ListenKhutba/ListenKhutba';
-import TestUpdate from '../Dashboard/ManageCampaign/TestUpdate';
+
 import Footer from '../Shared/Footer/Footer';
 import RequireAuth from '../Login/RequireAuth';
 import UserDonation from '../UserDonation/UserDonation';
@@ -41,13 +40,11 @@ const Routesin = () => {
                 <Route path='/events' element={<Event></Event>}></Route>
                 <Route path='/allexperts' element={<Scolar></Scolar>}></Route>
                 <Route path='/khutba' element={<ListenKhutba></ListenKhutba>}></Route>
-                <Route path='/test' element={<TestUpdate></TestUpdate>}></Route>
-
 
 
                 <Route path="/login" element={<Login></Login>}></Route>
-
                 <Route path="/register" element={<Register></Register>}></Route>
+
 
 
                 <Route path="/payment/:id" element={<Payment></Payment>}></Route>

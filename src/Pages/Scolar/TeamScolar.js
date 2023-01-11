@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Scolar = () => {
     const [allScolar, setScolar] = useState([])
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/experts/scolar')
+        fetch('https://mosque-management.onrender.com/experts/scolar')
             .then(res => res.json())
             .then(data => setScolar(data))
     }, [])
@@ -57,7 +57,7 @@ const Scolar = () => {
                                 <h5 className="team_heading mt-4">{scolar.name}</h5>
 
                                 <p className="team_body mt-3 about-scholar"  >
-                                    {scolar.short_description}
+                                    {scolar.short_description.slice(0, 70)}
                                 </p>
                                 <a href={scolar.facebook} className="service_read_more_btn p-2 m-1 social_media_icon rounded-circle">
 

@@ -11,7 +11,7 @@ const UserDonation = () => {
 
     const [donation, setDonation] = useState([]);
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/checkout/${user?.email}/true`)
+        fetch(`https://mosque-management.onrender.com/checkout/${user?.email}/true`)
             .then(res => res.json())
             .then(data => setDonation(data))
         console.log(setDonation);

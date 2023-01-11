@@ -11,7 +11,7 @@ const DonationSuccess = () => {
 
     const [donation, setDonation] = useState({});
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/donation-info/by-transaction-id/${transactionId}`)
+        fetch(`https://mosque-management.onrender.com/donation-info/by-transaction-id/${transactionId}`)
             .then(res => res.json())
             .then(data => setDonation(data));
     }, [transactionId])

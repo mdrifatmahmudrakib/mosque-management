@@ -8,7 +8,7 @@ const UpdateExpert = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/expertSingle/${id}`)
+        fetch(`https://mosque-management.onrender.com/expertSingle/${id}`)
             .then((res) => res.json())
             .then((result) => {
                 setUpdateExpert(result);
@@ -40,7 +40,7 @@ const UpdateExpert = () => {
             instagram,
             phone,
         };
-        fetch(`https://mosque-management-server.vercel.app/experts/${id}`, {
+        fetch(`https://mosque-management.onrender.com/experts/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

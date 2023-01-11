@@ -12,20 +12,27 @@ const SingleEvent = ({ event }) => {
     }
     return (
         <div className="col-12 col-md-6 col-lg-6 col-xl-6 justify-content-center ">
-            <div className="div-card-bg"  >
-                <div className="card_banner card-img-top div-banner-bg"
-                    style={{
-                        background: `url(${img}) `
-                    }}
+            <div className="div-card-bg mb-4"  >
+                <div
+                // style={{
+                //     background: `url(${img}) `
+                // }}
                 >
+
+
+                    <img className='img-fluid w-52 h-96 ' src={img} alt="" />
+
+
+
+
 
                 </div>
 
-                <div className="card-body p-4">
+                <div className="card-body pt-2">
                     <a href="#" className="help_card_title ps-1 pe-1 scholar-meet">
 
                         {name}</a>
-                    <p className="help_card_text ps-2 pe-2">
+                    <p className="help_card_text ps-1 pe-1">
                         {short_description.slice(0, 70)}
 
 

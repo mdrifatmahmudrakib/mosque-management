@@ -16,14 +16,14 @@ const ManageCampaign = () => {
     const [size, setSize] = useState(3);
 
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/campaigns?page=${page}&size=${size}`)
+        fetch(`https://mosque-management.onrender.com/campaigns?page=${page}&size=${size}`)
             .then(res => res.json())
             .then(data => setCauses(data));
     }, [page, size]);
 
 
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/campaignCount')
+        fetch('https://mosque-management.onrender.com/campaignCount')
             .then(res => res.json())
             .then(data => {
                 const count = data.count;

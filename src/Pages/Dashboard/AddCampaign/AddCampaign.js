@@ -36,7 +36,7 @@ const AddCampaign = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch('https://mosque-management-server.vercel.app/campaigns', {
+                    fetch('https://mosque-management.onrender.com/campaigns', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

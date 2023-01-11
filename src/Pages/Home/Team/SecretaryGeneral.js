@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const SecretaryGeneral = () => {
     const [allSecretary, setSecretary] = useState([])
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/experts/secretaryGeneral')
+        fetch('https://mosque-management.onrender.com/experts/secretaryGeneral')
             .then(res => res.json())
             .then(data => setSecretary(data))
     }, [])
@@ -57,7 +57,7 @@ const SecretaryGeneral = () => {
                                 <h5 className="team_heading mt-4">{secretary.name}</h5>
 
                                 <p className="team_body mt-3 about-scholar"  >
-                                    {secretary.short_description}
+                                    {secretary.short_description.slice(0, 70)}
                                 </p>
                                 <a href={secretary.facebook} className="service_read_more_btn p-2 m-1 social_media_icon rounded-circle">
 

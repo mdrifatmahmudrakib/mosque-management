@@ -20,7 +20,7 @@ const Event = () => {
 
 
 
-        <div className='ml-4 mr-4'>
+        <div className='ml-4 mr-4 event-bg'>
 
 
             <div className='home_banner pb-5'

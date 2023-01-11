@@ -20,7 +20,7 @@
 //             link
 
 //         };
-//         fetch("https://mosque-management-server.vercel.app/addKhutba", {
+//         fetch("https://mosque-management.onrender.com/addKhutba", {
 //             method: "POST",
 //             headers: {
 //                 "content-type": "application/json",

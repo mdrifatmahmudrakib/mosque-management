@@ -7,10 +7,10 @@ const UserRow = ({ user, refetch, i }) => {
     const [users, setUsers] = useState([]);
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`https://mosque-management-server.vercel.app/user/admin/${email}`, {
+        fetch(`https://mosque-management.onrender.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
-                // authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
             .then(res => {
@@ -34,7 +34,7 @@ const UserRow = ({ user, refetch, i }) => {
         // const proceed = window.confirm('Are you Sure?');
         const proceed = window.confirm('Are you Sure?');
         if (proceed) {
-            const url = `https://mosque-management-server.vercel.app/user/${email}`;
+            const url = `https://mosque-management.onrender.com/user/${email}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -43,7 +43,7 @@ const UserRow = ({ user, refetch, i }) => {
                 .then(data => {
 
                     if (data.modifiedCount > 0) {
-                        // refetch();
+                        refetch();
 
                         console.log(data);
                         const remaining = users.filter(user => user._id !== id)
@@ -83,3 +83,4 @@ const UserRow = ({ user, refetch, i }) => {
 };
 
 export default UserRow;
+

@@ -4,7 +4,7 @@ const AllEvents = () => {
     const [events, setEvents] = useState([])
 
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/events')
+        fetch('https://mosque-management.onrender.com/events')
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [])

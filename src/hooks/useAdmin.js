@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react"
 
 const useAdmin = user => {
@@ -6,12 +7,12 @@ const useAdmin = user => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://mosque-management-server.vercel.app/admin/${email}`, {
+            fetch(`https://mosque-management.onrender.com/admin/${email}`, {
                 method: 'GET',
-                // headers: {
-                //     'content-type': 'application/json',
-                //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                // }
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {

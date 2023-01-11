@@ -20,10 +20,11 @@ const User = () => {
 
     const [user, loading] = useAuthState(auth);
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://mosque-management-server.vercel.app/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://mosque-management.onrender.com/user', {
         method: 'GET',
         headers: {
-            // authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            'content-type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
     }).then(res => res.json()));
 
@@ -54,17 +55,10 @@ const User = () => {
                 </div>
 
             </div>
-            {/* hello from {users.length} */}
+
 
             <table className=' mx-auto table table-striped shadow m-4 p-4'>
-                {/* <thead>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>Favorite Color</th>
-                    </tr>
-                </thead> */}
+
 
                 <thead>
                     <tr className='bg-dark text-white'>
@@ -97,4 +91,4 @@ const User = () => {
     );
 };
 
-export default User;
+export default User;    

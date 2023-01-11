@@ -44,7 +44,7 @@ const PrayerTime = () => {
     const [jamaattime, setJamaattime] = useState([])
 
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/jamaattime')
+        fetch('https://mosque-management.onrender.com/jamaattime')
             .then(res => res.json())
             .then(data => setJamaattime(data))
     }, [jamaattime, setJamaattime])

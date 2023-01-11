@@ -19,7 +19,7 @@ const UpdateProfile = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/puser/${user?.email}`)
+        fetch(`https://mosque-management.onrender.com/puser/${user?.email}`)
             .then((res) => res.json())
             .then((result) => {
                 setUpdateExpert(result);
@@ -62,7 +62,7 @@ const UpdateProfile = () => {
 
 
         };
-        fetch(`https://mosque-management-server.vercel.app/puser/${user?.email}`, {
+        fetch(`https://mosque-management.onrender.com/puser/${user?.email}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

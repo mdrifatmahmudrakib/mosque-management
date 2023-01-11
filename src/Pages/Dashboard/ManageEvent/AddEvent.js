@@ -40,7 +40,7 @@ const AddEvent = () => {
 
                     }
                     // send to your database 
-                    fetch('https://mosque-management-server.vercel.app/events', {
+                    fetch('https://mosque-management.onrender.com/events', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

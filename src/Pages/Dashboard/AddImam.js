@@ -31,7 +31,7 @@ const AddImam = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch('https://mosque-management-server.vercel.app/imam', {
+                    fetch('https://mosque-management.onrender.com/imam', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -39,7 +39,7 @@ const AddExpert = () => {
 
                     }
                     // send to your database 
-                    fetch('https://mosque-management-server.vercel.app/experts', {
+                    fetch('https://mosque-management.onrender.com/experts', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

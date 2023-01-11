@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react';
 const Muyajjem = () => {
     const [allMember, setMember] = useState([])
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/experts/muyajjem')
+        fetch('https://mosque-management.onrender.com/experts/muyajjem')
             .then(res => res.json())
             .then(data => setMember(data))
     }, [])
@@ -57,7 +57,7 @@ const Muyajjem = () => {
                                 <h5 className="team_heading mt-4">{member.name}</h5>
 
                                 <p className="team_body mt-3 about-scholar"  >
-                                    {member.short_description}
+                                    {member.short_description.slice(0, 70)}
                                 </p>
                                 <a href={member.facebook} className="service_read_more_btn p-2 m-1 social_media_icon rounded-circle">
 

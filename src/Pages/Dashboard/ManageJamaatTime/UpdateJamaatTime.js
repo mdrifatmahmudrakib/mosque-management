@@ -9,7 +9,7 @@ const UpdateJamaatTime = () => {
     // const { id } = useParams();
 
     // useEffect(() => {
-    //     fetch(`https://mosque-management-server.vercel.app/jamaattime/${id}`)
+    //     fetch(`https://mosque-management.onrender.com/jamaattime/${id}`)
     //         .then(res => res.json())
     //         .then(result => {
     //             setUpdateItem(result);
@@ -25,7 +25,7 @@ const UpdateJamaatTime = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://mosque-management-server.vercel.app/jamaattime/${id}`)
+        fetch(`https://mosque-management.onrender.com/jamaattime/${id}`)
             .then(res => res.json())
             .then(result => {
                 setUpdateItem(result);
@@ -48,7 +48,7 @@ const UpdateJamaatTime = () => {
             fajr, zuhr, asr, isha, magrib,
 
         };
-        fetch(`https://mosque-management-server.vercel.app/jamaattime/${id}`, {
+        fetch(`https://mosque-management.onrender.com/jamaattime/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

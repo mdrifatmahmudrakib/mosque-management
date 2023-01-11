@@ -18,7 +18,7 @@ const ManageKhutba = () => {
         queryFn: async () => {
             try {
                 const res = await fetch(
-                    "https://mosque-management-server.vercel.app/allKhutba",
+                    "https://mosque-management.onrender.com/allKhutba",
                     {
                         headers: {
                             // authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const ManageKhutba = () => {
         console.log(khutba);
 
         fetch(
-            `https://mosque-management-server.vercel.app/allKhutba/${khutba._id}`,
+            `https://mosque-management.onrender.com/allKhutba/${khutba._id}`,
             {
                 method: "DELETE",
                 headers: {

@@ -6,49 +6,13 @@ import SingleJamaatTime from './SingleJamaatTime';
 
 const ManageJamaatTime = () => {
 
-    // const [jamaat, setJamaat] = useState([])
-
-    // useEffect(() => {
-    //     fetch('https://mosque-management-server.vercel.app/jamaattime')
-    //         .then(res => res.json())
-    //         .then(data => setJamaat(data))
-    // }, [jamaat, setJamaat])
-
-    // const { id } = useParams();
-    // const navigate = useNavigate();
-
-
-    // let navigate = useNavigate();
-
-
-    // const {
-    //     data: jamaattime = [],
-    //     isLoading,
-
-    // } = useQuery({
-    //     queryKey: ["jamaattime"],
-    //     queryFn: async () => {
-    //         try {
-    //             const res = await fetch(
-    //                 "https://mosque-management-server.vercel.app/jamaattime",
-    //                 {
-    //                     // headers: {
-    //                     //   authorization: `Bearer ${localStorage.getItem('accessToken')}`
-    //                     // },
-    //                 }
-    //             );
-    //             const data = await res.json();
-    //             return data;
-    //         } catch (error) { }
-    //     },
-    // });
 
 
 
     const [jamaattime, setJamaattime] = useState([])
 
     useEffect(() => {
-        fetch('https://mosque-management-server.vercel.app/jamaattime')
+        fetch('https://mosque-management.onrender.com/jamaattime')
             .then(res => res.json())
             .then(data => setJamaattime(data))
     }, [jamaattime, setJamaattime])
@@ -58,9 +22,7 @@ const ManageJamaatTime = () => {
 
 
 
-    // if (isLoading) {
-    //     return <Loading></Loading>
-    // }
+
 
     return (
 
@@ -82,13 +44,7 @@ const ManageJamaatTime = () => {
             </section>
 
 
-            {/* {
-                jamaattime.map((jamaat) => <p>{jamaat.fajr} </p>
 
-
-
-                )
-            } */}
         </>
 
 
